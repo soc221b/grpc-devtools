@@ -1,0 +1,6 @@
+node_modules
+package-lock.json
+dist
+protos
+CHANGELOG.md
+shell-chrome/manifest.json

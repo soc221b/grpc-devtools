@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package chat;
+
+service ChatService {
+  rpc sendMessage (SendMessageRequest) returns (SendMessageResponse);
+
+  rpc onMessage (OnMessageRequest) returns (stream OnMessageResponse);
+}
+
+message SendMessageRequest {
+  string id = 1;
+  string message = 2;
+}
+
+message SendMessageResponse {}
+
+message OnMessageRequest {
+  string id = 1;
+}
+
+message OnMessageResponse {
+  string id = 1;
+  string message = 2;
+}

@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@custom-variant dark (@media (prefers-color-scheme: dark));
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+:not(input[type="checkbox"]) {
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  background-color: #fafafa;
+  height: 14px;
+  width: 14px;
+  border: 1px solid transparent;
+}
+
+::-webkit-scrollbar:horizontal {
+  border-top-color: #e8e8e8;
+}
+
+::-webkit-scrollbar:vertical {
+  border-left-color: #e8e8e8;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #fafafa;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  border-radius: 9999px;
+  border: 3px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #7d7d7d;
+}
+
+.-theme-with-dark-background ::-webkit-scrollbar {
+  background-color: #2b2b2b;
+}
+
+.-theme-with-dark-background ::-webkit-scrollbar:horizontal {
+  border-top-color: #3d3d3d;
+}
+
+.-theme-with-dark-background ::-webkit-scrollbar:vertical {
+  border-left-color: #3d3d3d;
+}
+
+.-theme-with-dark-background ::-webkit-scrollbar-corner {
+  background-color: #2c2c2c;
+}
+
+.-theme-with-dark-background ::-webkit-scrollbar-thumb {
+  background-color: #6b6b6b;
+}
+
+.-theme-with-dark-background ::-webkit-scrollbar-thumb:hover {
+  background-color: #939393;
+}
+
+html {
+  font-family: Roboto, system-ui, sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
