@@ -178,11 +178,11 @@
     };
   }
 
-  const unaryInterceptors = new gRPCDevtoolsUnaryInterceptor();
-  const streamInterceptors = new gRPCDevtoolsStreamInterceptor();
+  const unaryInterceptor = new gRPCDevtoolsUnaryInterceptor();
+  const streamInterceptor = new gRPCDevtoolsStreamInterceptor();
   window.__gRPC_devtools__ = {
-    gRPCDevtoolsUnaryInterceptor: unaryInterceptors,
-    gRPCDevtoolsStreamInterceptor: streamInterceptors,
+    gRPCDevtoolsUnaryInterceptor: unaryInterceptor,
+    gRPCDevtoolsStreamInterceptor: streamInterceptor,
   };
 
   let isWarned = false;
@@ -197,12 +197,12 @@
     clients.forEach((client) => {
       if (Array.isArray(client.client_.h)) {
         // grpc-web@^1.3.0
-        client.client_.h = [...client.client_.h, unaryInterceptors];
+        client.client_.h = [...client.client_.h, unaryInterceptor];
       } else {
         // grpc-web@^1.1.0
-        client.client_.g = [...client.client_.g, unaryInterceptors];
+        client.client_.g = [...client.client_.g, unaryInterceptor];
       }
-      client.client_.b = [...client.client_.b, streamInterceptors];
+      client.client_.b = [...client.client_.b, streamInterceptor];
     });
   }
   setTimeout(() => {
