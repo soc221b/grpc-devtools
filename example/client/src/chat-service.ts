@@ -1,4 +1,4 @@
-import { gRPCDevtoolsUnaryInterceptors, gRPCDevtoolsStreamInterceptors } from "./grpc-devtools";
+import { unaryInterceptors, streamInterceptors } from "./grpc-web-devtools";
 import { ChatServiceClient } from "./protos/ChatServiceClientPb";
 import { SendMessageRequest, OnMessageRequest } from "./protos/chat_pb";
 
@@ -10,8 +10,8 @@ class ChatService {
   constructor() {
     this.id = Math.random().toString(36).slice(2, 6);
     this.chatService = new ChatServiceClient("http://localhost:3003", null, {
-      unaryInterceptors: gRPCDevtoolsUnaryInterceptors,
-      streamInterceptors: gRPCDevtoolsStreamInterceptors,
+      unaryInterceptors: unaryInterceptors,
+      streamInterceptors: streamInterceptors,
     });
 
     const metadata = {
