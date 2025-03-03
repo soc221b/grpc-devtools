@@ -7,7 +7,7 @@ declare const __gRPC_devtools__:
       gRPCDevtoolsStreamInterceptor: StreamInterceptor<unknown, unknown>;
     };
 
-export const gRPCDevtoolsUnaryInterceptors =
+export const unaryInterceptors =
   typeof __gRPC_devtools__ === "object" ? [__gRPC_devtools__.gRPCDevtoolsUnaryInterceptor] : [];
-export const gRPCDevtoolsStreamInterceptors =
+export const streamInterceptors =
   typeof __gRPC_devtools__ === "object" ? [__gRPC_devtools__.gRPCDevtoolsStreamInterceptor] : [];

@@ -39,18 +39,18 @@ declare const __gRPC_devtools__:
       gRPCDevtoolsStreamInterceptor: StreamInterceptor<unknown, unknown>;
     };
 
-export const gRPCDevtoolsUnaryInterceptors =
+export const unaryInterceptors =
   typeof __gRPC_devtools__ === "object" ? [__gRPC_devtools__.gRPCDevtoolsUnaryInterceptor] : [];
-export const gRPCDevtoolsStreamInterceptors =
+export const streamInterceptors =
   typeof __gRPC_devtools__ === "object" ? [__gRPC_devtools__.gRPCDevtoolsStreamInterceptor] : [];
 `.trim();
 
   const exampleCode = `
-import { gRPCDevtoolsUnaryInterceptors, gRPCDevtoolsStreamInterceptors } from "./grpc-devtools";
+import { unaryInterceptors, streamInterceptors } from "./grpc-web-devtools";
 
 const client = new ChatServiceClient(host, creds, {
-  unaryInterceptors: gRPCDevtoolsUnaryInterceptors,
-  streamInterceptors: gRPCDevtoolsStreamInterceptors,
+  unaryInterceptors: unaryInterceptors,
+  streamInterceptors: streamInterceptors,
 });
     `.trim();
 
@@ -88,7 +88,7 @@ const client = new ChatServiceClient(host, creds, {
               </a>
               &nbsp;to a client:
             </p>
-            grpc-devtools.ts
+            grpc-web-devtools.ts
             <textarea
               disabled
               rows={grpcDevtoolsCode.split("\n").length + 1}
