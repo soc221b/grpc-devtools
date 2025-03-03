@@ -55,7 +55,7 @@
     "jest-environment-jsdom": "29.7.0",
     "postcss": "8.5.3",
     "postcss-loader": "8.1.1",
-    "prettier": "3.5.2",
+    "prettier": "3.5.3",
     "rimraf": "6.0.1",
     "start-server-and-test": "2.0.10",
     "style-loader": "4.0.0",
