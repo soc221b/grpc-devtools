@@ -33,7 +33,7 @@
   "devDependencies": {
     "@swc/core": "1.11.5",
     "@swc/jest": "0.2.37",
-    "@tailwindcss/postcss": "4.0.9",
+    "@tailwindcss/postcss": "4.0.10",
     "@types/chrome": "0.0.308",
     "@types/google-protobuf": "3.15.12",
     "@types/jest": "29.5.14",
@@ -60,7 +60,7 @@
     "start-server-and-test": "2.0.10",
     "style-loader": "4.0.0",
     "swc-loader": "0.2.6",
-    "tailwindcss": "4.0.9",
+    "tailwindcss": "4.0.10",
     "ts-essentials": "10.0.4",
     "ts-loader": "9.5.2",
     "ts-node": "10.9.2",
