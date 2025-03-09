@@ -1,6 +1,5 @@
 beforeEach(() => {
   cy.visit("/");
-  cy.root().find("[data-setup-close]").click();
   cy.sendGrpcRequest({
     id: "1",
     methodName: "sendMessage 1",

@@ -1,6 +1,5 @@
 beforeEach(() => {
   cy.visit("/");
-  cy.root().find("[data-setup-close]").click();
 });
 
 it("should be able to download and upload a gar file", () => {

@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "protoc": "export IN_DIR=../protos OUT_DIR=./src/protos && protoc -I=$IN_DIR chat.proto --js_out=import_style=commonjs:$OUT_DIR --grpc-web_out=import_style=typescript,mode=grpcwebtext:$OUT_DIR",
+    "gen": "export IN_DIR=../../protos OUT_DIR=./src/protos && protoc -I=$IN_DIR chat.proto --js_out=import_style=commonjs:$OUT_DIR --grpc-web_out=import_style=typescript,mode=grpcwebtext:$OUT_DIR",
     "dev": "webpack-dev-server"
   },
   "devDependencies": {
@@ -18,9 +18,6 @@
     "webpack-dev-server": "5.2.0"
   },
   "dependencies": {
-    "google-protobuf": "3.21.4",
-    "grpc-web": "1.5.0",
-    "rxjs": "7.8.2",
-    "socket.io-client": "4.8.1"
+    "grpc-web": "1.5.0"
   }
 }

@@ -4,7 +4,6 @@ import RequestRow from "./request-rows/RequestRow";
 import { RequestRow as IRequestRow } from "@/entities/request-row";
 import { getClassName as _getClassName } from "./request-rows/get-class-name";
 import useIsFocusIn from "@/hooks/use-is-focus-in";
-import Setup from "@/components/Setup";
 import VirtualList from "@/components/VirtualList";
 import { useEffect } from "react";
 import { useConfig } from "@/contexts/config-context";
@@ -141,7 +140,16 @@ const RequestRows = ({
                 &nbsp; to display gRPC activity.
               </p>
             )}
-            <Setup></Setup>
+
+            <a
+              href="https://github.com/soc221b/grpc-devtools#usage"
+              target="_blank"
+              className="mt-3 flex items-center"
+              tabIndex={-1}
+            >
+              README
+              <span className="material-symbols-rounded scale-75">open_in_new</span>
+            </a>
           </div>
         </div>
       )}

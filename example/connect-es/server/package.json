@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "gen": "export IN_DIR=../../protos OUT_DIR=./ && protoc -I=$IN_DIR chat.proto --plugin=protoc-gen-es=node_modules/.bin/protoc-gen-es --es_out $OUT_DIR --es_opt target=ts",
+    "dev": "tsx index.ts"
+  },
+  "dependencies": {
+    "@connectrpc/connect": "^2.0.2",
+    "@connectrpc/connect-express": "^2.0.2",
+    "@connectrpc/connect-node": "^2.0.2",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "rxjs": "^7.8.2"
+  },
+  "devDependencies": {
+    "@bufbuild/protoc-gen-es": "^2.2.3",
+    "tsx": "^4.19.3"
+  }
+}

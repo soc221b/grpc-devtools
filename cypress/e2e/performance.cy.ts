@@ -1,6 +1,5 @@
 beforeEach(() => {
   cy.visit("/");
-  cy.root().find("[data-setup-close]").click();
 });
 
 it("should use virtual list for displaying request rows", () => {

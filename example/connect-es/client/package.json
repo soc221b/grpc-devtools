@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "name": "client",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "gen": "export IN_DIR=../../protos OUT_DIR=./src/protos && protoc -I=$IN_DIR chat.proto --plugin=protoc-gen-es=node_modules/.bin/protoc-gen-es --es_out $OUT_DIR --es_opt target=ts",
+    "dev": "webpack-dev-server"
+  },
+  "devDependencies": {
+    "@bufbuild/protoc-gen-es": "2.2.3",
+    "css-loader": "7.1.2",
+    "html-webpack-plugin": "5.6.3",
+    "style-loader": "4.0.0",
+    "ts-loader": "9.5.2",
+    "typescript": "5.8.2",
+    "webpack": "5.98.0",
+    "webpack-cli": "6.0.1",
+    "webpack-dev-server": "5.2.0"
+  },
+  "dependencies": {
+    "@connectrpc/connect": "^2.0.2",
+    "@connectrpc/connect-web": "^2.0.2"
+  }
+}

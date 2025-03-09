@@ -1,4 +1,4 @@
-const PROTO_PATH = __dirname + "/../protos/chat.proto";
+const PROTO_PATH = __dirname + "/../../protos/chat.proto";
 
 const grpc = require("@grpc/grpc-js");
 const protoLoader = require("@grpc/proto-loader");
@@ -76,7 +76,6 @@ function main() {
   const server = new grpc.Server();
   server.addService(chat_proto.ChatService.service, { sendMessage, onMessage });
   server.bindAsync(`${host}:${port}`, grpc.ServerCredentials.createInsecure(), () => {
-    server.start();
     console.log(`Server running at ${host}:${port}`);
   });
 }
