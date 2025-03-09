@@ -19,7 +19,7 @@
     "webpack-dev-server": "5.2.0"
   },
   "dependencies": {
-    "@connectrpc/connect": "^2.0.2",
-    "@connectrpc/connect-web": "^2.0.2"
+    "@connectrpc/connect": "2.0.2",
+    "@connectrpc/connect-web": "2.0.2"
   }
 }
