@@ -1,6 +1,4 @@
-# gRPC Web Devtools
-
-`grpc-web-devtools` requires at least [`grpc-web` 1.1.0](https://grpc.io/blog/grpc-web-interceptor/), so make sure you upgrade your grpc-web if you're still running an older one.
+# gRPC Devtools
 
 <div style="display: flex; justify-content: center;">
   <img src="./demo.png" width='720px'/>
@@ -8,7 +6,11 @@
 
 ## Usage
 
-grpc-web-devtools.ts
+### [gRPC-Web](https://github.com/grpc/grpc-web)
+
+`gRPC-Devtools` requires at least [`gRPC-Web` 1.1.0](https://grpc.io/blog/grpc-web-interceptor/), so make sure you upgrade your grpc-web if you're still running an older one.
+
+grpc-devtools.ts
 
 ```ts
 import type { StreamInterceptor, UnaryInterceptor } from "grpc-web";
@@ -16,23 +18,45 @@ import type { StreamInterceptor, UnaryInterceptor } from "grpc-web";
 declare const __gRPC_devtools__:
   | undefined
   | {
-      gRPCDevtoolsUnaryInterceptor: UnaryInterceptor<unknown, unknown>;
-      gRPCDevtoolsStreamInterceptor: StreamInterceptor<unknown, unknown>;
+      gRPCWebUnaryInterceptor: UnaryInterceptor<unknown, unknown>;
+      gRPCWebStreamInterceptor: StreamInterceptor<unknown, unknown>;
     };
 
 export const unaryInterceptors =
-  typeof __gRPC_devtools__ === "object" ? [__gRPC_devtools__.gRPCDevtoolsUnaryInterceptor] : [];
+  typeof __gRPC_devtools__ === "object" ? [__gRPC_devtools__.gRPCWebUnaryInterceptor] : [];
 export const streamInterceptors =
-  typeof __gRPC_devtools__ === "object" ? [__gRPC_devtools__.gRPCDevtoolsStreamInterceptor] : [];
+  typeof __gRPC_devtools__ === "object" ? [__gRPC_devtools__.gRPCWebStreamInterceptor] : [];
 ```
 
 example.ts
 
 ```ts
-import { unaryInterceptors, streamInterceptors } from "./grpc-web-devtools";
+import { unaryInterceptors, streamInterceptors } from "./grpc-devtools";
 
-const client = new ChatServiceClient(host, creds, {
-  unaryInterceptors: unaryInterceptors,
-  streamInterceptors: streamInterceptors,
-});
+const client = new ChatServiceClient(host, creds, { unaryInterceptors, streamInterceptors });
+```
+
+## [Connect-ES](https://github.com/connectrpc/connect-es)
+
+grpc-devtools.ts
+
+```ts
+import type { Interceptor } from "@connectrpc/connect";
+
+declare const __gRPC_devtools__:
+  | undefined
+  | {
+      connectEsInterceptor: Interceptor;
+    };
+
+export const interceptors =
+  typeof __gRPC_devtools__ === "object" ? [__gRPC_devtools__.connectEsInterceptor] : [];
+```
+
+example.ts
+
+```ts
+import { interceptors } from "./grpc-devtools";
+
+const transport = createConnectTransport({ baseUrl: "http://localhost:3003", interceptors });
 ```

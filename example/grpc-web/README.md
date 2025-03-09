@@ -1,12 +1,11 @@
-# gRPC Web Devtools Example
+# gRPC Web Example
 
 Run the example:
 
-1. Run the NodeJS gRPC service:
+1. Run the gRPC server:
 
    ```shell
    cd server
-   # You can choose your favorite package manager: npm.
    npm ci
    npm run dev
    ```
@@ -18,7 +17,7 @@ Run the example:
    envoy -c envoy.yaml
    ```
 
-3. Run the simple web server:
+3. Run the gRPC client:
 
    ```shell
    cd client

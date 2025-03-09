@@ -1,4 +1,4 @@
-import { unaryInterceptors, streamInterceptors } from "./grpc-web-devtools";
+import { unaryInterceptors, streamInterceptors } from "./grpc-devtools";
 import { ChatServiceClient } from "./protos/ChatServiceClientPb";
 import { SendMessageRequest, OnMessageRequest } from "./protos/chat_pb";
 

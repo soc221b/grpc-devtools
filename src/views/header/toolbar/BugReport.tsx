@@ -4,7 +4,7 @@ import React from "react";
 const BugReport = () => {
   return (
     <a
-      href="https://github.com/soc221b/grpc-web-devtools/issues/new"
+      href="https://github.com/soc221b/grpc-devtools/issues/new"
       target="_blank"
       className="flex"
       tabIndex={-1}

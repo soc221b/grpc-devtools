@@ -2,7 +2,6 @@ import "cypress-network-idle";
 
 beforeEach(() => {
   cy.visit("/");
-  cy.root().find("[data-setup-close]").click();
 });
 
 it("should display 'Recording gRPC activity' when empty", () => {

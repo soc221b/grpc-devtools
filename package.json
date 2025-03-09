@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "grpc-web-devtools",
+  "name": "grpc-devtools",
   "scripts": {
     "protoc": "rm -rf src/protos && mkdir src/protos && export IN_DIR=googleapis/google/rpc OUT_DIR=./src/protos && protoc -I=$IN_DIR code.proto status.proto error_details.proto --js_out=import_style=commonjs,binary:$OUT_DIR --grpc-web_out=import_style=commonjs+dts,mode=grpcwebtext:$OUT_DIR",
     "dev": "cross-env NODE_ENV=development webpack-dev-server",

@@ -15,7 +15,7 @@ const Rate = () => {
   const open = () => {
     setShouldShow(false);
     window.open(
-      "https://chromewebstore.google.com/detail/grpc-web-devtools/fohdnlaeecihjiendkfhifhlgldpeopm",
+      "https://chromewebstore.google.com/detail/grpc-devtools/fohdnlaeecihjiendkfhifhlgldpeopm",
       "_blank",
     );
   };
