@@ -47,7 +47,7 @@
     "cross-zip": "4.0.1",
     "css-loader": "7.1.2",
     "cy-verify-downloads": "0.2.6",
-    "cypress": "14.1.0",
+    "cypress": "14.2.0",
     "cypress-file-upload": "5.0.8",
     "cypress-network-idle": "1.15.0",
     "html-webpack-plugin": "5.6.3",
