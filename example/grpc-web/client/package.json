@@ -1,11 +1,14 @@
 {
-  "private": true,
   "name": "client",
   "version": "1.0.0",
+  "private": true,
   "license": "MIT",
   "scripts": {
-    "gen": "export IN_DIR=../../protos OUT_DIR=./src/protos && protoc -I=$IN_DIR chat.proto --js_out=import_style=commonjs:$OUT_DIR --grpc-web_out=import_style=typescript,mode=grpcwebtext:$OUT_DIR",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "gen": "export IN_DIR=../../protos OUT_DIR=./src/protos && protoc -I=$IN_DIR chat.proto --js_out=import_style=commonjs:$OUT_DIR --grpc-web_out=import_style=typescript,mode=grpcwebtext:$OUT_DIR"
+  },
+  "dependencies": {
+    "grpc-web": "1.5.0"
   },
   "devDependencies": {
     "css-loader": "7.1.2",
@@ -16,8 +19,5 @@
     "webpack": "5.98.0",
     "webpack-cli": "6.0.1",
     "webpack-dev-server": "5.2.0"
-  },
-  "dependencies": {
-    "grpc-web": "1.5.0"
   }
 }

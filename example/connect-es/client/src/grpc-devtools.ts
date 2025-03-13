@@ -7,4 +7,8 @@ declare const __gRPC_devtools__:
     };
 
 export const interceptors =
-  typeof __gRPC_devtools__ === "object" ? [__gRPC_devtools__.connectEsInterceptor] : [];
+  typeof __gRPC_devtools__ === "object"
+    ? [
+        __gRPC_devtools__.connectEsInterceptor,
+      ]
+    : [];

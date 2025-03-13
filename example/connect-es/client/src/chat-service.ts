@@ -1,6 +1,6 @@
-import { interceptors } from "./grpc-devtools";
 import { createClient } from "@connectrpc/connect";
 import { createConnectTransport } from "@connectrpc/connect-web";
+import { interceptors } from "./grpc-devtools";
 import { ChatService as ChatDescService } from "./protos/chat_pb";
 
 class ChatService {

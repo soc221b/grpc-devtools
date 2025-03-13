@@ -1,6 +1,6 @@
 import type { ConnectRouter } from "@connectrpc/connect";
-import { ChatService } from "./chat_pb";
 import { Subject } from "rxjs";
+import { ChatService } from "./chat_pb";
 
 const userSubjects: Record<string, Subject<{ id: string; message: string }>> = {};
 

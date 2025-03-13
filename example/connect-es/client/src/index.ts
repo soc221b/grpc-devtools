@@ -1,6 +1,6 @@
+import ChatService from "./chat-service";
 import "./index.css";
 import { mountForm, mountMessages, unmountMessages } from "./render";
-import ChatService from "./chat-service";
 
 const chatApi = new ChatService();
 

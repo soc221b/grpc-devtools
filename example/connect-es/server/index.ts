@@ -1,7 +1,7 @@
-import http from "http";
-import express from "express";
-import cors from "cors";
 import { expressConnectMiddleware } from "@connectrpc/connect-express";
+import cors from "cors";
+import express from "express";
+import http from "http";
 import routes from "./connect";
 
 const port = 3003;
