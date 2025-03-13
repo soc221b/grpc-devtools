@@ -1,20 +1,14 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const path = require("path");
-const webpack = require("webpack");
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import path from "path";
+import webpack from "webpack";
 
 /**
  * @type { import('webpack').Configuration }
  */
-module.exports = {
+const configuration = {
   entry: path.resolve(__dirname, "src/main.tsx"),
 
   devtool: "source-map",
-
-  output: {
-    path: path.resolve(__dirname, "dist"),
-    publicPath: "/dist/",
-    filename: "bundle.js",
-  },
 
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js"],
@@ -41,7 +35,6 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "public", "index.html"),
-      inject: false,
     }),
     new webpack.DefinePlugin({
       __VUE_OPTIONS_API__: false,
@@ -56,3 +49,5 @@ module.exports = {
     port: 4000,
   },
 };
+
+export default configuration;
