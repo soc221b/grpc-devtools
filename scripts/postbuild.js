@@ -2,6 +2,9 @@ import fs from "fs";
 import zip from "cross-zip";
 
 fs.mkdirSync("shell-chrome/dist/devtools/panels/grpc", { recursive: true });
+fs.cpSync("devtools/dist", "shell-chrome/dist/devtools", {
+  recursive: true,
+});
 fs.cpSync("devtools/panels/grpc/dist", "shell-chrome/dist/devtools/panels/grpc", {
   recursive: true,
 });

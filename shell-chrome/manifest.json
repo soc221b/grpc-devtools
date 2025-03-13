@@ -8,7 +8,7 @@
     "48": "icon.png",
     "128": "icon.png"
   },
-  "devtools_page": "devtools.html",
+  "devtools_page": "dist/devtools/index.html",
   "incognito": "split",
   "content_scripts": [
     {
