@@ -16,7 +16,7 @@
         "<all_urls>"
       ],
       "js": [
-        "content-script.js"
+        "dist/content-scripts/isolated.js"
       ],
       "run_at": "document_start",
       "all_frames": true
@@ -27,7 +27,7 @@
         "<all_urls>"
       ],
       "js": [
-        "inject.js"
+        "dist/content-scripts/main.js"
       ],
       "run_at": "document_start",
       "all_frames": true
