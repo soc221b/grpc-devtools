@@ -1,7 +1,7 @@
-import React from "react";
 import HorizontalDivider from "@/components/HorizontalDivider";
 import { useRequestRows } from "@/contexts/request-rows-context";
 import { useFilteredRequestRows } from "@/hooks/use-filtered-request-rows";
+import React from "react";
 
 const Footer = ({
   footerRef: footerRef,

@@ -1,9 +1,9 @@
-import React, { createContext, useContext, useReducer } from "react";
 import {
+  initialRequestRows,
   RequestRowsAction,
   requestRowsReducer,
-  initialRequestRows,
 } from "@/reducers/request-rows-reducer";
+import React, { createContext, useContext, useReducer } from "react";
 
 export const RequestRowsContext = createContext(initialRequestRows);
 
@@ -12,7 +12,10 @@ export const RequestRowsDispatchContext = createContext<React.Dispatch<RequestRo
 );
 
 export const RequestRowsProvider = ({ children }: { children?: JSX.Element }) => {
-  const [requestRows, dispatch] = useReducer(requestRowsReducer, initialRequestRows);
+  const [
+    requestRows,
+    dispatch,
+  ] = useReducer(requestRowsReducer, initialRequestRows);
 
   return (
     <RequestRowsContext.Provider value={requestRows}>

@@ -1,7 +1,7 @@
-import { RequestRow } from "@/entities/request-row";
 import { useConfig } from "@/contexts/config-context";
-import { useEffect, useRef } from "react";
 import { useRequestRows, useRequestRowsDispatch } from "@/contexts/request-rows-context";
+import { RequestRow } from "@/entities/request-row";
+import { useEffect, useRef } from "react";
 import { z } from "zod";
 
 const unloadSchema = z.object({
@@ -29,11 +29,15 @@ export const useInitialize = () => {
   const requestRowsRef = useRef(requestRows);
   useEffect(() => {
     requestRowsRef.current = requestRows;
-  }, [requestRows]);
+  }, [
+    requestRows,
+  ]);
   const configRef = useRef(config);
   useEffect(() => {
     configRef.current = config;
-  }, [config]);
+  }, [
+    config,
+  ]);
   useEffect(() => {
     if (__ENV__.MODE === "production") {
       initDevtools();

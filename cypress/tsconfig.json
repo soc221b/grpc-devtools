@@ -1,6 +1,12 @@
 {
-  "include": ["./**/*"],
   "compilerOptions": {
-    "types": ["cypress", "cypress-file-upload", "cy-verify-downloads"]
-  }
+    "types": [
+      "cypress",
+      "cypress-file-upload",
+      "cy-verify-downloads"
+    ]
+  },
+  "include": [
+    "./**/*"
+  ]
 }

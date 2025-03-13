@@ -1,14 +1,14 @@
-import React from "react";
 import VerticalDivider from "@/components/VerticalDivider";
-import ShouldRecord from "./toolbar/ShouldRecord";
+import React from "react";
 import ClearAll from "./toolbar/ClearAll";
+import ShouldRecord from "./toolbar/ShouldRecord";
 import ShouldShowFilter from "./toolbar/ShouldShowFilter";
 // import ShouldShowSearch from "./toolbar/ShouldShowSearch";
-import ShouldPreserveLog from "./toolbar/ShouldPreserveLog";
-import BugReport from "./toolbar/BugReport";
 import Rate from "@/components/Rate";
-import Upload from "./toolbar/Upload";
+import BugReport from "./toolbar/BugReport";
 import Download from "./toolbar/Download";
+import ShouldPreserveLog from "./toolbar/ShouldPreserveLog";
+import Upload from "./toolbar/Upload";
 
 const Toolbar = () => {
   return (

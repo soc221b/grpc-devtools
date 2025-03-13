@@ -12,8 +12,14 @@ const Checkbox = ({
   disabled?: React.InputHTMLAttributes<HTMLInputElement>["disabled"];
   children?: JSX.Element;
 }) => {
-  const [isHovering, setIsHovering] = useState(false);
-  const [isFocusVisible, setIsFocusVisible] = useState(false);
+  const [
+    isHovering,
+    setIsHovering,
+  ] = useState(false);
+  const [
+    isFocusVisible,
+    setIsFocusVisible,
+  ] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useKeyPressEvent(

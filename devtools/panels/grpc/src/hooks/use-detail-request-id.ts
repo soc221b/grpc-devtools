@@ -19,5 +19,8 @@ export const useDetailRequestId = () => {
       });
     }
   };
-  return [detail.requestId, setDetailRequestId] as const;
+  return [
+    detail.requestId,
+    setDetailRequestId,
+  ] as const;
 };

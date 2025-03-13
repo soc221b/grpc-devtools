@@ -1,14 +1,16 @@
-import React, { useCallback } from "react";
 import IconButton from "@/components/IconButton";
 import { useRequestRows } from "@/contexts/request-rows-context";
 import { downloadGar } from "@/interactors/gar";
+import React, { useCallback } from "react";
 
 const Download = () => {
   const requestRows = useRequestRows();
 
   const handleDownload = useCallback(() => {
     downloadGar(requestRows);
-  }, [requestRows]);
+  }, [
+    requestRows,
+  ]);
 
   return (
     <IconButton

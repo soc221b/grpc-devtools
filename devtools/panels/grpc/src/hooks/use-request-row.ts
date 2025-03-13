@@ -1,16 +1,21 @@
-import { useMemo } from "react";
 import { useDetail } from "@/contexts/detail-context";
 import { useRequestRows } from "@/contexts/request-rows-context";
+import { useMemo } from "react";
 
 const useRequestRow = () => {
   const requestRows = useRequestRows();
   const detail = useDetail();
   const requestId = useMemo(() => {
     return detail.requestId;
-  }, [detail]);
+  }, [
+    detail,
+  ]);
   const requestRow = useMemo(() => {
     return requestRows.find((row) => row.id === requestId) ?? null;
-  }, [requestRows, requestId]);
+  }, [
+    requestRows,
+    requestId,
+  ]);
 
   return requestRow;
 };

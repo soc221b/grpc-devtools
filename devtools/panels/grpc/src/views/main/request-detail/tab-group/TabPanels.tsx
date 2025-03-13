@@ -1,8 +1,8 @@
-import React, { useRef } from "react";
+import useIsFocusIn from "@/hooks/use-is-focus-in";
 import { TabPanels as _TabPanels } from "@headlessui/react";
+import React, { useRef } from "react";
 import TabPanelHeaders from "./tab-panels/TabPanelHeaders";
 import TabPanelMessages from "./tab-panels/TabPanelMessages";
-import useIsFocusIn from "@/hooks/use-is-focus-in";
 
 const TabPanels = () => {
   const ref = useRef<HTMLDivElement | null>(null);

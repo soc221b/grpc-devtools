@@ -1,16 +1,15 @@
-import React, { useRef, useState } from "react";
-import { useKeyPressEvent, useWindowSize } from "react-use";
-import RequestRow from "./request-rows/RequestRow";
-import { RequestRow as IRequestRow } from "@/entities/request-row";
-import { getClassName as _getClassName } from "./request-rows/get-class-name";
-import useIsFocusIn from "@/hooks/use-is-focus-in";
 import VirtualList from "@/components/VirtualList";
-import { useEffect } from "react";
 import { useConfig } from "@/contexts/config-context";
-import { useFilteredRequestRows } from "@/hooks/use-filtered-request-rows";
 import { useDetail } from "@/contexts/detail-context";
 import { useRequestRows } from "@/contexts/request-rows-context";
+import { RequestRow as IRequestRow } from "@/entities/request-row";
 import { useDetailRequestId } from "@/hooks/use-detail-request-id";
+import { useFilteredRequestRows } from "@/hooks/use-filtered-request-rows";
+import useIsFocusIn from "@/hooks/use-is-focus-in";
+import React, { useEffect, useRef, useState } from "react";
+import { useKeyPressEvent, useWindowSize } from "react-use";
+import { getClassName as _getClassName } from "./request-rows/get-class-name";
+import RequestRow from "./request-rows/RequestRow";
 
 const RequestRows = ({
   headerHeight,
@@ -65,7 +64,10 @@ const RequestRows = ({
       <></>
     );
 
-  const [currentIndex, setCurrentIndex] = useState<number | null>(() => {
+  const [
+    currentIndex,
+    setCurrentIndex,
+  ] = useState<number | null>(() => {
     const i = filteredRequestRows.findIndex((requestRow) => requestRow.id === detail.requestId);
     return 0 <= i ? i : null;
   });
@@ -73,9 +75,15 @@ const RequestRows = ({
     if (detail.requestId === null) return;
     const i = filteredRequestRows.findIndex((requestRow) => requestRow.id === detail.requestId);
     setCurrentIndex(0 <= i ? i : null);
-  }, [filteredRequestRows, detail]);
+  }, [
+    filteredRequestRows,
+    detail,
+  ]);
 
-  const [, setDetailRequestId] = useDetailRequestId();
+  const [
+    ,
+    setDetailRequestId,
+  ] = useDetailRequestId();
   useKeyPressEvent("Enter", () => {
     if (isFocus === false) return;
     if (detail.requestId !== null) return;

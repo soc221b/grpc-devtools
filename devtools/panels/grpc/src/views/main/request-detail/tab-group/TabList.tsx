@@ -1,11 +1,14 @@
-import React from "react";
-import { Tab, TabList as _TabList } from "@headlessui/react";
-import { tabs } from "@/entities/detail";
 import IconButton from "@/components/IconButton";
+import { tabs } from "@/entities/detail";
 import { useDetailRequestId } from "@/hooks/use-detail-request-id";
+import { Tab, TabList as _TabList } from "@headlessui/react";
+import React from "react";
 
 const TabList = () => {
-  const [, setDetailRequestId] = useDetailRequestId();
+  const [
+    ,
+    setDetailRequestId,
+  ] = useDetailRequestId();
   const handleCloseDetail = () => {
     setDetailRequestId(null);
   };

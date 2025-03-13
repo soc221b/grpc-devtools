@@ -1,4 +1,3 @@
-import { Filter } from "@/entities/filter";
 import { RequestRow } from "@/entities/request-row";
 import { filterRequestRows } from "../filter-request-rows";
 
@@ -23,7 +22,11 @@ const requestRow3: RequestRow = {
   requestMetadata: {},
   serviceName: "dummyService",
 };
-const requestRows = [requestRow1, requestRow2, requestRow3];
+const requestRows = [
+  requestRow1,
+  requestRow2,
+  requestRow3,
+];
 
 const suits: {
   id: string;
@@ -40,7 +43,11 @@ const suits: {
         invert: false,
       },
     },
-    expect: [requestRow1, requestRow2, requestRow3],
+    expect: [
+      requestRow1,
+      requestRow2,
+      requestRow3,
+    ],
   },
   {
     id: "text 1",
@@ -52,7 +59,11 @@ const suits: {
         invert: true,
       },
     },
-    expect: [requestRow1, requestRow2, requestRow3],
+    expect: [
+      requestRow1,
+      requestRow2,
+      requestRow3,
+    ],
   },
   {
     id: "text 2",
@@ -64,7 +75,11 @@ const suits: {
         invert: false,
       },
     },
-    expect: [requestRow1, requestRow2, requestRow3],
+    expect: [
+      requestRow1,
+      requestRow2,
+      requestRow3,
+    ],
   },
   {
     id: "text 3",
@@ -76,7 +91,11 @@ const suits: {
         invert: true,
       },
     },
-    expect: [requestRow1, requestRow2, requestRow3],
+    expect: [
+      requestRow1,
+      requestRow2,
+      requestRow3,
+    ],
   },
   {
     id: "text 4",
@@ -88,7 +107,9 @@ const suits: {
         invert: false,
       },
     },
-    expect: [requestRow1],
+    expect: [
+      requestRow1,
+    ],
   },
   {
     id: "text 5",
@@ -100,7 +121,10 @@ const suits: {
         invert: true,
       },
     },
-    expect: [requestRow2, requestRow3],
+    expect: [
+      requestRow2,
+      requestRow3,
+    ],
   },
   {
     id: "text 6",
@@ -112,7 +136,10 @@ const suits: {
         invert: false,
       },
     },
-    expect: [requestRow1, requestRow2],
+    expect: [
+      requestRow1,
+      requestRow2,
+    ],
   },
   {
     id: "text 7",
@@ -124,7 +151,9 @@ const suits: {
         invert: true,
       },
     },
-    expect: [requestRow3],
+    expect: [
+      requestRow3,
+    ],
   },
   {
     id: "regex 0",
@@ -136,7 +165,11 @@ const suits: {
         invert: false,
       },
     },
-    expect: [requestRow1, requestRow2, requestRow3],
+    expect: [
+      requestRow1,
+      requestRow2,
+      requestRow3,
+    ],
   },
   {
     id: "regex 1",
@@ -148,7 +181,11 @@ const suits: {
         invert: true,
       },
     },
-    expect: [requestRow1, requestRow2, requestRow3],
+    expect: [
+      requestRow1,
+      requestRow2,
+      requestRow3,
+    ],
   },
   {
     id: "regex 2",
@@ -160,7 +197,11 @@ const suits: {
         invert: false,
       },
     },
-    expect: [requestRow1, requestRow2, requestRow3],
+    expect: [
+      requestRow1,
+      requestRow2,
+      requestRow3,
+    ],
   },
   {
     id: "regex 3",
@@ -172,7 +213,11 @@ const suits: {
         invert: true,
       },
     },
-    expect: [requestRow1, requestRow2, requestRow3],
+    expect: [
+      requestRow1,
+      requestRow2,
+      requestRow3,
+    ],
   },
   {
     id: "regex 4",
@@ -184,7 +229,9 @@ const suits: {
         invert: false,
       },
     },
-    expect: [requestRow1],
+    expect: [
+      requestRow1,
+    ],
   },
   {
     id: "regex 5",
@@ -196,7 +243,10 @@ const suits: {
         invert: true,
       },
     },
-    expect: [requestRow2, requestRow3],
+    expect: [
+      requestRow2,
+      requestRow3,
+    ],
   },
   {
     id: "regex 6",
@@ -208,7 +258,9 @@ const suits: {
         invert: false,
       },
     },
-    expect: [requestRow3],
+    expect: [
+      requestRow3,
+    ],
   },
   {
     id: "regex 7",
@@ -220,7 +272,10 @@ const suits: {
         invert: true,
       },
     },
-    expect: [requestRow1, requestRow2],
+    expect: [
+      requestRow1,
+      requestRow2,
+    ],
   },
   {
     id: "invalid regex",
@@ -256,7 +311,9 @@ const suits: {
         invert: false,
       },
     },
-    expect: [requestRow1],
+    expect: [
+      requestRow1,
+    ],
   },
 ];
 

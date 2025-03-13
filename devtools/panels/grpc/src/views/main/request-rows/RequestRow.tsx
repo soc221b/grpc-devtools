@@ -1,11 +1,11 @@
-import { RequestRow } from "@/entities/request-row";
 import { useDetail } from "@/contexts/detail-context";
-import React, { useRef, useState } from "react";
-import ContextMenu from "./request-row/ContextMenu";
-import { useClickAway, useEvent, useToggle } from "react-use";
-import { usePopper } from "react-popper";
-import { VirtualElement } from "@popperjs/core";
+import { RequestRow } from "@/entities/request-row";
 import { useDetailRequestId } from "@/hooks/use-detail-request-id";
+import { VirtualElement } from "@popperjs/core";
+import React, { useRef, useState } from "react";
+import { usePopper } from "react-popper";
+import { useClickAway, useEvent, useToggle } from "react-use";
+import ContextMenu from "./request-row/ContextMenu";
 
 const RequestRow = ({
   className,
@@ -18,7 +18,10 @@ const RequestRow = ({
   requestRow: RequestRow;
 }) => {
   const detail = useDetail();
-  const [, setDetailRequestId] = useDetailRequestId();
+  const [
+    ,
+    setDetailRequestId,
+  ] = useDetailRequestId();
   const handlePointerDown: React.DOMAttributes<HTMLDivElement>["onPointerDown"] = (e) => {
     onPointerDown?.(e);
 
@@ -26,9 +29,18 @@ const RequestRow = ({
     setDetailRequestId(requestRow.id);
   };
 
-  const [popperElement, setPopperElement] = useState(null);
-  const [isContextMenuVisible, toggleIsContextMenuVisible] = useToggle(false);
-  const [virtualElement, setVirtualElement] = useState({
+  const [
+    popperElement,
+    setPopperElement,
+  ] = useState(null);
+  const [
+    isContextMenuVisible,
+    toggleIsContextMenuVisible,
+  ] = useToggle(false);
+  const [
+    virtualElement,
+    setVirtualElement,
+  ] = useState({
     getBoundingClientRect: generateGetBoundingClientRect(),
   });
   const lastMouseMoveEvent = useRef({ clientX: 0, clientY: 0 });

@@ -195,7 +195,13 @@
                     methodName: req.method.name,
                     serviceName: req.service.name,
                     requestMetadata: Array.from(req.header.entries()).reduce(
-                      (acc, [key, value]) => ({ ...acc, [key]: value }),
+                      (
+                        acc,
+                        [
+                          key,
+                          value,
+                        ],
+                      ) => ({ ...acc, [key]: value }),
                       {},
                     ),
                     requestMessage: "EOF",
@@ -207,7 +213,13 @@
                   methodName: req.method.name,
                   serviceName: req.service.name,
                   requestMetadata: Array.from(req.header.entries()).reduce(
-                    (acc, [key, value]) => ({ ...acc, [key]: value }),
+                    (
+                      acc,
+                      [
+                        key,
+                        value,
+                      ],
+                    ) => ({ ...acc, [key]: value }),
                     {},
                   ),
                   requestMessage: { ...value, $typeName: undefined, $unknown: undefined },
@@ -224,7 +236,13 @@
           methodName: req.method.name,
           serviceName: req.service.name,
           requestMetadata: Array.from(req.header.entries()).reduce(
-            (acc, [key, value]) => ({ ...acc, [key]: value }),
+            (
+              acc,
+              [
+                key,
+                value,
+              ],
+            ) => ({ ...acc, [key]: value }),
             {},
           ),
           requestMessage: { ...req.message, $typeName: undefined, $unknown: undefined },
@@ -242,7 +260,13 @@
                 methodName: req.method.name,
                 serviceName: req.service.name,
                 responseMetadata: Array.from(res.header.entries()).reduce(
-                  (acc, [key, value]) => ({ ...acc, [key]: value }),
+                  (
+                    acc,
+                    [
+                      key,
+                      value,
+                    ],
+                  ) => ({ ...acc, [key]: value }),
                   {},
                 ),
                 responseMessage: { ...message, $typeName: undefined, $unknown: undefined },
@@ -254,7 +278,13 @@
               methodName: req.method.name,
               serviceName: req.service.name,
               responseMetadata: Array.from(res.header.entries()).reduce(
-                (acc, [key, value]) => ({ ...acc, [key]: value }),
+                (
+                  acc,
+                  [
+                    key,
+                    value,
+                  ],
+                ) => ({ ...acc, [key]: value }),
                 {},
               ),
               responseMessage: "EOF",
@@ -267,7 +297,13 @@
           methodName: req.method.name,
           serviceName: req.service.name,
           responseMetadata: Array.from(res.header.entries()).reduce(
-            (acc, [key, value]) => ({ ...acc, [key]: value }),
+            (
+              acc,
+              [
+                key,
+                value,
+              ],
+            ) => ({ ...acc, [key]: value }),
             {},
           ),
           responseMessage: { ...res.message, $typeName: undefined, $unknown: undefined },
@@ -277,7 +313,13 @@
           methodName: req.method.name,
           serviceName: req.service.name,
           responseMetadata: Array.from(res.header.entries()).reduce(
-            (acc, [key, value]) => ({ ...acc, [key]: value }),
+            (
+              acc,
+              [
+                key,
+                value,
+              ],
+            ) => ({ ...acc, [key]: value }),
             {},
           ),
           responseMessage: "EOF",
@@ -331,12 +373,21 @@
     clients.forEach((client) => {
       if (Array.isArray(client.client_.h)) {
         // grpc-web@^1.3.0
-        client.client_.h = [...client.client_.h, gRPCWebUnaryInterceptorInstance];
+        client.client_.h = [
+          ...client.client_.h,
+          gRPCWebUnaryInterceptorInstance,
+        ];
       } else {
         // grpc-web@^1.1.0
-        client.client_.g = [...client.client_.g, gRPCWebUnaryInterceptorInstance];
+        client.client_.g = [
+          ...client.client_.g,
+          gRPCWebUnaryInterceptorInstance,
+        ];
       }
-      client.client_.b = [...client.client_.b, gRPCWebStreamInterceptorInstance];
+      client.client_.b = [
+        ...client.client_.b,
+        gRPCWebStreamInterceptorInstance,
+      ];
     });
   }
   setTimeout(() => {

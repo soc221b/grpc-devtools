@@ -3,7 +3,10 @@ import React from "react";
 import { useCopyToClipboard } from "react-use";
 
 const ContextMenu = ({ requestRow, close }: { requestRow: RequestRow; close: () => void }) => {
-  const [_, copy] = useCopyToClipboard();
+  const [
+    _,
+    copy,
+  ] = useCopyToClipboard();
   const handleClick = () => {
     copy(
       `

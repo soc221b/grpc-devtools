@@ -1,19 +1,19 @@
 {
-  "private": true,
   "name": "grpc-devtools",
-  "author": "Ernest <soc221b.e@gmail.com>",
+  "private": true,
   "license": "GPL-3.0",
+  "author": "Ernest <soc221b.e@gmail.com>",
   "workspaces": [
     "content-scripts",
     "devtools",
     "devtools/panels/grpc"
   ],
   "scripts": {
-    "format": "prettier --write .",
-    "dev": "npm run dev --workspaces --if-present",
     "prebuild": "node scripts/prebuild.js",
     "build": "npm run build --workspaces --if-present",
     "postbuild": "node scripts/postbuild.js",
+    "dev": "npm run dev --workspaces --if-present",
+    "format": "prettier --write .",
     "test": "npm run test --workspaces --if-present && start-server-and-test dev http://localhost:4000 test:e2e",
     "test:e2e": "cypress run --e2e --browser chrome"
   },
@@ -24,6 +24,10 @@
     "cypress-file-upload": "5.0.8",
     "cypress-network-idle": "1.15.0",
     "prettier": "3.5.3",
+    "prettier-plugin-multiline-arrays": "4.0.2",
+    "prettier-plugin-organize-imports": "4.1.0",
+    "prettier-plugin-packagejson": "2.5.10",
+    "prettier-plugin-sort-json": "4.1.1",
     "start-server-and-test": "2.0.11"
   }
 }

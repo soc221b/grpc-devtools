@@ -1,6 +1,8 @@
 {
-  "private": true,
   "name": "devtools",
+  "private": true,
+  "license": "GPL-3.0",
+  "author": "Ernest <soc221b.e@gmail.com>",
   "type": "module",
   "scripts": {
     "build": "webpack --mode production"
@@ -8,7 +10,5 @@
   "devDependencies": {
     "webpack": "5.98.0",
     "webpack-cli": "6.0.1"
-  },
-  "author": "Ernest <soc221b.e@gmail.com>",
-  "license": "GPL-3.0"
+  }
 }

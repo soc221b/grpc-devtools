@@ -1,5 +1,5 @@
-import React, { useRef, useState } from "react";
 import { useFilter, useFilterDispatch } from "@/contexts/filter-context";
+import React, { useRef, useState } from "react";
 
 const Input = () => {
   const filter = useFilter();
@@ -15,7 +15,10 @@ const Input = () => {
 
   const isFiltering = filter.text.length > 0;
 
-  const [hasFocus, setHasFocus] = useState(false);
+  const [
+    hasFocus,
+    setHasFocus,
+  ] = useState(false);
 
   return (
     <div

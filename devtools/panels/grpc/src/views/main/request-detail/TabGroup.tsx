@@ -1,10 +1,10 @@
-import React from "react";
+import HorizontalDivider from "@/components/HorizontalDivider";
+import { useDetail, useDetailDispatch } from "@/contexts/detail-context";
+import { tabs } from "@/entities/detail";
 import { TabGroup as _TabGroup } from "@headlessui/react";
+import React from "react";
 import TabList from "./tab-group/TabList";
 import TabPanels from "./tab-group/TabPanels";
-import HorizontalDivider from "@/components/HorizontalDivider";
-import { tabs } from "@/entities/detail";
-import { useDetail, useDetailDispatch } from "@/contexts/detail-context";
 
 const TabGroup = () => {
   const detail = useDetail();

@@ -1,7 +1,7 @@
-import React, { useCallback } from "react";
 import IconButton from "@/components/IconButton";
 import { useRequestRowsDispatch } from "@/contexts/request-rows-context";
 import { uploadGar } from "@/interactors/gar";
+import React, { useCallback } from "react";
 
 const Upload = () => {
   const requestRowsDispatch = useRequestRowsDispatch();
@@ -9,7 +9,9 @@ const Upload = () => {
     uploadGar((requestRows) => {
       requestRowsDispatch({ type: "upload", requestRows });
     });
-  }, [requestRowsDispatch]);
+  }, [
+    requestRowsDispatch,
+  ]);
 
   return (
     <IconButton

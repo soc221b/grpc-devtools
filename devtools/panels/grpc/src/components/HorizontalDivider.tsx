@@ -1,5 +1,5 @@
-import React from "react";
 import { useResize } from "@/hooks/use-resize";
+import React from "react";
 
 const HorizontalDivider = ({
   className,

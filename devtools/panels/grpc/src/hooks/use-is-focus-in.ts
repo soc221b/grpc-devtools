@@ -7,7 +7,10 @@ const useIsFocusIn = ({
   ref: React.RefObject<HTMLElement>;
   initialValue: boolean;
 }) => {
-  const [isFocusIn, setIsFocusIn] = useState(initialValue);
+  const [
+    isFocusIn,
+    setIsFocusIn,
+  ] = useState(initialValue);
   useEffect(() => {
     const handleFocus = () => {
       setIsFocusIn(true);
@@ -21,7 +24,9 @@ const useIsFocusIn = ({
       ref.current?.removeEventListener("focusin", handleFocus);
       ref.current?.removeEventListener("focusout", handleBlur);
     };
-  }, [ref]);
+  }, [
+    ref,
+  ]);
 
   return isFocusIn;
 };

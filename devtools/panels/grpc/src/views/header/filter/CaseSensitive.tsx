@@ -1,6 +1,6 @@
-import React, { useCallback } from "react";
 import Checkbox from "@/components/Checkbox";
 import { useFilter, useFilterDispatch } from "@/contexts/filter-context";
+import React, { useCallback } from "react";
 
 const CaseSensitive = () => {
   const filter = useFilter();
@@ -9,7 +9,9 @@ const CaseSensitive = () => {
     filterDispatch({
       type: "toggledCaseSensitive",
     });
-  }, [filterDispatch]);
+  }, [
+    filterDispatch,
+  ]);
 
   return (
     <div

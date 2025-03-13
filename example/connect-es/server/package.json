@@ -1,13 +1,13 @@
 {
-  "private": true,
   "name": "server",
   "version": "1.0.0",
-  "main": "index.js",
-  "type": "module",
+  "private": true,
   "license": "MIT",
+  "type": "module",
+  "main": "index.js",
   "scripts": {
-    "gen": "export IN_DIR=../../protos OUT_DIR=./ && protoc -I=$IN_DIR chat.proto --plugin=protoc-gen-es=node_modules/.bin/protoc-gen-es --es_out $OUT_DIR --es_opt target=ts",
-    "dev": "tsx index.ts"
+    "dev": "tsx index.ts",
+    "gen": "export IN_DIR=../../protos OUT_DIR=./ && protoc -I=$IN_DIR chat.proto --plugin=protoc-gen-es=node_modules/.bin/protoc-gen-es --es_out $OUT_DIR --es_opt target=ts"
   },
   "dependencies": {
     "@connectrpc/connect": "2.0.2",

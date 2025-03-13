@@ -7,23 +7,47 @@ const suits: {
 }[] = [
   {
     title: "empty object",
-    parameters: [{}],
+    parameters: [
+      {},
+    ],
     expect: {},
   },
   {
     title: "no transform",
-    parameters: [{ a: "b" }],
+    parameters: [
+      { a: "b" },
+    ],
     expect: { a: "b" },
   },
   {
     title: "transform",
-    parameters: [{ a: { seconds: 0, nanos: 0 } }],
+    parameters: [
+      { a: { seconds: 0, nanos: 0 } },
+    ],
     expect: { a: "1970-01-01T00:00:00.000Z" },
   },
   {
     title: "nested",
-    parameters: [{ a: { b: { c: [{ seconds: 946_782_245, nanos: 678_000_000 }] } } }],
-    expect: { a: { b: { c: ["2000-01-02T03:04:05.678Z"] } } },
+    parameters: [
+      {
+        a: {
+          b: {
+            c: [
+              { seconds: 946_782_245, nanos: 678_000_000 },
+            ],
+          },
+        },
+      },
+    ],
+    expect: {
+      a: {
+        b: {
+          c: [
+            "2000-01-02T03:04:05.678Z",
+          ],
+        },
+      },
+    },
   },
 ];
 

@@ -1,12 +1,14 @@
+import IconButton from "@/components/IconButton";
 import { useRequestRowsDispatch } from "@/contexts/request-rows-context";
 import React, { useCallback } from "react";
-import IconButton from "@/components/IconButton";
 
 const ClearAll = () => {
   const requestRowsDispatch = useRequestRowsDispatch();
   const onClick = useCallback(() => {
     requestRowsDispatch({ type: "clearedAll" });
-  }, [requestRowsDispatch]);
+  }, [
+    requestRowsDispatch,
+  ]);
 
   return (
     <IconButton

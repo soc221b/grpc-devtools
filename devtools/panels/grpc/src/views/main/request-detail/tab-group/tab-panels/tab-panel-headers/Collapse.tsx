@@ -28,12 +28,20 @@ const Collapse = ({
     () =>
       (Object.keys(value) as (keyof typeof value)[])
         .reduce<readonly (readonly [string, string])[]>((acc, key) => {
-          const line = [key, value[key]!] as const;
-          return [...acc, line];
+          const line = [
+            key,
+            value[key]!,
+          ] as const;
+          return [
+            ...acc,
+            line,
+          ];
         }, [])
         .slice()
         .sort((a, b) => a[0].localeCompare(b[0])),
-    [value],
+    [
+      value,
+    ],
   );
 
   const handleClickTitle = () => {
@@ -45,7 +53,9 @@ const Collapse = ({
   };
   const handleClickLine = useCallback(
     (index: number) => onFocus(getLineOffsetIndex(index)),
-    [detail],
+    [
+      detail,
+    ],
   );
 
   return (

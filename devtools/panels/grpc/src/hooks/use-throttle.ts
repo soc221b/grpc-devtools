@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
 export const useThrottle = <T>(value: T, delay: number) => {
-  const [throttledValue, setThrottledValue] = useState(value);
+  const [
+    throttledValue,
+    setThrottledValue,
+  ] = useState(value);
   const lastId = useRef<number | null>(null);
   useEffect(() => {
     const id = setTimeout(() => {
@@ -16,6 +19,9 @@ export const useThrottle = <T>(value: T, delay: number) => {
 
       clearTimeout(id);
     };
-  }, [value, delay]);
+  }, [
+    value,
+    delay,
+  ]);
   return throttledValue;
 };

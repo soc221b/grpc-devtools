@@ -1,24 +1,24 @@
-import React, { useEffect, useRef, useState } from "react";
-import { TabPanel } from "@headlessui/react";
-import useRequestRow from "@/hooks/use-request-row";
-import VirtualList from "@/components/VirtualList";
-import HorizontalDivider from "@/components/HorizontalDivider";
-import { useEvent, useKeyPressEvent, useToggle } from "react-use";
-import ReadonlyPre from "@/components/ReadonlyPre";
 import Checkbox from "@/components/Checkbox";
+import HorizontalDivider from "@/components/HorizontalDivider";
+import IconButton from "@/components/IconButton";
 import ObjectVisualizer from "@/components/ObjectVisualizer";
+import ReadonlyPre from "@/components/ReadonlyPre";
+import VirtualList from "@/components/VirtualList";
 import { useDetail, useDetailDispatch } from "@/contexts/detail-context";
+import { useRequestRowsDispatch } from "@/contexts/request-rows-context";
+import { stringifyPreview } from "@/helper/stringify-preview";
+import { transformTimestampLikeObjectToISO8601 } from "@/helper/transform-timestamp-like-object-to-iso8601";
+import { useDetailMessagesFocusedIndex } from "@/hooks/use-detail-messages-focused-index";
+import useRequestRow from "@/hooks/use-request-row";
+import { isEOFMessage } from "@/interactors/is-eof-message";
+import { TabPanel } from "@headlessui/react";
+import stringify from "json-stable-stringify";
+import React, { useEffect, useRef, useState } from "react";
+import { useEvent, useKeyPressEvent, useToggle } from "react-use";
 import {
   defaultMessagesVirtualListInitialHeight,
   useVirtualListInitialHeight,
 } from "./tab-panel-messages/use-virtual-list-initial-height";
-import { useRequestRowsDispatch } from "@/contexts/request-rows-context";
-import stringify from "json-stable-stringify";
-import { transformTimestampLikeObjectToISO8601 } from "@/helper/transform-timestamp-like-object-to-iso8601";
-import IconButton from "@/components/IconButton";
-import { useDetailMessagesFocusedIndex } from "@/hooks/use-detail-messages-focused-index";
-import { stringifyPreview } from "@/helper/stringify-preview";
-import { isEOFMessage } from "@/interactors/is-eof-message";
 
 const formatter = Intl.DateTimeFormat("en-US", {
   hour12: false,
@@ -38,10 +38,16 @@ const TabPanelMessages = ({ isFocusIn: _isFocusIn }: { isFocusIn: boolean }) => 
   const requestRow = useRequestRow();
   const detail = useDetail();
   const detailDispatch = useDetailDispatch();
-  const [isFocusInMessages, setIsFocusInMessages] = useToggle(false);
+  const [
+    isFocusInMessages,
+    setIsFocusInMessages,
+  ] = useToggle(false);
   const isFocusIn = _isFocusIn && isFocusInMessages;
 
-  const [currentIndex, setCurrentIndex] = useState<number | null>(() => {
+  const [
+    currentIndex,
+    setCurrentIndex,
+  ] = useState<number | null>(() => {
     const i = requestRow?.messages.findIndex((_, index) => index === detail.messages.focusedIndex);
     return typeof i === "number" && 0 <= i ? i : null;
   });
@@ -49,9 +55,15 @@ const TabPanelMessages = ({ isFocusIn: _isFocusIn }: { isFocusIn: boolean }) => 
     if (detail.messages.focusedIndex === null) return;
     const i = requestRow?.messages.findIndex((_, index) => index === detail.messages.focusedIndex);
     setCurrentIndex(typeof i === "number" && 0 <= i ? i : null);
-  }, [requestRow, detail]);
+  }, [
+    requestRow,
+    detail,
+  ]);
   const isDuringCloseDetail = useRef(false);
-  const [, setDetailMessagesFocusedIndex] = useDetailMessagesFocusedIndex();
+  const [
+    ,
+    setDetailMessagesFocusedIndex,
+  ] = useDetailMessagesFocusedIndex();
   useKeyPressEvent("Enter", null, () => {
     if (isDuringCloseDetail.current) {
       isDuringCloseDetail.current = false;
@@ -70,7 +82,9 @@ const TabPanelMessages = ({ isFocusIn: _isFocusIn }: { isFocusIn: boolean }) => 
     if (detail.messages.focusedIndex === null) return;
     if (requestRow && requestRow.messages.length >= detail.messages.focusedIndex) return;
     detailDispatch({ type: "closedMessage" });
-  }, [requestRow]);
+  }, [
+    requestRow,
+  ]);
 
   const focusedMessage = (() => {
     if (requestRow === null) return null;
@@ -212,7 +226,10 @@ const TabPanelMessages = ({ isFocusIn: _isFocusIn }: { isFocusIn: boolean }) => 
   const container = useRef<HTMLDivElement>(null);
   const virtualListInitialHeight = useVirtualListInitialHeight({ container });
 
-  const [headerClassName, setHeaderClassName] = useState("");
+  const [
+    headerClassName,
+    setHeaderClassName,
+  ] = useState("");
   const updateHeaderClassName = () => {
     const update = () =>
       setHeaderClassName(
@@ -226,7 +243,9 @@ const TabPanelMessages = ({ isFocusIn: _isFocusIn }: { isFocusIn: boolean }) => 
     setTimeout(update, 100);
   };
   useEvent("mouseup", updateHeaderClassName);
-  useEffect(updateHeaderClassName, [detail]);
+  useEffect(updateHeaderClassName, [
+    detail,
+  ]);
 
   const requestRowsDispatch = useRequestRowsDispatch();
 

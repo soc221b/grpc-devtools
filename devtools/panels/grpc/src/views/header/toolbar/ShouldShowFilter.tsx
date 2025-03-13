@@ -1,7 +1,7 @@
-import React, { useCallback } from "react";
-import { useFilter } from "@/contexts/filter-context";
-import { useConfig, useConfigDispatch } from "@/contexts/config-context";
 import IconButton from "@/components/IconButton";
+import { useConfig, useConfigDispatch } from "@/contexts/config-context";
+import { useFilter } from "@/contexts/filter-context";
+import React, { useCallback } from "react";
 
 const ShouldShowFilter = () => {
   const config = useConfig();
@@ -11,7 +11,9 @@ const ShouldShowFilter = () => {
   const isFiltering = filter.text.length > 0 || filter.caseSensitive || filter.invert;
   const onClick = useCallback(() => {
     configDispatch({ type: "toggledShouldShowFilter" });
-  }, [configDispatch]);
+  }, [
+    configDispatch,
+  ]);
 
   return (
     <IconButton

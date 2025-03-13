@@ -41,7 +41,9 @@ export const requestRowsReducer: Reducer<
 
     case "updated": {
       if (state.requestRowsIdToIndex.has(action.requestRow.id)) {
-        const requestRows = [...state.requestRows];
+        const requestRows = [
+          ...state.requestRows,
+        ];
         const requestRowsIdToIndex = new Map(state.requestRowsIdToIndex);
         const requestRow = { ...action.requestRow };
         (Object.keys(requestRow) as (keyof typeof requestRow)[])
@@ -60,7 +62,9 @@ export const requestRowsReducer: Reducer<
           requestRowsIdToIndex,
         };
       } else if (!!action.requestRow.methodName) {
-        const requestRows = [...state.requestRows];
+        const requestRows = [
+          ...state.requestRows,
+        ];
         requestRows.push(action.requestRow);
         const requestRowsIdToIndex = new Map(state.requestRowsIdToIndex);
         requestRowsIdToIndex.set(action.requestRow.id, requestRows.length - 1);

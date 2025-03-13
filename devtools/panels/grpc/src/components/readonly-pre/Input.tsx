@@ -1,10 +1,8 @@
 import { Filter } from "@/entities/filter";
-import React, { useRef } from "react";
-import IconPrev from "./IconPrev";
-import IconNext from "./IconNext";
-import { useState } from "react";
-import { useEffect } from "react";
 import { useThrottle } from "@/hooks/use-throttle";
+import React, { useEffect, useRef, useState } from "react";
+import IconNext from "./IconNext";
+import IconPrev from "./IconPrev";
 
 const Input = ({
   value,
@@ -23,14 +21,19 @@ const Input = ({
   onNext: () => void;
   onClose: () => void;
 }) => {
-  const [innerValue, setInnerValue] = useState(value);
+  const [
+    innerValue,
+    setInnerValue,
+  ] = useState(value);
   const handleChange = (text: Filter["text"]) => {
     setInnerValue(text);
   };
   const throttledInnerValue = useThrottle(innerValue, 300);
   useEffect(() => {
     onChange(throttledInnerValue);
-  }, [throttledInnerValue]);
+  }, [
+    throttledInnerValue,
+  ]);
 
   const handleKeyDown: React.DOMAttributes<HTMLInputElement>["onKeyDown"] = (e) => {
     if (e.shiftKey && e.key === "Enter") {

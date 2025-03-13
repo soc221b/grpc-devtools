@@ -2,7 +2,10 @@ import IconButton from "@/components/IconButton";
 import React, { useState } from "react";
 
 const ShouldShowSearch = () => {
-  const [shouldOpenSearchSidebar, setShouldOpenSearchSidebar] = useState(false);
+  const [
+    shouldOpenSearchSidebar,
+    setShouldOpenSearchSidebar,
+  ] = useState(false);
 
   return (
     <IconButton onClick={() => setShouldOpenSearchSidebar(!shouldOpenSearchSidebar)}>

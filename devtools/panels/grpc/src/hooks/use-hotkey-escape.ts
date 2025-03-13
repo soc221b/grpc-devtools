@@ -1,12 +1,18 @@
 import { useDetail } from "@/contexts/detail-context";
-import { useEvent } from "react-use";
-import { useDetailRequestId } from "@/hooks/use-detail-request-id";
 import { useDetailMessagesFocusedIndex } from "@/hooks/use-detail-messages-focused-index";
+import { useDetailRequestId } from "@/hooks/use-detail-request-id";
+import { useEvent } from "react-use";
 
 export const useHotkeyEscape = () => {
   const detail = useDetail();
-  const [, setDetailRequestId] = useDetailRequestId();
-  const [, setDetailMessagesFocusedIndex] = useDetailMessagesFocusedIndex();
+  const [
+    ,
+    setDetailRequestId,
+  ] = useDetailRequestId();
+  const [
+    ,
+    setDetailMessagesFocusedIndex,
+  ] = useDetailMessagesFocusedIndex();
   useEvent(
     "keydown",
     (e: KeyboardEvent) => {

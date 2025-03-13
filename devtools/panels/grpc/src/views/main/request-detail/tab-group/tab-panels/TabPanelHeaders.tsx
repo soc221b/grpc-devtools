@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { TabPanel } from "@headlessui/react";
-import useRequestRow from "@/hooks/use-request-row";
-import Collapse from "./tab-panel-headers/Collapse";
 import HorizontalDivider from "@/components/HorizontalDivider";
-import { capitalCase } from "change-case";
-import { useEvent } from "react-use";
-import * as StatusPb from "@/protos/status_pb";
+import useRequestRow from "@/hooks/use-request-row";
 import * as ErrorDetailsPb from "@/protos/error_details_pb";
+import * as StatusPb from "@/protos/status_pb";
+import { TabPanel } from "@headlessui/react";
+import { capitalCase } from "change-case";
+import React, { useEffect, useState } from "react";
+import { useEvent } from "react-use";
+import Collapse from "./tab-panel-headers/Collapse";
 
 export type ErrorDetails =
   | ErrorDetailsPb.BadRequest
@@ -52,7 +52,10 @@ function stringToUint8Array(str: string): Uint8Array {
 const TabPanelRequest = ({ isFocusIn }: { isFocusIn: boolean }) => {
   const requestRow = useRequestRow();
 
-  const [focusedIndex, setFocusedIndex] = useState(0);
+  const [
+    focusedIndex,
+    setFocusedIndex,
+  ] = useState(0);
 
   const headers = {
     general: {
@@ -94,20 +97,32 @@ const TabPanelRequest = ({ isFocusIn }: { isFocusIn: boolean }) => {
   };
 
   const keys: (keyof typeof headers)[] = (
-    ["general", "responseMetadata", "requestMetadata"] as (keyof typeof headers)[]
+    [
+      "general",
+      "responseMetadata",
+      "requestMetadata",
+    ] as (keyof typeof headers)[]
   ).filter((k) => Object.keys(headers[k]).length);
 
-  const [_isExpanding, _setIsExpanding] = useState(Array(keys.length).fill(true));
+  const [
+    _isExpanding,
+    _setIsExpanding,
+  ] = useState(Array(keys.length).fill(true));
   useEffect(() => {
     if (_isExpanding.length !== keys.length) {
       _setIsExpanding(_isExpanding.concat(Array(keys.length).fill(true)).slice(0, keys.length));
     }
-  }, [keys]);
+  }, [
+    keys,
+  ]);
   const isExpanding = (index: number) => _isExpanding[index];
   const setIsExpanding = (index: number) => (isExpanding: boolean) =>
     _setIsExpanding(_isExpanding.map((oldValue, i) => (index === i ? isExpanding : oldValue)));
 
-  const lengths = [0, ...keys.map((k, i) => (isExpanding(i) ? Object.keys(headers[k]).length : 0))];
+  const lengths = [
+    0,
+    ...keys.map((k, i) => (isExpanding(i) ? Object.keys(headers[k]).length : 0)),
+  ];
   const offsetIndexes = Array(lengths.length)
     .fill(null)
     .map((_, i) => {

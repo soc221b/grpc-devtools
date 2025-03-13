@@ -1,7 +1,7 @@
 import { useDetail, useDetailDispatch } from "@/contexts/detail-context";
-import { useEffect } from "react";
 import { useFilteredRequestRows } from "@/hooks/use-filtered-request-rows";
 import useRequestRow from "@/hooks/use-request-row";
+import { useEffect } from "react";
 
 export const useCloseDetailWhenNotFound = () => {
   const filteredRequestRows = useFilteredRequestRows();
@@ -14,5 +14,9 @@ export const useCloseDetailWhenNotFound = () => {
       return;
 
     detailDispatch({ type: "closedDetail" });
-  }, [filteredRequestRows, requestRow, detail]);
+  }, [
+    filteredRequestRows,
+    requestRow,
+    detail,
+  ]);
 };

@@ -1,17 +1,17 @@
-import React from "react";
-import { useMeasure } from "react-use";
-import Header from "./views/Header";
-import Main from "./views/Main";
-import Footer from "./views/Footer";
-import { useThemeWithDarkBackgroundClass } from "./hooks/use-theme-with-dark-background-class";
-import { useInitialize } from "./hooks/use-initialize";
-import { Tooltip } from "react-tooltip";
-import { useDisableChromeDevtoolsFind } from "@/hooks/use-disable-chrome-devtools-find";
 import { useCloseDetailWhenNotFound } from "@/hooks/use-close-detail-when-not-found";
+import { useDisableChromeDevtoolsFind } from "@/hooks/use-disable-chrome-devtools-find";
+import { useHotkeyEscape } from "@/hooks/use-hotkey-escape";
 import { useHotkeyMetaE } from "@/hooks/use-hotkey-meta-e";
 import { useHotkeyMetaK } from "@/hooks/use-hotkey-meta-k";
-import { useHotkeyEscape } from "@/hooks/use-hotkey-escape";
+import React from "react";
+import { Tooltip } from "react-tooltip";
+import { useMeasure } from "react-use";
+import { useInitialize } from "./hooks/use-initialize";
 import { useObjectVisualizerStyle } from "./hooks/use-object-visualizer-style";
+import { useThemeWithDarkBackgroundClass } from "./hooks/use-theme-with-dark-background-class";
+import Footer from "./views/Footer";
+import Header from "./views/Header";
+import Main from "./views/Main";
 
 const App = () => {
   useInitialize();
@@ -27,8 +27,14 @@ const App = () => {
   useHotkeyMetaK();
   useHotkeyEscape();
 
-  const [headerRef, { height: headerHeight }] = useMeasure<HTMLDivElement>();
-  const [footerRef, { height: footerHeight }] = useMeasure<HTMLDivElement>();
+  const [
+    headerRef,
+    { height: headerHeight },
+  ] = useMeasure<HTMLDivElement>();
+  const [
+    footerRef,
+    { height: footerHeight },
+  ] = useMeasure<HTMLDivElement>();
 
   return (
     <div className="flex flex-col bg-[#ffffff] dark:bg-[#202124] w-screen h-screen overflow-hidden text-xs">

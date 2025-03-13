@@ -1,6 +1,6 @@
 import stringify from "json-stable-stringify";
 import React, { useLayoutEffect, useMemo, useState } from "react";
-import { ObjectInspector, chromeLight, chromeDark } from "react-inspector";
+import { ObjectInspector, chromeDark, chromeLight } from "react-inspector";
 import { useMeasure, useMedia } from "react-use";
 
 const customizedTheme = {
@@ -30,18 +30,26 @@ const customizedChromeDark = {
 };
 
 const ObjectVisualizer = ({ object, rootName }: { object: any; rootName?: string }) => {
-  const [data, setData] = useState(object);
+  const [
+    data,
+    setData,
+  ] = useState(object);
   if (stringify(object) !== stringify(data)) {
     setData(object);
   }
   useLayoutEffect(() => {
     document.querySelector(".object-visualizer")?.scrollTo(0, 0);
-  }, [data]);
+  }, [
+    data,
+  ]);
 
   const isPreferDark = useMedia("(prefers-color-scheme: dark)");
   const theme = isPreferDark ? customizedChromeDark : customizedChromeLight;
 
-  const [containerRef, { height: containerHeight }] = useMeasure<HTMLDivElement>();
+  const [
+    containerRef,
+    { height: containerHeight },
+  ] = useMeasure<HTMLDivElement>();
 
   const Inspector = useMemo(() => {
     return (
@@ -53,7 +61,10 @@ const ObjectVisualizer = ({ object, rootName }: { object: any; rootName?: string
         name={rootName}
       ></ObjectInspector>
     );
-  }, [data, theme]);
+  }, [
+    data,
+    theme,
+  ]);
   const container = useMemo(() => {
     return (
       <div
@@ -68,7 +79,10 @@ const ObjectVisualizer = ({ object, rootName }: { object: any; rootName?: string
         </div>
       </div>
     );
-  }, [containerHeight, Inspector]);
+  }, [
+    containerHeight,
+    Inspector,
+  ]);
   return container;
 };
 export default ObjectVisualizer;

@@ -29,7 +29,10 @@ const VirtualList = ({
   itemSize?: () => number;
 }) => {
   const virtusoRef = useRef<VirtuosoHandle>(null);
-  const [listRef, setListRef] = useState<HTMLElement | Window | null>(null);
+  const [
+    listRef,
+    setListRef,
+  ] = useState<HTMLElement | Window | null>(null);
   const handleScrollerKeydown = useCallback(
     (e: KeyboardEvent) => {
       if (isOSWindows() ? e.key === "Home" : e.metaKey && e.key === "ArrowUp") {
@@ -63,7 +66,11 @@ const VirtualList = ({
         scrollIntoView({ index: nextIndex });
       }
     },
-    [virtusoRef, data, onDone],
+    [
+      virtusoRef,
+      data,
+      onDone,
+    ],
   );
   function scrollIntoView({ index }: { index: number }) {
     setTimeout(() => {
@@ -82,7 +89,9 @@ const VirtualList = ({
         listRef?.removeEventListener("keydown", handleScrollerKeydown as any);
       }
     },
-    [handleScrollerKeydown],
+    [
+      handleScrollerKeydown,
+    ],
   );
 
   return (

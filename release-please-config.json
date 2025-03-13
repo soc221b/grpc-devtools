@@ -1,6 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
-  "exclude-paths": ["example"],
+  "exclude-paths": [
+    "example"
+  ],
   "packages": {
     ".": {
       "extra-files": [

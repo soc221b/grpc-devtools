@@ -33,6 +33,8 @@ export const useResize = (
 
       e.preventDefault();
     },
-    [resizeContainer],
+    [
+      resizeContainer,
+    ],
   );
 };

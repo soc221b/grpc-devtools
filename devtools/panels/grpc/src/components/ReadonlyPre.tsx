@@ -1,8 +1,8 @@
+import IconButton from "@/components/IconButton";
+import { isOSWindows } from "@/helper/ua";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useToggle } from "react-use";
-import IconButton from "@/components/IconButton";
 import Input from "./readonly-pre/Input";
-import { isOSWindows } from "@/helper/ua";
 
 const ReadonlyPre = ({
   object,
@@ -36,8 +36,14 @@ const ReadonlyPre = ({
     if (lineNumberRef.current) lineNumberRef.current.style.marginTop = -1 * top + "px";
   };
 
-  const [isFocusing, toggleIsFocusing] = useToggle(false);
-  const [isSearching, toggleIsSearching] = useToggle(false);
+  const [
+    isFocusing,
+    toggleIsFocusing,
+  ] = useToggle(false);
+  const [
+    isSearching,
+    toggleIsSearching,
+  ] = useToggle(false);
   const handleKeyDown: React.KeyboardEventHandler<HTMLDivElement> = (e) => {
     const isTriggeringSearch = isOSWindows()
       ? e.ctrlKey && e.key === "f" && isFocusing
@@ -60,10 +66,18 @@ const ReadonlyPre = ({
     return noop(e);
   };
 
-  const [searchingText, setSearchingText] = useState("");
-  const [current, _setCurrent] = useState(2222);
+  const [
+    searchingText,
+    setSearchingText,
+  ] = useState("");
+  const [
+    current,
+    _setCurrent,
+  ] = useState(2222);
   const setCurrent = (n: number) => _setCurrent(n === 0 ? total : n);
-  const [total] = useState(5555);
+  const [
+    total,
+  ] = useState(5555);
   const handlePrev = () => setCurrent((current + total - 1) % total);
   const handleNext = () => setCurrent((current + 1) % total);
   const handleClose = () => {
@@ -72,7 +86,9 @@ const ReadonlyPre = ({
   };
   const lines = useMemo(() => {
     return JSON.stringify(object, null, 2).split("\n");
-  }, [object]);
+  }, [
+    object,
+  ]);
 
   const highlightedHtml = useMemo(() => {
     const html = lines
@@ -88,7 +104,11 @@ const ReadonlyPre = ({
       .join("<br>");
 
     return { __html: html };
-  }, [lines, searchingText, isSearching]);
+  }, [
+    lines,
+    searchingText,
+    isSearching,
+  ]);
 
   const handleFocus = () => {
     toggleIsFocusing(true);
@@ -99,7 +119,10 @@ const ReadonlyPre = ({
     onBlur?.();
   };
 
-  const [lineNumberClassName, setLineNumberClassName] = useState("");
+  const [
+    lineNumberClassName,
+    setLineNumberClassName,
+  ] = useState("");
   const updateClassName = () => {
     setLineNumberClassName(
       codeRef.current && codeRef.current.clientWidth < codeRef.current.scrollWidth
@@ -107,7 +130,12 @@ const ReadonlyPre = ({
         : "",
     );
   };
-  useEffect(() => updateClassName(), [object]);
+  useEffect(
+    () => updateClassName(),
+    [
+      object,
+    ],
+  );
   const handleScroll: React.UIEventHandler<HTMLDivElement> = (e) => {
     updateMarginTop(e);
     updateClassName();

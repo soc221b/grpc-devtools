@@ -1,11 +1,17 @@
+import _Rate from "rc-rate";
 import React from "react";
 import { useEvent, useLocalStorage } from "react-use";
-import _Rate from "rc-rate";
 import "./rate/index.css";
 
 const Rate = () => {
-  const [shouldShow, setShouldShow] = useLocalStorage<null | boolean>("should-ask-to-rate", null);
-  const [clickCount, setClickCount] = useLocalStorage("click-count", 0);
+  const [
+    shouldShow,
+    setShouldShow,
+  ] = useLocalStorage<null | boolean>("should-ask-to-rate", null);
+  const [
+    clickCount,
+    setClickCount,
+  ] = useLocalStorage("click-count", 0);
   useEvent("click", () => {
     if (shouldShow !== null) return;
     setClickCount((clickCount ?? 0) + 1);

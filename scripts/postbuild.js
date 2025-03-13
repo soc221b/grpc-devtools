@@ -1,5 +1,5 @@
-import fs from "fs";
 import zip from "cross-zip";
+import fs from "fs";
 
 fs.mkdirSync("dist");
 fs.cpSync("content-scripts/dist", "dist/content-scripts", { recursive: true });

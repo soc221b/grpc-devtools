@@ -1,18 +1,23 @@
-import React, { useEffect, useRef } from "react";
-import RequestDetail from "./main/RequestDetail";
-import RequestRows from "./main/RequestRows";
 import VerticalDivider from "@/components/VerticalDivider";
 import { useDetail } from "@/contexts/detail-context";
 import { useRequestRows } from "@/contexts/request-rows-context";
 import { useDetailRequestId } from "@/hooks/use-detail-request-id";
+import React, { useEffect, useRef } from "react";
+import RequestDetail from "./main/RequestDetail";
+import RequestRows from "./main/RequestRows";
 
 const Main = ({ headerHeight, footerHeight }: { headerHeight: number; footerHeight: number }) => {
   const detail = useDetail();
   const requestRows = useRequestRows();
   useEffect(() => {
     resetDetailRequestIdIfRequestRowsIsEmpty();
-  }, [requestRows]);
-  const [, setDetailRequestId] = useDetailRequestId();
+  }, [
+    requestRows,
+  ]);
+  const [
+    ,
+    setDetailRequestId,
+  ] = useDetailRequestId();
   const resetDetailRequestIdIfRequestRowsIsEmpty = () => {
     if (requestRows.length) return;
     if (detail.requestId === null) return;

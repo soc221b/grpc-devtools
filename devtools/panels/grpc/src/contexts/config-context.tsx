@@ -1,12 +1,15 @@
-import React, { createContext, useContext, useReducer } from "react";
 import { ConfigAction, configReducer, initialConfig } from "@/reducers/config-reducer";
+import React, { createContext, useContext, useReducer } from "react";
 
 export const ConfigContext = createContext(initialConfig);
 
 export const ConfigDispatchContext = createContext<React.Dispatch<ConfigAction>>(() => {});
 
 export const ConfigProvider = ({ children }: { children?: JSX.Element }) => {
-  const [config, dispatch] = useReducer(configReducer, initialConfig);
+  const [
+    config,
+    dispatch,
+  ] = useReducer(configReducer, initialConfig);
 
   return (
     <ConfigContext.Provider value={config}>

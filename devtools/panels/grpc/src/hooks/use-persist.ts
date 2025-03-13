@@ -1,6 +1,6 @@
 import { storage } from "@/storage";
-import { useEffect, useMemo } from "react";
 import { get } from "lodash";
+import { useEffect, useMemo } from "react";
 
 type UsePersistReducerState = <T>(
   state: unknown,
@@ -10,7 +10,12 @@ type UsePersistReducerState = <T>(
 
 export const usePersistReducerState: UsePersistReducerState = (state, path, onHydrate): void => {
   const key = JSON.stringify(path);
-  const value = useMemo(() => get(state, path), [state]);
+  const value = useMemo(
+    () => get(state, path),
+    [
+      state,
+    ],
+  );
 
   // rehydrate
   useEffect(() => {
@@ -23,5 +28,7 @@ export const usePersistReducerState: UsePersistReducerState = (state, path, onHy
   // persist
   useEffect(() => {
     storage.set(key, JSON.stringify(value));
-  }, [value]);
+  }, [
+    value,
+  ]);
 };

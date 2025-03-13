@@ -1,13 +1,15 @@
+import IconButton from "@/components/IconButton";
 import { useConfig, useConfigDispatch } from "@/contexts/config-context";
 import React, { useCallback } from "react";
-import IconButton from "@/components/IconButton";
 
 const ShouldRecord = () => {
   const config = useConfig();
   const configDispatch = useConfigDispatch();
   const onClick = useCallback(() => {
     configDispatch({ type: "toggledShouldRecord" });
-  }, [configDispatch]);
+  }, [
+    configDispatch,
+  ]);
 
   return (
     <IconButton

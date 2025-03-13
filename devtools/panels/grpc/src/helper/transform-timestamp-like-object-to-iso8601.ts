@@ -2,7 +2,11 @@ export const transformTimestampLikeObjectToISO8601 = <T>(object: T): T => {
   if (object === null) return object;
   if (typeof object !== "object") return object;
 
-  object = Array.isArray(object) ? [...object] : { ...object };
+  object = Array.isArray(object)
+    ? [
+        ...object,
+      ]
+    : { ...object };
   for (const key of Object.keys(object) as (keyof object)[]) {
     const value = object[key];
     if (

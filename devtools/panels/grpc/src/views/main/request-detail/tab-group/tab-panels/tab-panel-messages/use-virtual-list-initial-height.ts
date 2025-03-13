@@ -1,7 +1,7 @@
-import { RefObject, useState } from "react";
-import { useEvent } from "react-use";
 import { useDetail } from "@/contexts/detail-context";
 import useRequestRow from "@/hooks/use-request-row";
+import { RefObject, useState } from "react";
+import { useEvent } from "react-use";
 
 const numberOfMessages = 3;
 export const defaultMessagesVirtualListInitialHeight = (24 + 1) * numberOfMessages + 1;
@@ -14,9 +14,10 @@ export const useVirtualListInitialHeight = ({
 }) => {
   const detail = useDetail();
   const requestRow = useRequestRow();
-  const [MessagesVirtualListInitialHeight, setMessagesVirtualListInitialHeight] = useState(
-    initialMessagesVirtualListInitialHeight,
-  );
+  const [
+    MessagesVirtualListInitialHeight,
+    setMessagesVirtualListInitialHeight,
+  ] = useState(initialMessagesVirtualListInitialHeight);
   useEvent("mouseup", () => {
     if (requestRow === null) return;
     if (detail.messages.focusedIndex === null) return;

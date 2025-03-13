@@ -9,4 +9,7 @@ export type Detail = {
   };
 };
 
-export const tabs = ["headers", "messages"] as const;
+export const tabs = [
+  "headers",
+  "messages",
+] as const;

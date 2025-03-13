@@ -1,13 +1,13 @@
+import "@/assets/index.css";
+import { ConfigProvider } from "@/contexts/config-context";
+import { DetailProvider } from "@/contexts/detail-context";
+import { FilterProvider } from "@/contexts/filter-context";
+import { RequestRowsProvider } from "@/contexts/request-rows-context";
+import "animate.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
-import "animate.css";
-import "@/assets/index.css";
 import "react-tooltip/dist/react-tooltip.css";
-import { ConfigProvider } from "@/contexts/config-context";
-import { FilterProvider } from "@/contexts/filter-context";
-import { DetailProvider } from "@/contexts/detail-context";
-import { RequestRowsProvider } from "@/contexts/request-rows-context";
+import App from "./App";
 
 let root = <App />;
 root = <DetailProvider>{root}</DetailProvider>;

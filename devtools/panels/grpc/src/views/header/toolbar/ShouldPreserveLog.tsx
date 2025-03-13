@@ -1,13 +1,15 @@
-import React, { useCallback } from "react";
-import { useConfig, useConfigDispatch } from "@/contexts/config-context";
 import IconButton from "@/components/IconButton";
+import { useConfig, useConfigDispatch } from "@/contexts/config-context";
+import React, { useCallback } from "react";
 
 const ShouldPreserveLog = () => {
   const config = useConfig();
   const configDispatch = useConfigDispatch();
   const onClick = useCallback(() => {
     configDispatch({ type: "toggledShouldPreserveLog" });
-  }, [configDispatch]);
+  }, [
+    configDispatch,
+  ]);
 
   return (
     <IconButton

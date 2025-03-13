@@ -1,12 +1,12 @@
 {
-  "private": true,
   "name": "grpc",
-  "author": "Ernest <soc221b.e@gmail.com>",
+  "private": true,
   "license": "GPL-3.0",
+  "author": "Ernest <soc221b.e@gmail.com>",
   "scripts": {
-    "protoc": "rm -rf src/protos && mkdir src/protos && export IN_DIR=googleapis/google/rpc OUT_DIR=./src/protos && protoc -I=$IN_DIR code.proto status.proto error_details.proto --js_out=import_style=commonjs,binary:$OUT_DIR --grpc-web_out=import_style=commonjs+dts,mode=grpcwebtext:$OUT_DIR",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server",
+    "protoc": "rm -rf src/protos && mkdir src/protos && export IN_DIR=googleapis/google/rpc OUT_DIR=./src/protos && protoc -I=$IN_DIR code.proto status.proto error_details.proto --js_out=import_style=commonjs,binary:$OUT_DIR --grpc-web_out=import_style=commonjs+dts,mode=grpcwebtext:$OUT_DIR",
     "test": "jest"
   },
   "dependencies": {

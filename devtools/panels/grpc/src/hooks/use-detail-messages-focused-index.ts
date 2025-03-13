@@ -19,5 +19,8 @@ export const useDetailMessagesFocusedIndex = () => {
       });
     }
   };
-  return [detail.messages.focusedIndex, setDetailMessagesFocusedIndex] as const;
+  return [
+    detail.messages.focusedIndex,
+    setDetailMessagesFocusedIndex,
+  ] as const;
 };

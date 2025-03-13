@@ -1,6 +1,6 @@
-import { unaryInterceptors, streamInterceptors } from "./grpc-devtools";
+import { streamInterceptors, unaryInterceptors } from "./grpc-devtools";
 import { ChatServiceClient } from "./protos/ChatServiceClientPb";
-import { SendMessageRequest, OnMessageRequest } from "./protos/chat_pb";
+import { OnMessageRequest, SendMessageRequest } from "./protos/chat_pb";
 
 class ChatService {
   private id;

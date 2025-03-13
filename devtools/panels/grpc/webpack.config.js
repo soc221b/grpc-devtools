@@ -11,7 +11,12 @@ const configuration = {
   devtool: "source-map",
 
   resolve: {
-    extensions: [".tsx", ".ts", ".jsx", ".js"],
+    extensions: [
+      ".tsx",
+      ".ts",
+      ".jsx",
+      ".js",
+    ],
     alias: {
       "@": path.resolve(import.meta.dirname, "src"),
     },
@@ -21,7 +26,11 @@ const configuration = {
     rules: [
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader", "postcss-loader"],
+        use: [
+          "style-loader",
+          "css-loader",
+          "postcss-loader",
+        ],
       },
       {
         test: /\.m?[jt]sx?$/,

@@ -1,6 +1,6 @@
-import React, { useCallback } from "react";
 import Checkbox from "@/components/Checkbox";
 import { useFilter, useFilterDispatch } from "@/contexts/filter-context";
+import React, { useCallback } from "react";
 
 const Invert = () => {
   const filter = useFilter();
@@ -9,7 +9,9 @@ const Invert = () => {
     filterDispatch({
       type: "inverted",
     });
-  }, [filterDispatch]);
+  }, [
+    filterDispatch,
+  ]);
 
   return (
     <div

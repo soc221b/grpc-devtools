@@ -1,7 +1,7 @@
 import React from "react";
+import CaseSensitive from "./filter/CaseSensitive";
 import Input from "./filter/Input";
 import Invert from "./filter/Invert";
-import CaseSensitive from "./filter/CaseSensitive";
 
 const Filter = () => {
   return (
