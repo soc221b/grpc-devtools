@@ -5,9 +5,9 @@
     ".": {
       "extra-files": [
         {
-          "type": "json",
-          "path": "shell-chrome/manifest.json",
-          "jsonpath": "$.version"
+          "jsonpath": "$.version",
+          "path": "manifest.json",
+          "type": "json"
         }
       ]
     }

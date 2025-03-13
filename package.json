@@ -1,14 +1,6 @@
 {
   "private": true,
   "name": "grpc-devtools",
-  "type": "module",
-  "scripts": {
-    "dev": "npm run dev --workspaces --if-present",
-    "prebuild": "node scripts/prebuild.js",
-    "build": "npm run build --workspaces --if-present",
-    "postbuild": "node scripts/postbuild.js",
-    "test": "npm run test --workspaces --if-present && cypress run --e2e --browser chrome"
-  },
   "author": "Ernest <soc221b.e@gmail.com>",
   "license": "GPL-3.0",
   "workspaces": [
@@ -16,7 +8,22 @@
     "devtools",
     "devtools/panels/grpc"
   ],
+  "scripts": {
+    "format": "prettier --write .",
+    "dev": "npm run dev --workspaces --if-present",
+    "prebuild": "node scripts/prebuild.js",
+    "build": "npm run build --workspaces --if-present",
+    "postbuild": "node scripts/postbuild.js",
+    "test": "npm run test --workspaces --if-present && start-server-and-test dev http://localhost:4000 test:e2e",
+    "test:e2e": "cypress run --e2e --browser chrome"
+  },
   "devDependencies": {
-    "cross-zip": "^4.0.1"
+    "cross-zip": "4.0.1",
+    "cy-verify-downloads": "0.2.6",
+    "cypress": "14.2.0",
+    "cypress-file-upload": "5.0.8",
+    "cypress-network-idle": "1.15.0",
+    "prettier": "3.5.3",
+    "start-server-and-test": "2.0.11"
   }
 }

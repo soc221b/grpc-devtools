@@ -6,14 +6,14 @@ import webpack from "webpack";
  * @type { import('webpack').Configuration }
  */
 const configuration = {
-  entry: path.resolve(__dirname, "src/main.tsx"),
+  entry: path.resolve(import.meta.dirname, "src/main.tsx"),
 
   devtool: "source-map",
 
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js"],
     alias: {
-      "@": path.resolve(__dirname, "src"),
+      "@": path.resolve(import.meta.dirname, "src"),
     },
   },
 
@@ -34,7 +34,7 @@ const configuration = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "public", "index.html"),
+      template: path.resolve(import.meta.dirname, "public", "index.html"),
     }),
     new webpack.DefinePlugin({
       __VUE_OPTIONS_API__: false,

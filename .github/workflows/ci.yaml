@@ -23,7 +23,7 @@ jobs:
 
       - run: npm run build
 
-      - run: npx start-server-and-test dev http://localhost:4000 test
+      - run: npm run test
 
       - uses: mnao305/chrome-extension-upload@v5.0.0
         if: ${{ github.ref == 'refs/heads/main' && contains(github.event.head_commit.message, 'chore(release):') }}

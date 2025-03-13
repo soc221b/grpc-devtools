@@ -2,6 +2,8 @@
   "private": true,
   "name": "content-script",
   "type": "module",
+  "author": "Ernest <soc221b.e@gmail.com>",
+  "license": "GPL-3.0",
   "scripts": {
     "build": "webpack --mode production"
   },

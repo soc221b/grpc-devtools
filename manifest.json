@@ -8,27 +8,19 @@
     "48": "icon.png",
     "128": "icon.png"
   },
-  "devtools_page": "dist/devtools/index.html",
+  "devtools_page": "devtools/index.html",
   "incognito": "split",
   "content_scripts": [
     {
-      "matches": [
-        "<all_urls>"
-      ],
-      "js": [
-        "dist/content-scripts/isolated.js"
-      ],
+      "matches": ["<all_urls>"],
+      "js": ["content-scripts/isolated.js"],
       "run_at": "document_start",
       "all_frames": true
     },
     {
       "world": "MAIN",
-      "matches": [
-        "<all_urls>"
-      ],
-      "js": [
-        "dist/content-scripts/main.js"
-      ],
+      "matches": ["<all_urls>"],
+      "js": ["content-scripts/main.js"],
       "run_at": "document_start",
       "all_frames": true
     }
