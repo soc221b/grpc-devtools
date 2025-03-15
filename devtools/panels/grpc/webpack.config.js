@@ -8,6 +8,11 @@ import webpack from "webpack";
 const configuration = {
   entry: path.resolve(import.meta.dirname, "src/main.tsx"),
 
+  output: {
+    clean: true,
+    path: path.resolve(import.meta.dirname, "../../../dist/devtools/panels/grpc"),
+  },
+
   devtool: "source-map",
 
   resolve: {
