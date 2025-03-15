@@ -10,12 +10,18 @@
     "**/node_modules/**"
   ],
   "packageRules": [
-    { "matchPackageNames": [
+    {
+      "matchPackageNames": [
         "*"
-      ], "rangeStrategy": "pin" },
-    { "matchDepTypes": [
+      ],
+      "rangeStrategy": "pin"
+    },
+    {
+      "matchDepTypes": [
         "engines",
         "peerDependencies"
-      ], "rangeStrategy": "auto" }
+      ],
+      "rangeStrategy": "auto"
+    }
   ]
 }
