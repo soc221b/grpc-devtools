@@ -4,4 +4,4 @@ dist
 protos
 chat_pb.ts
 CHANGELOG.md
-shell-chrome/manifest.json
+manifest.json
