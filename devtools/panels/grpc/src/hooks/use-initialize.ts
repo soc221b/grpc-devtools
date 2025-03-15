@@ -49,13 +49,13 @@ export const useInitialize = () => {
         function _handleMessage(message: any, sender: any, sendResponse: any) {
           if (message === null) return;
           if (typeof message !== "object") return;
-          if (message.source !== "__gRPC_devtools__content_script__") return;
+          if (message.source !== "__gRPC_devtools_content_scripts_isolated__") return;
           if (typeof sendResponse !== "function") return;
           if (sender.tab.id !== chrome.devtools.inspectedWindow.tabId) return;
           if (handleRequestRow(message) || handleUnload(message)) {
             sendResponse({
-              source: "__gRPC_devtools_background__",
-              payload: "forwarded",
+              source: "__gRPC_devtools_devtools_panels_grpc__",
+              payload: "ACK",
             });
           }
         }
@@ -215,7 +215,7 @@ export const useInitialize = () => {
     function handleUnload(message: any) {
       if (message === null) return false;
       if (typeof message !== "object") return false;
-      if (message.source !== "__gRPC_devtools__content_script__") return false;
+      if (message.source !== "__gRPC_devtools_content_scripts_isolated__") return false;
       const result = unloadSchema.safeParse(message.payload);
       if (result.success === false) return false;
 
@@ -228,7 +228,7 @@ export const useInitialize = () => {
     function handleRequestRow(message: any) {
       if (message === null) return false;
       if (typeof message !== "object") return false;
-      if (message.source !== "__gRPC_devtools__content_script__") return false;
+      if (message.source !== "__gRPC_devtools_content_scripts_isolated__") return false;
       const payloadResult = requestRowSchema.safeParse(message.payload);
       if (payloadResult.success === false) return false;
 

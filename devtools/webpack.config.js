@@ -5,6 +5,8 @@ import path from "path";
  * @type { import('webpack').Configuration }
  */
 const configuration = {
+  entry: path.resolve(import.meta.dirname, "./src/index.ts"),
+
   output: {
     clean: {
       keep: "panels",
@@ -13,6 +15,16 @@ const configuration = {
   },
 
   devtool: "source-map",
+
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        loader: "swc-loader",
+      },
+    ],
+  },
 
   plugins: [
     new HtmlWebpackPlugin(),
