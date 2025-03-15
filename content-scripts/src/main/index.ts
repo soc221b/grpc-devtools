@@ -12,7 +12,7 @@ let isUnloading = false;
 window.addEventListener("beforeunload", () => {
   isUnloading = true;
   const message = {
-    source: "__gRPC_devtools__",
+    source: "__gRPC_devtools_content_scripts_main__",
     payload: {
       action: "unload",
     },
@@ -46,7 +46,7 @@ const postMessageToContentScript = ({
   const timestamp = Date.now();
   const message = JSON.parse(
     JSON.stringify({
-      source: "__gRPC_devtools__",
+      source: "__gRPC_devtools_content_scripts_main__",
       payload: {
         id,
         timestamp,

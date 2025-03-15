@@ -44,7 +44,7 @@ addCustomCommand();
 Cypress.Commands.add("sendGrpcRequest", (payload) => {
   cy.window().then((win) => {
     win.postMessage({
-      source: "__gRPC_devtools__content_script__",
+      source: "__gRPC_devtools_content_scripts_isolated__",
       payload,
     });
   });

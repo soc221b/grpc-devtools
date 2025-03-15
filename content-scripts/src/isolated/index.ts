@@ -5,18 +5,19 @@ let isPending = false;
 chrome.runtime.onMessage.addListener((message) => {
   if (message === null) return;
   if (typeof message !== "object") return;
-  if (message.source !== "__gRPC_devtools__panel__") return;
+  if (message.source !== "__gRPC_devtools_devtools__") return;
   if (message.payload !== "shown") return;
 
   tryToSendMessages();
 });
 
 window.addEventListener("message", (event) => {
-  if (!event.data) return;
-  if (event.data.source !== "__gRPC_devtools__") return;
+  if (event.data === null) return;
+  if (typeof event.data !== "object") return;
+  if (event.data.source !== "__gRPC_devtools_content_scripts_main__") return;
 
   const message = {
-    source: "__gRPC_devtools__content_script__",
+    source: "__gRPC_devtools_content_scripts_isolated__",
     payload: event.data.payload,
   };
   messageQueue.push(message);
@@ -46,8 +47,8 @@ async function sendMessages() {
 
       if (response === null) break;
       if (typeof response !== "object") break;
-      if (response.source !== "__gRPC_devtools_background__") break;
-      if (response.payload !== "forwarded") break;
+      if (response.source !== "__gRPC_devtools_devtools_panels_grpc__") break;
+      if (response.payload !== "ACK") break;
 
       ++i;
     } catch (e) {
