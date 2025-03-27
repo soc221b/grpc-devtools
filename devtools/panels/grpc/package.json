@@ -34,7 +34,7 @@
     "@swc/core": "1.11.13",
     "@swc/jest": "0.2.37",
     "@tailwindcss/postcss": "4.0.17",
-    "@types/chrome": "0.0.312",
+    "@types/chrome": "0.0.313",
     "@types/google-protobuf": "3.15.12",
     "@types/jest": "29.5.14",
     "@types/json-stable-stringify": "1.2.0",

@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@connectrpc/connect": "2.0.2",
-    "@types/chrome": "0.0.312",
+    "@types/chrome": "0.0.313",
     "@types/google-protobuf": "3.15.12",
     "grpc-web": "1.5.0",
     "swc-loader": "0.2.6",
