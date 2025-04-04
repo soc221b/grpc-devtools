@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.22.3](https://github.com/soc221b/grpc-devtools/compare/v1.22.2...v1.22.3) (2025-04-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @headlessui/react to v2.2.1 ([#67](https://github.com/soc221b/grpc-devtools/issues/67)) ([f069db4](https://github.com/soc221b/grpc-devtools/commit/f069db451a52900887411e8c2be69113a7138b99))
+
 ## [1.22.2](https://github.com/soc221b/grpc-devtools/compare/v1.22.1...v1.22.2) (2025-03-29)
 
 
