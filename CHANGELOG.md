@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.22.4](https://github.com/soc221b/grpc-devtools/compare/v1.22.3...v1.22.4) (2025-04-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-tooltip to v5.28.1 ([#76](https://github.com/soc221b/grpc-devtools/issues/76)) ([9ce246e](https://github.com/soc221b/grpc-devtools/commit/9ce246e2454e287d07ea5cb6f393f7d9132110d0))
+
 ## [1.22.3](https://github.com/soc221b/grpc-devtools/compare/v1.22.2...v1.22.3) (2025-04-04)
 
 
