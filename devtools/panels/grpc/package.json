@@ -28,7 +28,7 @@
     "react-use": "17.6.0",
     "react-virtuoso": "4.12.6",
     "ua-parser-js": "2.0.3",
-    "zod": "3.24.2"
+    "zod": "3.24.3"
   },
   "devDependencies": {
     "@swc/core": "1.11.21",
