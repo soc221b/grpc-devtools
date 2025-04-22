@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.22.7](https://github.com/soc221b/grpc-devtools/compare/v1.22.6...v1.22.7) (2025-04-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency json-stable-stringify to v1.3.0 ([#95](https://github.com/soc221b/grpc-devtools/issues/95)) ([73b46ec](https://github.com/soc221b/grpc-devtools/commit/73b46ec89e65e820b1e544697115b9c9d738ef39))
+
 ## [1.22.6](https://github.com/soc221b/grpc-devtools/compare/v1.22.5...v1.22.6) (2025-04-18)
 
 
