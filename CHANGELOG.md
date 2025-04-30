@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.22.8](https://github.com/soc221b/grpc-devtools/compare/v1.22.7...v1.22.8) (2025-04-30)
+
+
+### Bug Fixes
+
+* **deps:** update dependency core-js to v3.42.0 ([#109](https://github.com/soc221b/grpc-devtools/issues/109)) ([9b63ec1](https://github.com/soc221b/grpc-devtools/commit/9b63ec1581a94d277b3ac57887a2c1403d4bdb57))
+
 ## [1.22.7](https://github.com/soc221b/grpc-devtools/compare/v1.22.6...v1.22.7) (2025-04-22)
 
 
