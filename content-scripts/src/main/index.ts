@@ -45,20 +45,23 @@ const postMessageToContentScript = ({
 
   const timestamp = Date.now();
   const message = JSON.parse(
-    JSON.stringify({
-      source: "__gRPC_devtools_content_scripts_main__",
-      payload: {
-        id,
-        timestamp,
-        methodName,
-        serviceName,
-        requestMetadata,
-        requestMessage,
-        responseMetadata,
-        responseMessage: responseMessage === "EOF" ? { EOF: timestamp } : responseMessage,
-        errorMetadata,
+    JSON.stringify(
+      {
+        source: "__gRPC_devtools_content_scripts_main__",
+        payload: {
+          id,
+          timestamp,
+          methodName,
+          serviceName,
+          requestMetadata,
+          requestMessage,
+          responseMetadata,
+          responseMessage: responseMessage === "EOF" ? { EOF: timestamp } : responseMessage,
+          errorMetadata,
+        },
       },
-    }),
+      (_, value) => (typeof value === "bigint" ? value.toString() + "n" : value),
+    ),
   );
   window.postMessage(message, "*");
 };
