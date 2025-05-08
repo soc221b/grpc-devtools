@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.23.0](https://github.com/soc221b/grpc-devtools/compare/v1.22.9...v1.23.0) (2025-05-08)
+
+
+### Features
+
+* support bigint ([#116](https://github.com/soc221b/grpc-devtools/issues/116)) ([121440c](https://github.com/soc221b/grpc-devtools/commit/121440c5a294d5af2f9f5308115e3d31adac9485))
+
+
+### Bug Fixes
+
+* **deps:** update dependency zod to v3.24.4 ([#118](https://github.com/soc221b/grpc-devtools/issues/118)) ([ac1cabc](https://github.com/soc221b/grpc-devtools/commit/ac1cabc5f28c7b5fbd057d35d8102cff32f11417))
+
 ## [1.22.9](https://github.com/soc221b/grpc-devtools/compare/v1.22.8...v1.22.9) (2025-05-02)
 
 
