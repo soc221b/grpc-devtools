@@ -33,5 +33,5 @@
   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkcLeBXMSYBLEM9ZXPctlUnKH64aS5FRKJ10cM35LaYcor93XTu1ub/HhYSYkaFWoZZ/ysWq0D5Rv6fIkxehwpSgvVwQ7Yoml4Vg7GxroRh3KwRzhL9/EVlnc1MvlRkuSudgTaCSOI/Ac+BZdJLgljS3BoiUP9Us7HNwsAFNXO9H110Y8GJ/woByDKdFQZmggEP+6lk8cJERxkjuWADPdSCd861Dh9taJT4nrKRVm7heIZzZu2iVfAA+DPGgTQhSHaNnK5yU58cBA9d6p4Jirmb1nodBjbcPbyUQogaAv5atVIvcmXrmuCtnxnznZNe64x5NFrnpk7r8e/2xiqcLkNwIDAQAB",
   "manifest_version": 3,
   "name": "gRPC Devtools",
-  "version": "1.23.4"
+  "version": "1.23.5"
 }
