@@ -374,7 +374,7 @@ const TabPanelMessages = ({ isFocusIn: _isFocusIn }: { isFocusIn: boolean }) => 
             {detail.messages.isStructValue && (
               <div
                 data-tooltip-id="tooltip"
-                data-tooltip-content="Remove 'List' suffix from array field names"
+                data-tooltip-content="Remove 'List' suffix from array field names (e.g., recordsList → records)"
               >
                 <Checkbox
                   checked={detail.messages.isRemoveListSuffix}
@@ -382,7 +382,7 @@ const TabPanelMessages = ({ isFocusIn: _isFocusIn }: { isFocusIn: boolean }) => 
                     detailDispatch({ type: "toggleIsRemoveListSuffix" });
                   }}
                 >
-                  <span>Remove List</span>
+                  <span>Trim List Suffix</span>
                 </Checkbox>
               </div>
             )}
