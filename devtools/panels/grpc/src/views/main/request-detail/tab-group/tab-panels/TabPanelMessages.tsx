@@ -8,6 +8,7 @@ import { useDetail, useDetailDispatch } from "@/contexts/detail-context";
 import { useRequestRowsDispatch } from "@/contexts/request-rows-context";
 import { stringifyPreview } from "@/helper/stringify-preview";
 import { transformTimestampLikeObjectToISO8601 } from "@/helper/transform-timestamp-like-object-to-iso8601";
+import { transformWellKnownTypes } from "@/helper/transform-well-known-types";
 import { useDetailMessagesFocusedIndex } from "@/hooks/use-detail-messages-focused-index";
 import useRequestRow from "@/hooks/use-request-row";
 import { isEOFMessage } from "@/interactors/is-eof-message";
@@ -95,9 +96,23 @@ const TabPanelMessages = ({ isFocusIn: _isFocusIn }: { isFocusIn: boolean }) => 
   const object = focusedMessage
     ? isEOFMessage(focusedMessage)
       ? "EOF"
-      : detail.messages.isISO8601
-        ? JSON.parse(stringify(transformTimestampLikeObjectToISO8601(focusedMessage.data)))
-        : JSON.parse(stringify(focusedMessage.data))
+      : (() => {
+          // Clone the data first to avoid any immutability issues
+          let data = JSON.parse(stringify(focusedMessage.data));
+          
+          // Apply transformations based on checkboxes
+          if (detail.messages.isISO8601) {
+            data = transformTimestampLikeObjectToISO8601(data);
+          }
+          
+          if (detail.messages.isStructValue) {
+            data = transformWellKnownTypes(data, { 
+              removeListSuffix: detail.messages.isRemoveListSuffix 
+            });
+          }
+          
+          return data;
+        })()
     : "";
 
   const renderItem = (index: number) => {
@@ -343,6 +358,34 @@ const TabPanelMessages = ({ isFocusIn: _isFocusIn }: { isFocusIn: boolean }) => 
                 <span>ISO 8601</span>
               </Checkbox>
             </div>
+            <div
+              data-tooltip-id="tooltip"
+              data-tooltip-content="Convert google.protobuf.Struct and Value to readable format"
+            >
+              <Checkbox
+                checked={detail.messages.isStructValue}
+                onChange={() => {
+                  detailDispatch({ type: "toggleIsStructValue" });
+                }}
+              >
+                <span>Struct/Value</span>
+              </Checkbox>
+            </div>
+            {detail.messages.isStructValue && (
+              <div
+                data-tooltip-id="tooltip"
+                data-tooltip-content="Remove 'List' suffix from array field names"
+              >
+                <Checkbox
+                  checked={detail.messages.isRemoveListSuffix}
+                  onChange={() => {
+                    detailDispatch({ type: "toggleIsRemoveListSuffix" });
+                  }}
+                >
+                  <span>Remove List</span>
+                </Checkbox>
+              </div>
+            )}
             {detail.messages.isPreview && (
               <Checkbox
                 checked={detail.messages.isStickyScroll}
