@@ -19,6 +19,6 @@
   },
   "devDependencies": {
     "@bufbuild/protoc-gen-es": "2.5.2",
-    "tsx": "4.19.4"
+    "tsx": "4.20.1"
   }
 }
