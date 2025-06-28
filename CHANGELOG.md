@@ -1,5 +1,34 @@
 # Changelog
 
+## [1.23.10](https://github.com/soc221b/grpc-devtools/compare/v1.23.9...v1.23.10) (2025-06-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency core-js to v3.43.0 ([#211](https://github.com/soc221b/grpc-devtools/issues/211)) ([1718a8a](https://github.com/soc221b/grpc-devtools/commit/1718a8a615faf04dce16c649e208da44f1b0bd83))
+* **deps:** update dependency react-tooltip to v5.29.0 ([#215](https://github.com/soc221b/grpc-devtools/issues/215)) ([b52112e](https://github.com/soc221b/grpc-devtools/commit/b52112ec059b32735aa9daea19f93182826fab95))
+* **deps:** update dependency react-tooltip to v5.29.1 ([#230](https://github.com/soc221b/grpc-devtools/issues/230)) ([6709181](https://github.com/soc221b/grpc-devtools/commit/67091810c5cffb4e8be4a32e6d6a80a754352b58))
+* **deps:** update dependency react-virtuoso to v4.12.8 ([#192](https://github.com/soc221b/grpc-devtools/issues/192)) ([00debef](https://github.com/soc221b/grpc-devtools/commit/00debef0e5c795928d6eeb6d7722b6f9fece6e46))
+* **deps:** update dependency react-virtuoso to v4.13.0 ([#234](https://github.com/soc221b/grpc-devtools/issues/234)) ([13fbfbf](https://github.com/soc221b/grpc-devtools/commit/13fbfbf16820badbcd0ac61c7e7b2ccbf9cb1ad2))
+* **deps:** update dependency ua-parser-js to v2.0.4 ([#245](https://github.com/soc221b/grpc-devtools/issues/245)) ([f725f52](https://github.com/soc221b/grpc-devtools/commit/f725f52724cf1439d4ea45a6fea42f48ea60f3bf))
+* **deps:** update dependency zod to v3.25.44 ([#195](https://github.com/soc221b/grpc-devtools/issues/195)) ([5b91d57](https://github.com/soc221b/grpc-devtools/commit/5b91d57504f9ea6f0da8c47fdfd77b2274a01c65))
+* **deps:** update dependency zod to v3.25.45 ([#196](https://github.com/soc221b/grpc-devtools/issues/196)) ([de1a97e](https://github.com/soc221b/grpc-devtools/commit/de1a97e4c942f0b622818a75fe33ac7830ca2396))
+* **deps:** update dependency zod to v3.25.46 ([#197](https://github.com/soc221b/grpc-devtools/issues/197)) ([3c4dd02](https://github.com/soc221b/grpc-devtools/commit/3c4dd020fde884817780f0e3be7a543128516c45))
+* **deps:** update dependency zod to v3.25.47 ([#198](https://github.com/soc221b/grpc-devtools/issues/198)) ([ebced2c](https://github.com/soc221b/grpc-devtools/commit/ebced2c3d201d5933f786550664dfaa400f9aa8a))
+* **deps:** update dependency zod to v3.25.48 ([#199](https://github.com/soc221b/grpc-devtools/issues/199)) ([6b21161](https://github.com/soc221b/grpc-devtools/commit/6b21161ae1b5ee015d4aed9a570e0b4129500c87))
+* **deps:** update dependency zod to v3.25.49 ([#200](https://github.com/soc221b/grpc-devtools/issues/200)) ([fe38202](https://github.com/soc221b/grpc-devtools/commit/fe3820210d38de08e2da88394ab6081bbbcb34cf))
+* **deps:** update dependency zod to v3.25.50 ([#203](https://github.com/soc221b/grpc-devtools/issues/203)) ([c43d08b](https://github.com/soc221b/grpc-devtools/commit/c43d08b01b1105f93eaf28f391924c35e14cd968))
+* **deps:** update dependency zod to v3.25.51 ([#204](https://github.com/soc221b/grpc-devtools/issues/204)) ([3374945](https://github.com/soc221b/grpc-devtools/commit/3374945944be29bccc6d7c3aea47fde828da7ae0))
+* **deps:** update dependency zod to v3.25.56 ([#209](https://github.com/soc221b/grpc-devtools/issues/209)) ([e9b4095](https://github.com/soc221b/grpc-devtools/commit/e9b40953015b9ed5307c524337030b9c74044ff2))
+* **deps:** update dependency zod to v3.25.57 ([#213](https://github.com/soc221b/grpc-devtools/issues/213)) ([7628a40](https://github.com/soc221b/grpc-devtools/commit/7628a40a813589c2470b899ca0fb103d98386449))
+* **deps:** update dependency zod to v3.25.58 ([#217](https://github.com/soc221b/grpc-devtools/issues/217)) ([b7aa2af](https://github.com/soc221b/grpc-devtools/commit/b7aa2afd9449c3c81d7565f20339612cd5638e60))
+* **deps:** update dependency zod to v3.25.60 ([#218](https://github.com/soc221b/grpc-devtools/issues/218)) ([5213ed7](https://github.com/soc221b/grpc-devtools/commit/5213ed7945a08c54c45ff4aacac50070c082a01c))
+* **deps:** update dependency zod to v3.25.61 ([#220](https://github.com/soc221b/grpc-devtools/issues/220)) ([3ffe4ec](https://github.com/soc221b/grpc-devtools/commit/3ffe4ec50f3dfcdf18e657ec3962352029df2733))
+* **deps:** update dependency zod to v3.25.62 ([#223](https://github.com/soc221b/grpc-devtools/issues/223)) ([7e8f67c](https://github.com/soc221b/grpc-devtools/commit/7e8f67c22335aaa798dbe61dd99eab6177326785))
+* **deps:** update dependency zod to v3.25.63 ([#225](https://github.com/soc221b/grpc-devtools/issues/225)) ([8297319](https://github.com/soc221b/grpc-devtools/commit/8297319030d77a6f2d8e364126542999491fa2bb))
+* **deps:** update dependency zod to v3.25.64 ([#229](https://github.com/soc221b/grpc-devtools/issues/229)) ([4ae173b](https://github.com/soc221b/grpc-devtools/commit/4ae173beb7f68b506beaa62ecec7fc755d35d5b9))
+* **deps:** update dependency zod to v3.25.67 ([#233](https://github.com/soc221b/grpc-devtools/issues/233)) ([63063bb](https://github.com/soc221b/grpc-devtools/commit/63063bbef7b9fa57ff525cc5ee8a3fa021048102))
+
 ## [1.23.9](https://github.com/soc221b/grpc-devtools/compare/v1.23.8...v1.23.9) (2025-05-31)
 
 
