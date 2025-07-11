@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.23.12](https://github.com/soc221b/grpc-devtools/compare/v1.23.11...v1.23.12) (2025-07-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency core-js to v3.44.0 ([#274](https://github.com/soc221b/grpc-devtools/issues/274)) ([597bdaf](https://github.com/soc221b/grpc-devtools/commit/597bdaf55a7dca6861fbb8153b6f8f4d218c06d1))
+* **deps:** update dependency zod to v3.25.74 ([#271](https://github.com/soc221b/grpc-devtools/issues/271)) ([ae121fb](https://github.com/soc221b/grpc-devtools/commit/ae121fb7e1eb5ca6ddd29c31117e1e84e8a46559))
+* **deps:** update dependency zod to v3.25.75 ([#273](https://github.com/soc221b/grpc-devtools/issues/273)) ([d1e7b22](https://github.com/soc221b/grpc-devtools/commit/d1e7b22729971637ba105785ccee224608d60b03))
+* **deps:** update dependency zod to v3.25.76 ([#276](https://github.com/soc221b/grpc-devtools/issues/276)) ([08af522](https://github.com/soc221b/grpc-devtools/commit/08af5226b02fbb17e3bffdc227290577606cf873))
+* **deps:** update dependency zod to v4 ([#281](https://github.com/soc221b/grpc-devtools/issues/281)) ([7e97bd5](https://github.com/soc221b/grpc-devtools/commit/7e97bd54abcff15f703139ec945a25e8528833d6))
+* **deps:** update dependency zod to v4.0.3 ([#282](https://github.com/soc221b/grpc-devtools/issues/282)) ([f98cdbe](https://github.com/soc221b/grpc-devtools/commit/f98cdbe503a04d8d1342bfc00159c1e1a817e7bd))
+* **deps:** update dependency zod to v4.0.5 ([#284](https://github.com/soc221b/grpc-devtools/issues/284)) ([f4a2839](https://github.com/soc221b/grpc-devtools/commit/f4a2839b4127025c18208cf60887a77b94c3bca9))
+
 ## [1.23.11](https://github.com/soc221b/grpc-devtools/compare/v1.23.10...v1.23.11) (2025-07-04)
 
 
