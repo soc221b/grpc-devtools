@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.23.13](https://github.com/soc221b/grpc-devtools/compare/v1.23.12...v1.23.13) (2025-07-15)
+
+
+### Bug Fixes
+
+* zod error preventing all requests from appearing in devtools ([#291](https://github.com/soc221b/grpc-devtools/issues/291)) ([6c563e3](https://github.com/soc221b/grpc-devtools/commit/6c563e3b1adbd5d41791b98a66719ec05d651606))
+
 ## [1.23.12](https://github.com/soc221b/grpc-devtools/compare/v1.23.11...v1.23.12) (2025-07-11)
 
 
