@@ -12,11 +12,11 @@ const requestRowSchema = z.object({
   id: z.string(),
   methodName: z.string().optional(),
   serviceName: z.string().optional(),
-  requestMetadata: z.record(z.string()).optional(),
-  responseMetadata: z.record(z.string()).optional(),
-  errorMetadata: z.record(z.string()).optional(),
-  requestMessage: z.record(z.unknown()).optional(),
-  responseMessage: z.record(z.unknown()).optional(),
+  requestMetadata: z.record(z.string(), z.string()).optional(),
+  responseMetadata: z.record(z.string(), z.string()).optional(),
+  errorMetadata: z.record(z.string(), z.string()).optional(),
+  requestMessage: z.record(z.string(), z.unknown()).optional(),
+  responseMessage: z.record(z.string(), z.unknown()).optional(),
   timestamp: z.number(),
 });
 
