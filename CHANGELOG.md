@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.23.14](https://github.com/soc221b/grpc-devtools/compare/v1.23.13...v1.23.14) (2025-07-31)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @headlessui/react to v2.2.5 ([#306](https://github.com/soc221b/grpc-devtools/issues/306)) ([37228a4](https://github.com/soc221b/grpc-devtools/commit/37228a43e47f41d74aabe5d87b976c69c9c54fa5))
+* **deps:** update dependency @headlessui/react to v2.2.6 ([#309](https://github.com/soc221b/grpc-devtools/issues/309)) ([e33227b](https://github.com/soc221b/grpc-devtools/commit/e33227b4b5698d3740b3292045da91915f1912a9))
+* **deps:** update dependency @headlessui/react to v2.2.7 ([#324](https://github.com/soc221b/grpc-devtools/issues/324)) ([64c43ec](https://github.com/soc221b/grpc-devtools/commit/64c43ec057f06d9debc06749ba9e83a0bef0de3a))
+* **deps:** update dependency zod to v4.0.10 ([#311](https://github.com/soc221b/grpc-devtools/issues/311)) ([a82c31d](https://github.com/soc221b/grpc-devtools/commit/a82c31dd519eb49ee49e3e47716ecc2eabe0cb85))
+* **deps:** update dependency zod to v4.0.11 ([#319](https://github.com/soc221b/grpc-devtools/issues/319)) ([68466fb](https://github.com/soc221b/grpc-devtools/commit/68466fb386c8e8af40e7538714b2687b7d3d6b3e))
+* **deps:** update dependency zod to v4.0.13 ([#321](https://github.com/soc221b/grpc-devtools/issues/321)) ([7a819fc](https://github.com/soc221b/grpc-devtools/commit/7a819fc3a6f65aced4b002c2a527d6927891b86d))
+* **deps:** update dependency zod to v4.0.14 ([#323](https://github.com/soc221b/grpc-devtools/issues/323)) ([cec8022](https://github.com/soc221b/grpc-devtools/commit/cec80220ccddc655c6117c3f9371f2f4f96ae98b))
+* **deps:** update dependency zod to v4.0.8 ([#308](https://github.com/soc221b/grpc-devtools/issues/308)) ([6abb681](https://github.com/soc221b/grpc-devtools/commit/6abb681b6476bc921bf933a95f4817b54a577d81))
+* **deps:** update dependency zod to v4.0.9 ([#310](https://github.com/soc221b/grpc-devtools/issues/310)) ([13269a5](https://github.com/soc221b/grpc-devtools/commit/13269a5196a8396f188cf37f10b952eae7af5298))
+
 ## [1.23.13](https://github.com/soc221b/grpc-devtools/compare/v1.23.12...v1.23.13) (2025-07-15)
 
 
