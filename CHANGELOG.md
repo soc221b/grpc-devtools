@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.23.15](https://github.com/soc221b/grpc-devtools/compare/v1.23.14...v1.23.15) (2025-08-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency core-js to v3.45.0 ([#328](https://github.com/soc221b/grpc-devtools/issues/328)) ([e35b1be](https://github.com/soc221b/grpc-devtools/commit/e35b1be55f724ed806aadcd8d9a3418a1ee589b3))
+* **deps:** update dependency react-virtuoso to v4.14.0 ([#336](https://github.com/soc221b/grpc-devtools/issues/336)) ([2ff790f](https://github.com/soc221b/grpc-devtools/commit/2ff790f89636a44bbed9ae9d5b7d6b17f9cfa5ec))
+* **deps:** update dependency zod to v4.0.15 ([#330](https://github.com/soc221b/grpc-devtools/issues/330)) ([077a6b9](https://github.com/soc221b/grpc-devtools/commit/077a6b99bcf375d9f2c93f4d5e3d2fff09145500))
+* **deps:** update dependency zod to v4.0.16 ([#334](https://github.com/soc221b/grpc-devtools/issues/334)) ([682c932](https://github.com/soc221b/grpc-devtools/commit/682c932eeaa501be7c1c32c0ad748493fec9b02f))
+* **deps:** update dependency zod to v4.0.17 ([#335](https://github.com/soc221b/grpc-devtools/issues/335)) ([88b084a](https://github.com/soc221b/grpc-devtools/commit/88b084a985d3b9ace4b852bec9d440aff6505c32))
+
 ## [1.23.14](https://github.com/soc221b/grpc-devtools/compare/v1.23.13...v1.23.14) (2025-07-31)
 
 
