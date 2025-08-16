@@ -14,7 +14,7 @@
   "devDependencies": {
     "@bufbuild/protoc-gen-es": "2.6.3",
     "css-loader": "7.1.2",
-    "html-webpack-plugin": "5.6.3",
+    "html-webpack-plugin": "5.6.4",
     "style-loader": "4.0.0",
     "ts-loader": "9.5.2",
     "typescript": "5.9.2",
