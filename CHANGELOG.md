@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.23.16](https://github.com/soc221b/grpc-devtools/compare/v1.23.15...v1.23.16) (2025-08-24)
+
+
+### Bug Fixes
+
+* **deps:** update dependency core-js to v3.45.1 ([#351](https://github.com/soc221b/grpc-devtools/issues/351)) ([c58df33](https://github.com/soc221b/grpc-devtools/commit/c58df330473cf62bebf01e3e154a94d974a36d1b))
+* **deps:** update dependency google-protobuf to v4 ([#348](https://github.com/soc221b/grpc-devtools/issues/348)) ([3e06147](https://github.com/soc221b/grpc-devtools/commit/3e06147f16c0cbea49943f17db43c6e441d853c5))
+* **deps:** update dependency zod to v4.1.0 ([#355](https://github.com/soc221b/grpc-devtools/issues/355)) ([d9cb0cf](https://github.com/soc221b/grpc-devtools/commit/d9cb0cfa4c675889f46f625d2dfafd58f74355da))
+
 ## [1.23.15](https://github.com/soc221b/grpc-devtools/compare/v1.23.14...v1.23.15) (2025-08-11)
 
 
