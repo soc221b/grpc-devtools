@@ -8,7 +8,7 @@
     "gen": "export IN_DIR=../../protos OUT_DIR=./src/protos && protoc -I=$IN_DIR chat.proto --js_out=import_style=commonjs:$OUT_DIR --grpc-web_out=import_style=typescript,mode=grpcwebtext:$OUT_DIR"
   },
   "dependencies": {
-    "grpc-web": "1.5.0"
+    "grpc-web": "2.0.0"
   },
   "devDependencies": {
     "css-loader": "7.1.2",
