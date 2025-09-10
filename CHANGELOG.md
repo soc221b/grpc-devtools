@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.23.16](https://github.com/soc221b/grpc-devtools/compare/v1.23.15...v1.23.16) (2025-09-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency core-js to v3.45.1 ([#351](https://github.com/soc221b/grpc-devtools/issues/351)) ([c58df33](https://github.com/soc221b/grpc-devtools/commit/c58df330473cf62bebf01e3e154a94d974a36d1b))
+* **deps:** update dependency google-protobuf to v4 ([#348](https://github.com/soc221b/grpc-devtools/issues/348)) ([3e06147](https://github.com/soc221b/grpc-devtools/commit/3e06147f16c0cbea49943f17db43c6e441d853c5))
+* **deps:** update dependency grpc-web to v2 ([#366](https://github.com/soc221b/grpc-devtools/issues/366)) ([8466212](https://github.com/soc221b/grpc-devtools/commit/8466212eacdb46f5e90d2bc56618bb11f3f52bea))
+* **deps:** update dependency grpc-web to v2.0.1 ([#378](https://github.com/soc221b/grpc-devtools/issues/378)) ([f40ec16](https://github.com/soc221b/grpc-devtools/commit/f40ec16c5da7499d53708d673ec6b0a1c97d36f0))
+* **deps:** update dependency react-inspector to v9 ([#375](https://github.com/soc221b/grpc-devtools/issues/375)) ([f036522](https://github.com/soc221b/grpc-devtools/commit/f036522c50dd7734bb25d26680386d682ed71c43))
+* **deps:** update dependency ua-parser-js to v2.0.5 ([#381](https://github.com/soc221b/grpc-devtools/issues/381)) ([5dd7863](https://github.com/soc221b/grpc-devtools/commit/5dd7863e8ed5d2c3b5fbce17d4f4fdb6cee8fea5))
+* **deps:** update dependency zod to v4.1.0 ([#355](https://github.com/soc221b/grpc-devtools/issues/355)) ([d9cb0cf](https://github.com/soc221b/grpc-devtools/commit/d9cb0cfa4c675889f46f625d2dfafd58f74355da))
+* **deps:** update dependency zod to v4.1.5 ([#359](https://github.com/soc221b/grpc-devtools/issues/359)) ([91d1208](https://github.com/soc221b/grpc-devtools/commit/91d1208ef7cf830295400090595c424b712b8daf))
+
 ## [1.23.15](https://github.com/soc221b/grpc-devtools/compare/v1.23.14...v1.23.15) (2025-08-11)
 
 
