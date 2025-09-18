@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.23.17](https://github.com/soc221b/grpc-devtools/compare/v1.23.16...v1.23.17) (2025-09-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @headlessui/react to v2.2.8 ([#390](https://github.com/soc221b/grpc-devtools/issues/390)) ([4dcf728](https://github.com/soc221b/grpc-devtools/commit/4dcf72841357ada3eb09ba4370bb89f5ccb4cf34))
+* **deps:** update dependency grpc-web to v2.0.2 ([#393](https://github.com/soc221b/grpc-devtools/issues/393)) ([83ee2ec](https://github.com/soc221b/grpc-devtools/commit/83ee2eca9851c30dfb8f47d8a9966315beb08d26))
+* **deps:** update dependency zod to v4.1.6 ([#383](https://github.com/soc221b/grpc-devtools/issues/383)) ([12276f8](https://github.com/soc221b/grpc-devtools/commit/12276f824b6eed44ca5063bc30d3ac82ac91b177))
+* **deps:** update dependency zod to v4.1.7 ([#385](https://github.com/soc221b/grpc-devtools/issues/385)) ([decb54e](https://github.com/soc221b/grpc-devtools/commit/decb54e3c08ec9e591072a0ff2f8d9d810ea7342))
+* **deps:** update dependency zod to v4.1.8 ([#386](https://github.com/soc221b/grpc-devtools/issues/386)) ([5286575](https://github.com/soc221b/grpc-devtools/commit/528657562a23916bdd6cf8c7d41844c4aa948d18))
+* **deps:** update dependency zod to v4.1.9 ([#396](https://github.com/soc221b/grpc-devtools/issues/396)) ([b1f44a0](https://github.com/soc221b/grpc-devtools/commit/b1f44a03358c9bb3874da39e1bb638e8e7a53ebd))
+
 ## [1.23.16](https://github.com/soc221b/grpc-devtools/compare/v1.23.15...v1.23.16) (2025-09-10)
 
 
