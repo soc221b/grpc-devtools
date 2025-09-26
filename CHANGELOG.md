@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.23.19](https://github.com/soc221b/grpc-devtools/compare/v1.23.18...v1.23.19) (2025-09-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @headlessui/react to v2.2.9 ([#407](https://github.com/soc221b/grpc-devtools/issues/407)) ([d2e72a5](https://github.com/soc221b/grpc-devtools/commit/d2e72a54b667d3276e52311253133a121cf6968a))
+* **deps:** update dependency react-virtuoso to v4.14.1 ([#409](https://github.com/soc221b/grpc-devtools/issues/409)) ([dfc8cab](https://github.com/soc221b/grpc-devtools/commit/dfc8cabda64e0c26a36d786682810560a03ae044))
+
 ## [1.23.18](https://github.com/soc221b/grpc-devtools/compare/v1.23.17...v1.23.18) (2025-09-20)
 
 
