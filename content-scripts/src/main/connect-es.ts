@@ -16,7 +16,7 @@ export const connectEsInterceptor: Interceptor = (next) => {
                 postMessageToContentScript({
                   id,
                   methodName: req.method.name,
-                  serviceName: req.service.name,
+                  serviceName: req.service.typeName,
                   requestMetadata: Array.from(req.header.entries()).reduce(
                     (
                       acc,
@@ -34,7 +34,7 @@ export const connectEsInterceptor: Interceptor = (next) => {
               postMessageToContentScript({
                 id,
                 methodName: req.method.name,
-                serviceName: req.service.name,
+                serviceName: req.service.typeName,
                 requestMetadata: Array.from(req.header.entries()).reduce(
                   (
                     acc,
@@ -57,7 +57,7 @@ export const connectEsInterceptor: Interceptor = (next) => {
       postMessageToContentScript({
         id,
         methodName: req.method.name,
-        serviceName: req.service.name,
+        serviceName: req.service.typeName,
         requestMetadata: Array.from(req.header.entries()).reduce(
           (
             acc,
@@ -81,7 +81,7 @@ export const connectEsInterceptor: Interceptor = (next) => {
             postMessageToContentScript({
               id,
               methodName: req.method.name,
-              serviceName: req.service.name,
+              serviceName: req.service.typeName,
               responseMetadata: Array.from(res.header.entries()).reduce(
                 (
                   acc,
@@ -99,7 +99,7 @@ export const connectEsInterceptor: Interceptor = (next) => {
           postMessageToContentScript({
             id,
             methodName: req.method.name,
-            serviceName: req.service.name,
+            serviceName: req.service.typeName,
             responseMetadata: Array.from(res.header.entries()).reduce(
               (
                 acc,
@@ -118,7 +118,7 @@ export const connectEsInterceptor: Interceptor = (next) => {
       postMessageToContentScript({
         id,
         methodName: req.method.name,
-        serviceName: req.service.name,
+        serviceName: req.service.typeName,
         responseMetadata: Array.from(res.header.entries()).reduce(
           (
             acc,
@@ -134,7 +134,7 @@ export const connectEsInterceptor: Interceptor = (next) => {
       postMessageToContentScript({
         id,
         methodName: req.method.name,
-        serviceName: req.service.name,
+        serviceName: req.service.typeName,
         responseMetadata: Array.from(res.header.entries()).reduce(
           (
             acc,
