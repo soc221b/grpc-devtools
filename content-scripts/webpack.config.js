@@ -9,6 +9,13 @@ const configuration = {
     isolated: "./src/isolated/index.ts",
   },
 
+  resolve: {
+    extensions: [
+      ".ts",
+      ".js",
+    ],
+  },
+
   output: {
     clean: true,
     path: path.resolve(import.meta.dirname, "../dist/content-scripts"),
