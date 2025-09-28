@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.23.20](https://github.com/soc221b/grpc-devtools/compare/v1.23.19...v1.23.20) (2025-09-28)
+
+
+### Bug Fixes
+
+* [#129](https://github.com/soc221b/grpc-devtools/issues/129) ([5c0ed6c](https://github.com/soc221b/grpc-devtools/commit/5c0ed6c2adbcd484f02a4aa5c95ce6b442dc841f))
+* **connect-es:** service name is wrong ([#415](https://github.com/soc221b/grpc-devtools/issues/415)) ([5c0ed6c](https://github.com/soc221b/grpc-devtools/commit/5c0ed6c2adbcd484f02a4aa5c95ce6b442dc841f))
+* **deps:** update dependency @connectrpc/connect to v2.1.0 ([#312](https://github.com/soc221b/grpc-devtools/issues/312)) ([0afa9fc](https://github.com/soc221b/grpc-devtools/commit/0afa9fcd3ee620fef36a316d9d3ad3ae0aa28711))
+
 ## [1.23.19](https://github.com/soc221b/grpc-devtools/compare/v1.23.18...v1.23.19) (2025-09-25)
 
 
