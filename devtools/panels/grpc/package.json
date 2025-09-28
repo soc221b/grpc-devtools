@@ -31,7 +31,7 @@
     "zod": "4.1.11"
   },
   "devDependencies": {
-    "@swc/core": "1.13.20",
+    "@swc/core": "1.13.19",
     "@swc/jest": "0.2.39",
     "@tailwindcss/postcss": "4.1.13",
     "@types/chrome": "0.1.12",
