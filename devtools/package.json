@@ -8,7 +8,7 @@
     "build": "webpack --mode production"
   },
   "devDependencies": {
-    "@types/chrome": "0.1.14",
+    "@types/chrome": "0.1.15",
     "swc-loader": "0.2.6",
     "typescript": "5.9.2",
     "webpack": "5.102.0",
