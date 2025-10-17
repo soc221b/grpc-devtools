@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.23.22](https://github.com/soc221b/grpc-devtools/compare/v1.23.21...v1.23.22) (2025-10-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency core-js to v3.46.0 ([#439](https://github.com/soc221b/grpc-devtools/issues/439)) ([9a1cff0](https://github.com/soc221b/grpc-devtools/commit/9a1cff060d9093c4b043f81299506be417ea7352))
+* **deps:** update dependency react-tooltip to v5.30.0 ([#442](https://github.com/soc221b/grpc-devtools/issues/442)) ([f139b46](https://github.com/soc221b/grpc-devtools/commit/f139b46765d273971fbe81b65cf56289180f8acc))
+* **deps:** update dependency ua-parser-js to v2.0.6 ([#441](https://github.com/soc221b/grpc-devtools/issues/441)) ([7e08f9e](https://github.com/soc221b/grpc-devtools/commit/7e08f9efd3c43a6e32c333b6db4270fe9fbd02e0))
+
 ## [1.23.21](https://github.com/soc221b/grpc-devtools/compare/v1.23.20...v1.23.21) (2025-10-06)
 
 
