@@ -1,17 +1,17 @@
-import { isOSWindows } from "@/helper/ua";
+import { KeyboardStrategyBuilder } from "@/helper/keyboard-strategy-builder";
+import { selectKeyboardStrategy } from "@/helper/select-keyboard-strategy";
 import { useLayoutEffect } from "react";
 
 export const useDisableChromeDevtoolsFind = () => {
   useLayoutEffect(() => {
     document.documentElement.addEventListener("keydown", (e: KeyboardEvent) => {
-      if (isOSWindows()) {
-        if (e.ctrlKey && e.key === "f") {
-          e.stopPropagation();
-        }
-      } else {
-        if (e.metaKey && e.key === "f") {
-          e.stopPropagation();
-        }
+      if (
+        selectKeyboardStrategy([
+          new KeyboardStrategyBuilder("windows").withCtrl().withKey("f").build(),
+          new KeyboardStrategyBuilder("macos").withMeta().withKey("f").build(),
+        ]).isPressed(e)
+      ) {
+        e.stopPropagation();
       }
     });
   }, []);

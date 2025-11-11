@@ -1,0 +1,18 @@
+export class KeyboardStrategy {
+  constructor(
+    public readonly os: "windows" | "macos",
+    public readonly ctrl: boolean,
+    public readonly meta: boolean,
+    public readonly shift: boolean,
+    public readonly key: undefined | string,
+  ) {}
+
+  isPressed(event: KeyboardEvent): boolean {
+    if (this.ctrl !== event.ctrlKey) return false;
+    if (this.meta !== event.metaKey) return false;
+    if (this.shift !== event.shiftKey) return false;
+    if (this.key && event.key !== this.key) return false;
+
+    return true;
+  }
+}

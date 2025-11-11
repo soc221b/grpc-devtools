@@ -1,4 +1,5 @@
-import { isOSWindows } from "@/helper/ua";
+import { KeyboardStrategyBuilder } from "@/helper/keyboard-strategy-builder";
+import { selectKeyboardStrategy } from "@/helper/select-keyboard-strategy";
 import React, { useCallback, useRef, useState } from "react";
 import { Virtuoso, VirtuosoHandle } from "react-virtuoso";
 
@@ -35,21 +36,36 @@ const VirtualList = ({
   ] = useState<HTMLElement | Window | null>(null);
   const handleScrollerKeydown = useCallback(
     (e: KeyboardEvent) => {
-      if (isOSWindows() ? e.key === "Home" : e.metaKey && e.key === "ArrowUp") {
+      if (
+        selectKeyboardStrategy([
+          new KeyboardStrategyBuilder("windows").withKey("Home").build(),
+          new KeyboardStrategyBuilder("macos").withMeta().withKey("ArrowUp").build(),
+        ]).isPressed(e)
+      ) {
         e.preventDefault();
         const firstIndex = 0;
         onDone?.(firstIndex);
         scrollIntoView({
           index: firstIndex,
         });
-      } else if (isOSWindows() ? e.key === "End" : e.metaKey && e.key === "ArrowDown") {
+      } else if (
+        selectKeyboardStrategy([
+          new KeyboardStrategyBuilder("windows").withKey("End").build(),
+          new KeyboardStrategyBuilder("macos").withMeta().withKey("ArrowDown").build(),
+        ]).isPressed(e)
+      ) {
         e.preventDefault();
         const lastIndex = data.length - 1;
         onDone?.(lastIndex);
         scrollIntoView({
           index: lastIndex,
         });
-      } else if (e.key === "ArrowUp") {
+      } else if (
+        selectKeyboardStrategy([
+          new KeyboardStrategyBuilder("windows").withKey("ArrowUp").build(),
+          new KeyboardStrategyBuilder("macos").withKey("ArrowUp").build(),
+        ]).isPressed(e)
+      ) {
         e.preventDefault();
         if (currentIndex === 0) return;
         const prevIndex =
@@ -57,7 +73,12 @@ const VirtualList = ({
 
         onDone?.(prevIndex);
         scrollIntoView({ index: prevIndex });
-      } else if (e.key === "ArrowDown") {
+      } else if (
+        selectKeyboardStrategy([
+          new KeyboardStrategyBuilder("windows").withKey("ArrowDown").build(),
+          new KeyboardStrategyBuilder("macos").withKey("ArrowDown").build(),
+        ]).isPressed(e)
+      ) {
         e.preventDefault();
         if (currentIndex === data.length - 1) return;
         const nextIndex = (currentIndex ?? -1) + 1;
