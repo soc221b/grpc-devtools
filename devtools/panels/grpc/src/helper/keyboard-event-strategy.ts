@@ -11,7 +11,7 @@ export class KeyboardEventStrategy {
     if (this.ctrl !== event.ctrlKey) return false;
     if (this.meta !== event.metaKey) return false;
     if (this.shift !== event.shiftKey) return false;
-    if (this.key && event.key !== this.key) return false;
+    if (this.key && this.key !== event.key) return false;
 
     return true;
   }
