@@ -1,4 +1,4 @@
-export class KeyboardStrategy {
+export class KeyboardEventStrategy {
   constructor(
     public readonly os: "windows" | "macos",
     public readonly ctrl: boolean,

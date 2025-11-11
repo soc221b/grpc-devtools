@@ -1,6 +1,6 @@
 import { useDetail } from "@/contexts/detail-context";
-import { KeyboardStrategyBuilder } from "@/helper/keyboard-strategy-builder";
-import { selectKeyboardStrategy } from "@/helper/select-keyboard-strategy";
+import { KeyboardEventStrategyBuilder } from "@/helper/keyboard-event-strategy-builder";
+import { selectKeyboardEventStrategy } from "@/helper/select-keyboard-event-strategy";
 import { useDetailMessagesFocusedIndex } from "@/hooks/use-detail-messages-focused-index";
 import { useDetailRequestId } from "@/hooks/use-detail-request-id";
 import { useEvent } from "react-use";
@@ -19,9 +19,9 @@ export const useHotkeyEscape = () => {
     "keydown",
     (e: KeyboardEvent) => {
       if (
-        selectKeyboardStrategy([
-          new KeyboardStrategyBuilder("windows").withKey("Escape").build(),
-          new KeyboardStrategyBuilder("macos").withKey("Escape").build(),
+        selectKeyboardEventStrategy([
+          new KeyboardEventStrategyBuilder("windows").withKey("Escape").build(),
+          new KeyboardEventStrategyBuilder("macos").withKey("Escape").build(),
         ]).isPressed(e)
       ) {
         if (detail.messages.focusedIndex !== null) {

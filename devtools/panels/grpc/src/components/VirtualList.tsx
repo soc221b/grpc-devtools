@@ -1,5 +1,5 @@
-import { KeyboardStrategyBuilder } from "@/helper/keyboard-strategy-builder";
-import { selectKeyboardStrategy } from "@/helper/select-keyboard-strategy";
+import { KeyboardEventStrategyBuilder } from "@/helper/keyboard-event-strategy-builder";
+import { selectKeyboardEventStrategy } from "@/helper/select-keyboard-event-strategy";
 import React, { useCallback, useRef, useState } from "react";
 import { Virtuoso, VirtuosoHandle } from "react-virtuoso";
 
@@ -37,9 +37,9 @@ const VirtualList = ({
   const handleScrollerKeydown = useCallback(
     (e: KeyboardEvent) => {
       if (
-        selectKeyboardStrategy([
-          new KeyboardStrategyBuilder("windows").withKey("Home").build(),
-          new KeyboardStrategyBuilder("macos").withMeta().withKey("ArrowUp").build(),
+        selectKeyboardEventStrategy([
+          new KeyboardEventStrategyBuilder("windows").withKey("Home").build(),
+          new KeyboardEventStrategyBuilder("macos").withMeta().withKey("ArrowUp").build(),
         ]).isPressed(e)
       ) {
         e.preventDefault();
@@ -49,9 +49,9 @@ const VirtualList = ({
           index: firstIndex,
         });
       } else if (
-        selectKeyboardStrategy([
-          new KeyboardStrategyBuilder("windows").withKey("End").build(),
-          new KeyboardStrategyBuilder("macos").withMeta().withKey("ArrowDown").build(),
+        selectKeyboardEventStrategy([
+          new KeyboardEventStrategyBuilder("windows").withKey("End").build(),
+          new KeyboardEventStrategyBuilder("macos").withMeta().withKey("ArrowDown").build(),
         ]).isPressed(e)
       ) {
         e.preventDefault();
@@ -61,9 +61,9 @@ const VirtualList = ({
           index: lastIndex,
         });
       } else if (
-        selectKeyboardStrategy([
-          new KeyboardStrategyBuilder("windows").withKey("ArrowUp").build(),
-          new KeyboardStrategyBuilder("macos").withKey("ArrowUp").build(),
+        selectKeyboardEventStrategy([
+          new KeyboardEventStrategyBuilder("windows").withKey("ArrowUp").build(),
+          new KeyboardEventStrategyBuilder("macos").withKey("ArrowUp").build(),
         ]).isPressed(e)
       ) {
         e.preventDefault();
@@ -74,9 +74,9 @@ const VirtualList = ({
         onDone?.(prevIndex);
         scrollIntoView({ index: prevIndex });
       } else if (
-        selectKeyboardStrategy([
-          new KeyboardStrategyBuilder("windows").withKey("ArrowDown").build(),
-          new KeyboardStrategyBuilder("macos").withKey("ArrowDown").build(),
+        selectKeyboardEventStrategy([
+          new KeyboardEventStrategyBuilder("windows").withKey("ArrowDown").build(),
+          new KeyboardEventStrategyBuilder("macos").withKey("ArrowDown").build(),
         ]).isPressed(e)
       ) {
         e.preventDefault();
