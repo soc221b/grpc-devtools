@@ -1,7 +1,9 @@
 import { isOSWindows } from "@/helper/ua";
 import { KeyboardEventStrategy } from "./keyboard-event-strategy";
 
-export const selectKeyboardEventStrategy = (strategies: KeyboardEventStrategy[]): KeyboardEventStrategy => {
+export const selectKeyboardEventStrategy = (
+  strategies: KeyboardEventStrategy[],
+): KeyboardEventStrategy => {
   let keyboardEventStrategy: undefined | KeyboardEventStrategy;
 
   if (isOSWindows()) {
