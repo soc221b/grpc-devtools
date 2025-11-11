@@ -8,9 +8,10 @@ export class KeyboardEventStrategy {
   ) {}
 
   isPressed(event: KeyboardEvent): boolean {
-    if (this.ctrl !== event.ctrlKey) return false;
-    if (this.meta !== event.metaKey) return false;
-    if (this.shift !== event.shiftKey) return false;
+    // we don't pass these keys into Cypress.trigger, so it maybe undefined
+    if (this.ctrl !== !!event.ctrlKey) return false;
+    if (this.meta !== !!event.metaKey) return false;
+    if (this.shift !== !!event.shiftKey) return false;
     if (this.key && this.key !== event.key) return false;
 
     return true;
