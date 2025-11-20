@@ -28,6 +28,6 @@
     "prettier-plugin-organize-imports": "4.3.0",
     "prettier-plugin-packagejson": "2.5.19",
     "prettier-plugin-sort-json": "4.1.1",
-    "start-server-and-test": "2.1.2"
+    "start-server-and-test": "2.1.3"
   }
 }
