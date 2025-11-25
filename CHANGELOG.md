@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.23.24](https://github.com/soc221b/grpc-devtools/compare/v1.23.23...v1.23.24) (2025-11-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-virtuoso to v4.15.0 ([#493](https://github.com/soc221b/grpc-devtools/issues/493)) ([8d084c8](https://github.com/soc221b/grpc-devtools/commit/8d084c8f6bddc2251530ddea40e37c96acdfa0eb))
+* **deps:** update dependency zod to v4.1.13 ([#491](https://github.com/soc221b/grpc-devtools/issues/491)) ([2cefe72](https://github.com/soc221b/grpc-devtools/commit/2cefe72e8cabfb75534e716dfb7317681f64aaae))
+
 ## [1.23.23](https://github.com/soc221b/grpc-devtools/compare/v1.23.22...v1.23.23) (2025-11-22)
 
 
