@@ -1,4 +1,15 @@
 {
+  "chat.promptFilesRecommendations": {
+    "speckit.constitution": true,
+    "speckit.implement": true,
+    "speckit.plan": true,
+    "speckit.specify": true,
+    "speckit.tasks": true
+  },
+  "chat.tools.terminal.autoApprove": {
+    ".specify/scripts/bash/": true,
+    ".specify/scripts/powershell/": true
+  },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true
 }
