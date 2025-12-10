@@ -1,0 +1,67 @@
+name: grpc-panel-ci
+
+on:
+  pull_request:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  grpc-panel:
+    name: grpc panel checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck grpc panel
+        run: npm run -w devtools/panels/grpc typecheck --if-present
+
+      - name: Test grpc panel
+        run: npm run -w devtools/panels/grpc test --if-present
+
+      - name: Build grpc panel
+        run: npm run -w devtools/panels/grpc build --if-present
+name: gRPC panel CI
+
+on:
+  pull_request:
+    paths:
+      - 'devtools/panels/grpc/**'
+  push:
+    paths:
+      - 'devtools/panels/grpc/**'
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install
+        run: npm ci
+
+      - name: Typecheck (gRPC panel)
+        run: npm run -w devtools/panels/grpc typecheck
+
+      - name: Jest tests (gRPC panel)
+        run: npm run -w devtools/panels/grpc test --if-present
+
+      - name: Build (gRPC panel)
+        run: npm run -w devtools/panels/grpc build

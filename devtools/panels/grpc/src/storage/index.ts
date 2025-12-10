@@ -6,7 +6,7 @@ export type Storage = {
 const chromeLocalStorage: Storage = {
   async get(key) {
     try {
-      return chrome.storage.local.get(key).then((result) => result[key] ?? null);
+      return chrome.storage.local.get(key).then((result) => (result[key] ?? null) as string | null);
     } catch {
       return null;
     }

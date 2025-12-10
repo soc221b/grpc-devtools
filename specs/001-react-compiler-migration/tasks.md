@@ -6,18 +6,18 @@ Plan: `/specs/001-react-compiler-migration/plan.md`
 
 Phase 1: Setup (project initialization)
 
-- [ ] T001 [P] Create Babel config file `devtools/panels/grpc/.babelrc.json` (use `specs/001-react-compiler-migration/contracts/babelrc.sample.json` as a template) — `devtools/panels/grpc/.babelrc.json`
-- [ ] T002 [P] Add typecheck npm script in `devtools/panels/grpc/package.json` (`"typecheck": "tsc -p ./tsconfig.json --noEmit"`) — `devtools/panels/grpc/package.json`
-- [ ] T003 [P] Add a CI step to run `typecheck` for `devtools/panels/grpc` (update root CI config or package workspace scripts) — repository CI config file (e.g., `.github/workflows/ci.yml`)
+ [x] T001 [P] Create Babel config file `devtools/panels/grpc/.babelrc.json` (use `specs/001-react-compiler-migration/contracts/babelrc.sample.json` as a template) — `devtools/panels/grpc/.babelrc.json`
+ [x] T002 [P] Add typecheck npm script in `devtools/panels/grpc/package.json` (`"typecheck": "tsc -p ./tsconfig.json --noEmit"`) — `devtools/panels/grpc/package.json`
+ [x] T003 [P] Add a CI step to run `typecheck` for `devtools/panels/grpc` (update root CI config or package workspace scripts) — repository CI config file (e.g., `.github/workflows/ci.yml`)
 - [ ] T004 [P] Document quickstart steps in `specs/001-react-compiler-migration/quickstart.md` (ensure commands are copyable) — `specs/001-react-compiler-migration/quickstart.md`
 
-Phase 2: Foundational tasks (blocking prerequisites)
-
-- [ ] T005 Update `devtools/panels/grpc/webpack.config.js` to use `babel-loader` for `.ts/.tsx/.js/.jsx` files and reference `devtools/panels/grpc/.babelrc.json` — `devtools/panels/grpc/webpack.config.js`
+ [x] T005 Update `devtools/panels/grpc/webpack.config.js` to use `babel-loader` for `.ts/.tsx/.js/.jsx` files and reference `devtools/panels/grpc/.babelrc.json` — `devtools/panels/grpc/webpack.config.js`
+ [x] T006 Update `devtools/panels/grpc/jest.config.ts` to use `babel-jest` as the transformer for TS/JS files — `devtools/panels/grpc/jest.config.ts`
+ [x] T007 Add `babel-jest` and `babel-loader` as devDependencies in `devtools/panels/grpc/package.json` — `devtools/panels/grpc/package.json`
 - [ ] T006 Update `devtools/panels/grpc/jest.config.ts` to use `babel-jest` as the transformer for TS/JS files — `devtools/panels/grpc/jest.config.ts`
 - [ ] T007 Add `babel-jest` and `babel-loader` as devDependencies in `devtools/panels/grpc/package.json` — `devtools/panels/grpc/package.json`
-- [ ] T008 Add a lightweight performance smoke test (Jest or Cypress) to capture p95 before/after changes — `specs/001-react-compiler-migration/perf-smoke.test.js`
-
+ [x] T009 [US1] Update `devtools/panels/grpc/package.json` to include Babel packages and ensure no SWC transform remains (remove `@swc/core` or swc-loader entries if present) — `devtools/panels/grpc/package.json`
+ [x] T016 [US3] Add `babel-plugin-react-compiler` to `devtools/panels/grpc/package.json` and add plugin entry in `devtools/panels/grpc/.babelrc.json` behind an env gate (`process.env.REACT_COMPILER`) — `devtools/panels/grpc/package.json`, `devtools/panels/grpc/.babelrc.json`
 Phase 3: User Story Implementation (priority order)
 
 - [ ] T009 [US1] Update `devtools/panels/grpc/package.json` to include Babel packages and ensure no SWC transform remains (remove `@swc/core` or swc-loader entries if present) — `devtools/panels/grpc/package.json`

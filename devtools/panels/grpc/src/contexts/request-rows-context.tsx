@@ -3,9 +3,12 @@ import {
   RequestRowsAction,
   requestRowsReducer,
 } from "@/reducers/request-rows-reducer";
+import type { DeepReadonly } from "ts-essentials";
 import React, { createContext, useContext, useReducer } from "react";
 
-export const RequestRowsContext = createContext(initialRequestRows);
+export const RequestRowsContext = createContext<DeepReadonly<typeof initialRequestRows>>(
+  initialRequestRows as unknown as DeepReadonly<typeof initialRequestRows>,
+);
 
 export const RequestRowsDispatchContext = createContext<React.Dispatch<RequestRowsAction>>(
   () => {},

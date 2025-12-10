@@ -1,0 +1,14 @@
+
+> test
+> jest --runInBand
+
+PASS src/helper/__tests__/transform-timestamp-like-object-to-iso8601.ts
+PASS src/interactors/__tests__/filter-request-rows.ts
+PASS src/views/main/request-rows/__tests__/get-class-name.test.ts
+PASS src/helper/__tests__/stringify-preview.ts
+
+Test Suites: 4 passed, 4 total
+Tests:       60 passed, 60 total
+Snapshots:   0 total
+Time:        1.754 s
+Ran all test suites.

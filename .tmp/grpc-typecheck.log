@@ -1,0 +1,19 @@
+
+> typecheck
+> tsc -p ./tsconfig.json --noEmit
+
+src/hooks/use-filtered-request-rows.ts(11,68): error TS2345: Argument of type 'readonly { readonly id: string; readonly methodName: string; readonly serviceName: string; readonly requestMetadata: { readonly [x: string]: string; }; readonly responseMetadata?: { readonly [x: string]: string; }; readonly errorMetadata?: { ...; }; readonly messages: readonly ({ ...; } | { ...; })[]; }[]' is not assignable to parameter of type 'readonly Readonly<RequestRow>[]'.
+  Type '{ readonly id: string; readonly methodName: string; readonly serviceName: string; readonly requestMetadata: { readonly [x: string]: string; }; readonly responseMetadata?: { readonly [x: string]: string; }; readonly errorMetadata?: { ...; }; readonly messages: readonly ({ ...; } | { ...; })[]; }' is not assignable to type 'Readonly<RequestRow>' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
+    Types of property 'messages' are incompatible.
+      The type 'readonly ({ readonly type: "request"; readonly data: { readonly [x: string]: unknown; }; readonly timestamp: number; } | { readonly type: "response"; readonly data: { readonly [x: string]: unknown; }; readonly timestamp: number; })[]' is 'readonly' and cannot be assigned to the mutable type '({ type: "request"; data: Record<string, unknown>; timestamp: number; } | { type: "response"; data: Record<string, unknown>; timestamp: number; })[]'.
+src/views/header/toolbar/Download.tsx(11,41): error TS2345: Argument of type 'readonly { readonly id: string; readonly methodName: string; readonly serviceName: string; readonly requestMetadata: { readonly [x: string]: string; }; readonly responseMetadata?: { readonly [x: string]: string; }; readonly errorMetadata?: { ...; }; readonly messages: readonly ({ ...; } | { ...; })[]; }[]' is not assignable to parameter of type 'readonly Readonly<RequestRow>[]'.
+  Type '{ readonly id: string; readonly methodName: string; readonly serviceName: string; readonly requestMetadata: { readonly [x: string]: string; }; readonly responseMetadata?: { readonly [x: string]: string; }; readonly errorMetadata?: { ...; }; readonly messages: readonly ({ ...; } | { ...; })[]; }' is not assignable to type 'Readonly<RequestRow>' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
+    Types of property 'messages' are incompatible.
+      The type 'readonly ({ readonly type: "request"; readonly data: { readonly [x: string]: unknown; }; readonly timestamp: number; } | { readonly type: "response"; readonly data: { readonly [x: string]: unknown; }; readonly timestamp: number; })[]' is 'readonly' and cannot be assigned to the mutable type '({ type: "request"; data: Record<string, unknown>; timestamp: number; } | { type: "response"; data: Record<string, unknown>; timestamp: number; })[]'.
+npm error Lifecycle script `typecheck` failed with error:
+npm error code 2
+npm error path /Users/yung-yuanchang/Documents/self/grpc-devtools/devtools/panels/grpc
+npm error workspace grpc
+npm error location /Users/yung-yuanchang/Documents/self/grpc-devtools/devtools/panels/grpc
+npm error command failed
+npm error command sh -c tsc -p ./tsconfig.json --noEmit

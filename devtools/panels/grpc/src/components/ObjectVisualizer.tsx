@@ -29,12 +29,20 @@ const customizedChromeDark = {
   OBJECT_VALUE_BOOLEAN_COLOR: "#9980FF",
 };
 
-const ObjectVisualizer = ({ object, rootName }: { object: any; rootName?: string }) => {
-  const [
-    data,
-    setData,
-  ] = useState(object);
-  if (stringify(object) !== stringify(data)) {
+const ObjectVisualizer: React.FC<{ object: unknown; rootName?: string }> = ({ object, rootName }) => {
+  const [data, setData] = useState<unknown>(object);
+  const safeStableStringify = (v: unknown) => {
+    try {
+      return stringify(v as any);
+    } catch {
+      try {
+        return JSON.stringify(v);
+      } catch {
+        return String(v);
+      }
+    }
+  };
+  if (safeStableStringify(object) !== safeStableStringify(data)) {
     setData(object);
   }
   useLayoutEffect(() => {
@@ -56,15 +64,12 @@ const ObjectVisualizer = ({ object, rootName }: { object: any; rootName?: string
       <ObjectInspector
         expandLevel={10}
         sortObjectKeys={true}
-        theme={theme}
-        data={data}
+        theme={theme as any}
+        data={data as any}
         name={rootName}
-      ></ObjectInspector>
+      />
     );
-  }, [
-    data,
-    theme,
-  ]);
+  }, [data, theme, rootName]);
   const container = useMemo(() => {
     return (
       <div
@@ -79,10 +84,7 @@ const ObjectVisualizer = ({ object, rootName }: { object: any; rootName?: string
         </div>
       </div>
     );
-  }, [
-    containerHeight,
-    Inspector,
-  ]);
+  }, [containerHeight, Inspector, isPreferDark]);
   return container;
 };
 export default ObjectVisualizer;

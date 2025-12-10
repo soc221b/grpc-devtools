@@ -9,7 +9,7 @@ import useIsFocusIn from "@/hooks/use-is-focus-in";
 import React, { useEffect, useRef, useState } from "react";
 import { useKeyPressEvent, useWindowSize } from "react-use";
 import { getClassName as _getClassName } from "./request-rows/get-class-name";
-import RequestRow from "./request-rows/RequestRow";
+import RequestRowComponent from "./request-rows/RequestRow";
 
 const RequestRows = ({
   headerHeight,
@@ -52,14 +52,14 @@ const RequestRows = ({
   };
 
   const renderItem = (index: number) =>
-    typeof filteredRequestRows[index] !== "undefined" ? (
-      <RequestRow
+      typeof filteredRequestRows[index] !== "undefined" ? (
+      <RequestRowComponent
         data-request-row-id={filteredRequestRows[index]?.id}
         key={filteredRequestRows[index]!.id}
         requestRow={filteredRequestRows[index]!}
         className={getClassName(filteredRequestRows[index], index)}
         onPointerDown={() => setDetailRequestId(filteredRequestRows[index]!.id)}
-      ></RequestRow>
+      ></RequestRowComponent>
     ) : (
       <></>
     );
