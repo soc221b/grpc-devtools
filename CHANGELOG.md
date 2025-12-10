@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.23.26](https://github.com/soc221b/grpc-devtools/compare/v1.23.25...v1.23.26) (2025-12-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ua-parser-js to v2.0.7 ([#509](https://github.com/soc221b/grpc-devtools/issues/509)) ([043ccbc](https://github.com/soc221b/grpc-devtools/commit/043ccbcfa631822a086914644a2a7306b587c36e))
+
 ## [1.23.25](https://github.com/soc221b/grpc-devtools/compare/v1.23.24...v1.23.25) (2025-12-09)
 
 
