@@ -101,18 +101,25 @@ const VirtualList = ({
       });
     });
   }
+  // store event listener so we can remove it cleanly
+  const keydownListenerRef = useRef<EventListener | null>(null);
   const scrollerRef = React.useCallback(
     (element: HTMLElement | Window | null) => {
       if (element) {
         setListRef(element);
-        listRef?.addEventListener("keydown", handleScrollerKeydown as any);
+        // create a stable EventListener that forwards to our KeyboardEvent handler
+        const listener: EventListener = (ev) => handleScrollerKeydown(ev as unknown as KeyboardEvent);
+        keydownListenerRef.current = listener;
+        element.addEventListener("keydown", listener);
       } else {
-        listRef?.removeEventListener("keydown", handleScrollerKeydown as any);
+        const prev = keydownListenerRef.current;
+        if (prev && listRef) {
+          listRef.removeEventListener("keydown", prev);
+        }
+        keydownListenerRef.current = null;
       }
     },
-    [
-      handleScrollerKeydown,
-    ],
+    [handleScrollerKeydown, listRef],
   );
 
   return (

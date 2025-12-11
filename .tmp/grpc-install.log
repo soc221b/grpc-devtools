@@ -1,0 +1,40 @@
+npm verbose cli /Users/yung-yuanchang/.nvm/versions/node/v24.11.1/bin/node /Users/yung-yuanchang/.nvm/versions/node/v24.11.1/bin/npm
+npm info using npm@11.6.2
+npm info using node@v24.11.1
+npm verbose title npm install
+npm verbose argv "install" "--workspace" "devtools/panels/grpc" "--loglevel" "verbose"
+npm verbose logfile logs-max:10 dir:/Users/yung-yuanchang/.npm/_logs/2025-12-09T12_13_43_549Z-
+npm verbose logfile /Users/yung-yuanchang/.npm/_logs/2025-12-09T12_13_43_549Z-debug-0.log
+npm http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 1200ms
+npm http cache https://registry.npmjs.org/brace-expansion 25ms (cache hit)
+npm http cache https://registry.npmjs.org/on-headers 25ms (cache hit)
+npm http cache https://registry.npmjs.org/js-yaml 28ms (cache hit)
+npm http cache https://registry.npmjs.org/node-forge 29ms (cache hit)
+npm http cache https://registry.npmjs.org/glob 36ms (cache hit)
+npm http cache https://registry.npmjs.org/minimatch 5ms (cache hit)
+npm http cache https://registry.npmjs.org/@istanbuljs%2fload-nyc-config 4ms (cache hit)
+npm http cache https://registry.npmjs.org/cosmiconfig 4ms (cache hit)
+npm http cache https://registry.npmjs.org/jest-config 9ms (cache hit)
+npm http cache https://registry.npmjs.org/@jest%2freporters 24ms (cache hit)
+npm http cache https://registry.npmjs.org/jest-runtime 29ms (cache hit)
+npm http cache https://registry.npmjs.org/selfsigned 5ms (cache hit)
+npm http cache https://registry.npmjs.org/compression 4ms (cache hit)
+npm http cache https://registry.npmjs.org/webpack-dev-server 4ms (cache hit)
+
+up to date, audited 1113 packages in 2s
+
+179 packages are looking for funding
+  run `npm fund` for details
+
+6 vulnerabilities (3 low, 1 moderate, 2 high)
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+npm verbose cwd /Users/yung-yuanchang/Documents/self/grpc-devtools
+npm verbose os Darwin 23.5.0
+npm verbose node v24.11.1
+npm verbose npm  v11.6.2
+npm verbose exit 0
+npm info ok

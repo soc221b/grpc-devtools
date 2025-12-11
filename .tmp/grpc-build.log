@@ -1,0 +1,43 @@
+
+> build
+> cross-env NODE_ENV=production webpack
+
+asset main.js 1.07 MiB [emitted] [minimized] [big] (name: main) 2 related assets
+asset index.html 859 bytes [compared for emit]
+orphan modules 1.92 MiB [orphan] 591 modules
+runtime modules 28 KiB 14 modules
+cacheable modules 2.34 MiB
+  modules by path ../../../node_modules/ 1.18 MiB 74 modules
+  modules by path ./src/ 1.16 MiB
+    modules by path ./src/assets/*.css 52.9 KiB
+      ./src/assets/index.css 2.49 KiB [built] [code generated]
+      ../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/postcss-loader/dist/cjs.js!./src/assets/index.css 50.4 KiB [built] [code generated]
+    modules by path ./src/components/ 6.53 KiB
+      ./src/components/rate/index.css 2.53 KiB [built] [code generated]
+      ../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/postcss-loader/dist/cjs.js!./src/components/rate/index.css 4 KiB [built] [code generated]
+    modules by path ./src/protos/*.js 88.9 KiB
+      ./src/protos/error_details_pb.js 81.4 KiB [built] [code generated]
+      ./src/protos/status_pb.js 7.47 KiB [built] [code generated]
+    ./src/main.tsx + 231 modules 1.02 MiB [built] [code generated]
+
+WARNING in ./src/views/main/RequestRows.tsx 41:81-100
+export 'default' (imported as 'RequestRowComponent') was not found in './request-rows/RequestRow' (module has no exports)
+ @ ./src/views/Main.tsx 7:0-45 34:36-47
+ @ ./src/App.tsx 14:0-32 35:26-30
+ @ ./src/main.tsx 10:0-24 12:29-32
+
+WARNING in asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+This can impact web performance.
+Assets: 
+  main.js (1.07 MiB)
+
+WARNING in entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+Entrypoints:
+  main (1.07 MiB)
+      main.js
+
+WARNING in webpack performance recommendations: 
+You can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.
+For more info visit https://webpack.js.org/guides/code-splitting/
+
+webpack 5.103.0 compiled with 4 warnings in 10243 ms

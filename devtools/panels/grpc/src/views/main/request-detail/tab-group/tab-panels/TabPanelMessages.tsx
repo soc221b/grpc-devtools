@@ -19,6 +19,7 @@ import {
   defaultMessagesVirtualListInitialHeight,
   useVirtualListInitialHeight,
 } from "./tab-panel-messages/use-virtual-list-initial-height";
+import { mapMessagesToMutable } from "@/helper/mutable";
 
 const formatter = Intl.DateTimeFormat("en-US", {
   hour12: false,
@@ -96,8 +97,8 @@ const TabPanelMessages = ({ isFocusIn: _isFocusIn }: { isFocusIn: boolean }) => 
     ? isEOFMessage(focusedMessage)
       ? "EOF"
       : detail.messages.isISO8601
-        ? JSON.parse(stringify(transformTimestampLikeObjectToISO8601(focusedMessage.data)))
-        : JSON.parse(stringify(focusedMessage.data))
+        ? JSON.parse(String(stringify(transformTimestampLikeObjectToISO8601(focusedMessage.data))))
+        : JSON.parse(String(stringify(focusedMessage.data)))
     : "";
 
   const renderItem = (index: number) => {
@@ -284,7 +285,7 @@ const TabPanelMessages = ({ isFocusIn: _isFocusIn }: { isFocusIn: boolean }) => 
           <VirtualList
             id="messages"
             data-detail-messages
-            data={requestRow.messages}
+            data={mapMessagesToMutable(requestRow.messages)}
             currentIndex={currentIndex}
             renderItem={renderItem}
             style={{ height: "100%" }}
@@ -312,6 +313,7 @@ const TabPanelMessages = ({ isFocusIn: _isFocusIn }: { isFocusIn: boolean }) => 
         ) : (
           <></>
         )}
+      // (mappings are provided by `@/helper/mutable`)
       </div>
       {focusedMessage && (
         <>

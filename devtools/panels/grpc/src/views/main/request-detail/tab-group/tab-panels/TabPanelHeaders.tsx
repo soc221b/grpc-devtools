@@ -76,11 +76,11 @@ const TabPanelRequest = ({ isFocusIn }: { isFocusIn: boolean }) => {
           const details = status
             .getDetailsList()
             .filter((details) => mapTypeUrlToErrorDetailClass[details.getTypeUrl()])
-            .map((details) => ({
-              [details.getTypeUrl().split(".").pop()]: mapTypeUrlToErrorDetailClass[
-                details.getTypeUrl()
-              ]!.deserializeBinary(details.getValue_asU8()).toObject(),
-            }));
+              .map((details) => ({
+                [String(details.getTypeUrl().split(".").pop())]: mapTypeUrlToErrorDetailClass[
+                  details.getTypeUrl()
+                ]!.deserializeBinary(details.getValue_asU8()).toObject(),
+              }));
           return {
             ...requestRow?.errorMetadata,
             "grpc-status-details-bin": JSON.stringify({

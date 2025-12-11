@@ -40,12 +40,8 @@ export const useInitialize = () => {
   ]);
   useEffect(() => {
     if (__ENV__.MODE === "production") {
-      initDevtools();
-      async function initDevtools() {
-        connect();
-        function connect() {
-          chrome.runtime.onMessage.addListener(_handleMessage);
-        }
+      return initDevtools();
+      function initDevtools() {
         function _handleMessage(message: any, sender: any, sendResponse: any) {
           if (message === null) return;
           if (typeof message !== "object") return;
@@ -59,16 +55,22 @@ export const useInitialize = () => {
             });
           }
         }
+        function connect() {
+          chrome.runtime.onMessage.addListener(_handleMessage);
+        }
+        connect();
+        return () => chrome.runtime.onMessage.removeListener(_handleMessage);
       }
     } else if (
       __ENV__.MODE === "development" &&
       new URLSearchParams(location.search).get("random")
     ) {
-      window.addEventListener("beforeunload", () => {
+      const _beforeUnloadHandler = () => {
         if (configRef.current.shouldPreserveLog === false) {
           requestRowsDispatch({ type: "clearedAll" });
         }
-      });
+      };
+      window.addEventListener("beforeunload", _beforeUnloadHandler);
 
       Array(5000)
         .fill(null)
@@ -174,9 +176,9 @@ export const useInitialize = () => {
                   timestamp: Date.now(),
                 })),
             ].concat([
-              {
+                {
                 type: "response" as const,
-                data: { EOF: Date.now() } as any,
+                data: { EOF: Date.now() } as Record<string, unknown>,
                 timestamp: Date.now(),
               },
             ]),
@@ -204,6 +206,9 @@ export const useInitialize = () => {
             }
           }, index * 10);
         });
+      return () => {
+        window.removeEventListener("beforeunload", _beforeUnloadHandler);
+      };
     } else {
       window.addEventListener("message", _handleMessage);
       return () => window.removeEventListener("message", _handleMessage);

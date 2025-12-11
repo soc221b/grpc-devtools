@@ -26,7 +26,7 @@ const configuration = {
       {
         test: /\.ts$/,
         exclude: /node_modules/,
-        loader: "swc-loader",
+        loader: "babel-loader",
       },
     ],
   },

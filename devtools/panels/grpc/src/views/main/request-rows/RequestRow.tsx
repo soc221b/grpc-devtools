@@ -1,5 +1,5 @@
 import { useDetail } from "@/contexts/detail-context";
-import { RequestRow } from "@/entities/request-row";
+import type { RequestRow } from "@/entities/request-row";
 import { useDetailRequestId } from "@/hooks/use-detail-request-id";
 import { VirtualElement } from "@popperjs/core";
 import React, { useRef, useState } from "react";
@@ -32,7 +32,7 @@ const RequestRow = ({
   const [
     popperElement,
     setPopperElement,
-  ] = useState(null);
+  ] = useState<HTMLElement | null>(null);
   const [
     isContextMenuVisible,
     toggleIsContextMenuVisible,
@@ -40,7 +40,7 @@ const RequestRow = ({
   const [
     virtualElement,
     setVirtualElement,
-  ] = useState({
+  ] = useState<VirtualElement | null>({
     getBoundingClientRect: generateGetBoundingClientRect(),
   });
   const lastMouseMoveEvent = useRef({ clientX: 0, clientY: 0 });
@@ -60,7 +60,7 @@ const RequestRow = ({
     toggleIsContextMenuVisible(true);
     e.preventDefault();
   };
-  const { styles, attributes } = usePopper(virtualElement, popperElement);
+  const { styles, attributes } = usePopper(virtualElement ?? undefined, popperElement ?? undefined);
   useClickAway({ current: popperElement }, () => {
     toggleIsContextMenuVisible(false);
   });
@@ -81,8 +81,8 @@ const RequestRow = ({
         <section
           ref={setPopperElement}
           className="z-50"
-          style={styles.popper}
-          {...attributes.popper}
+          style={styles['popper']}
+          {...attributes['popper']}
         >
           <ContextMenu
             requestRow={requestRow}

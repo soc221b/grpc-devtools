@@ -40,7 +40,12 @@ const configuration = {
       {
         test: /\.m?[jt]sx?$/,
         exclude: /node_modules/,
-        loader: "swc-loader",
+        use: {
+          loader: "babel-loader",
+          options: {
+            cacheDirectory: true
+          }
+        }
       },
     ],
   },

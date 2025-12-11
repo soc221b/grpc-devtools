@@ -1,0 +1,17 @@
+devtools/panels/grpc/src/components/ReadonlyPre.tsx:13:  object: any;
+devtools/panels/grpc/src/components/ReadonlyPre.tsx:18:  const noop = (e: any) => {
+devtools/panels/grpc/src/components/VirtualList.tsx:108:        listRef?.addEventListener("keydown", handleScrollerKeydown as any);
+devtools/panels/grpc/src/components/VirtualList.tsx:110:        listRef?.removeEventListener("keydown", handleScrollerKeydown as any);
+devtools/panels/grpc/src/components/ObjectVisualizer.tsx:32:const ObjectVisualizer = ({ object, rootName }: { object: any; rootName?: string }) => {
+devtools/panels/grpc/src/hooks/use-initialize.ts:45:        function _handleMessage(message: any, sender: any, sendResponse: any) {
+devtools/panels/grpc/src/hooks/use-initialize.ts:181:                data: { EOF: Date.now() } as any,
+devtools/panels/grpc/src/hooks/use-initialize.ts:220:    function handleUnload(message: any) {
+devtools/panels/grpc/src/hooks/use-initialize.ts:233:    function handleRequestRow(message: any) {
+devtools/panels/grpc/src/hooks/use-initialize.ts:243:    function saveRequestRow(payload: any) {
+devtools/panels/grpc/src/views/main/request-rows/request-row/ContextMenu.tsx:23:    function stringifyAndIndent(value: any) {
+devtools/panels/grpc/src/views/main/request-rows/RequestRow.tsx:63:  const { styles, attributes } = usePopper(virtualElement as any, popperElement as any);
+devtools/panels/grpc/src/views/main/request-rows/RequestRow.tsx:82:          ref={setPopperElement as any}
+devtools/panels/grpc/src/views/main/request-rows/RequestRow.tsx:84:          style={(styles as any).popper}
+devtools/panels/grpc/src/views/main/request-rows/RequestRow.tsx:85:          {...(attributes as any).popper}
+devtools/panels/grpc/src/views/main/request-detail/tab-group/tab-panels/TabPanelHeaders.tsx:25:      new (...args: any[]): T;
+devtools/panels/grpc/src/helper/stringify-preview.ts:1:export const stringifyPreview = (object: any, length: number): string => {
