@@ -20,7 +20,7 @@
   "devDependencies": {
     "cross-zip": "4.0.1",
     "cy-verify-downloads": "0.3.0",
-    "cypress": "15.7.1",
+    "cypress": "15.8.1",
     "cypress-file-upload": "5.0.8",
     "cypress-network-idle": "1.15.0",
     "prettier": "3.6.2",
