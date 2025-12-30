@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.23.28](https://github.com/soc221b/grpc-devtools/compare/v1.23.27...v1.23.28) (2025-12-30)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-virtuoso to v4.18.0 ([#526](https://github.com/soc221b/grpc-devtools/issues/526)) ([a31a8da](https://github.com/soc221b/grpc-devtools/commit/a31a8da56dc7b4cb4f97dc695820fca47a79cadc))
+* **deps:** update dependency react-virtuoso to v4.18.1 ([#528](https://github.com/soc221b/grpc-devtools/issues/528)) ([2d401c6](https://github.com/soc221b/grpc-devtools/commit/2d401c6a4ddf5994033dc933313fa95c180ba033))
+
 ## [1.23.27](https://github.com/soc221b/grpc-devtools/compare/v1.23.26...v1.23.27) (2025-12-20)
 
 
