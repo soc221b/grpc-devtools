@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.23.30](https://github.com/soc221b/grpc-devtools/compare/v1.23.29...v1.23.30) (2026-01-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency zod to v4.3.4 ([#533](https://github.com/soc221b/grpc-devtools/issues/533)) ([b2029ab](https://github.com/soc221b/grpc-devtools/commit/b2029ab212805e5cae2377e504a03caee2ca061a))
+* **deps:** update dependency zod to v4.3.5 ([#535](https://github.com/soc221b/grpc-devtools/issues/535)) ([383ef93](https://github.com/soc221b/grpc-devtools/commit/383ef9385cca4518ecad9aeb62c54e5a00b8e303))
+
 ## [1.23.29](https://github.com/soc221b/grpc-devtools/compare/v1.23.28...v1.23.29) (2025-12-31)
 
 
