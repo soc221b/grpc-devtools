@@ -13,7 +13,7 @@
     "@connectrpc/connect": "2.1.0",
     "@connectrpc/connect-express": "2.1.1",
     "@connectrpc/connect-node": "2.1.1",
-    "cors": "2.8.5",
+    "cors": "2.8.6",
     "express": "5.2.1",
     "rxjs": "7.8.2"
   },
