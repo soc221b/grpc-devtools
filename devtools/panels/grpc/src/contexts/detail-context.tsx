@@ -27,6 +27,28 @@ export const DetailProvider = ({ children }: { children?: JSX.Element }) => {
     detail,
     [
       "messages",
+      "isStructValue",
+    ],
+    (isStructValue: boolean) => {
+      if (isStructValue === detail.messages.isStructValue) return;
+      dispatch({ type: "toggleIsStructValue" });
+    },
+  );
+  usePersistReducerState(
+    detail,
+    [
+      "messages",
+      "isRemoveListSuffix",
+    ],
+    (isRemoveListSuffix: boolean) => {
+      if (isRemoveListSuffix === detail.messages.isRemoveListSuffix) return;
+      dispatch({ type: "toggleIsRemoveListSuffix" });
+    },
+  );
+  usePersistReducerState(
+    detail,
+    [
+      "messages",
       "isPreview",
     ],
     (isPreview: boolean) => {
