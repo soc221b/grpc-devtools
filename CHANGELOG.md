@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.23.30](https://github.com/soc221b/grpc-devtools/compare/v1.23.29...v1.23.30) (2026-02-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency core-js to v3.48.0 ([#561](https://github.com/soc221b/grpc-devtools/issues/561)) ([1569b54](https://github.com/soc221b/grpc-devtools/commit/1569b548b1a3e894c0057b2557b4b9ced3f187ee))
+* **deps:** update dependency lodash to v4.17.23 ([#558](https://github.com/soc221b/grpc-devtools/issues/558)) ([6181317](https://github.com/soc221b/grpc-devtools/commit/6181317f9e624908ed913b05f7f26ab02a506c9b))
+* **deps:** update dependency ua-parser-js to v2.0.8 ([#546](https://github.com/soc221b/grpc-devtools/issues/546)) ([9a45495](https://github.com/soc221b/grpc-devtools/commit/9a45495559d1192c8861f4381694a2778a12f5b9))
+* **deps:** update dependency ua-parser-js to v2.0.9 ([#567](https://github.com/soc221b/grpc-devtools/issues/567)) ([3b054fa](https://github.com/soc221b/grpc-devtools/commit/3b054fabf234075065773022a31e307eaa4ce6c5))
+* **deps:** update dependency zod to v4.3.4 ([#533](https://github.com/soc221b/grpc-devtools/issues/533)) ([b2029ab](https://github.com/soc221b/grpc-devtools/commit/b2029ab212805e5cae2377e504a03caee2ca061a))
+* **deps:** update dependency zod to v4.3.5 ([#535](https://github.com/soc221b/grpc-devtools/issues/535)) ([383ef93](https://github.com/soc221b/grpc-devtools/commit/383ef9385cca4518ecad9aeb62c54e5a00b8e303))
+* **deps:** update dependency zod to v4.3.6 ([#563](https://github.com/soc221b/grpc-devtools/issues/563)) ([91043b9](https://github.com/soc221b/grpc-devtools/commit/91043b97007c8f1d77cb5238d7eac3765baf4c99))
+
 ## [1.23.29](https://github.com/soc221b/grpc-devtools/compare/v1.23.28...v1.23.29) (2025-12-31)
 
 
