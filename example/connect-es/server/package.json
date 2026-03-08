@@ -10,7 +10,7 @@
     "gen": "export IN_DIR=../../protos OUT_DIR=./ && protoc -I=$IN_DIR chat.proto --plugin=protoc-gen-es=node_modules/.bin/protoc-gen-es --es_out $OUT_DIR --es_opt target=ts"
   },
   "dependencies": {
-    "@connectrpc/connect": "2.1.0",
+    "@connectrpc/connect": "2.1.1",
     "@connectrpc/connect-express": "2.1.1",
     "@connectrpc/connect-node": "2.1.1",
     "cors": "2.8.6",
