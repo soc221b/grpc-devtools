@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.23.31](https://github.com/soc221b/grpc-devtools/compare/v1.23.30...v1.23.31) (2026-03-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency google-protobuf to v4.0.2 ([#585](https://github.com/soc221b/grpc-devtools/issues/585)) ([fcf3614](https://github.com/soc221b/grpc-devtools/commit/fcf36148f52e71986a20a7eede35e55640bda1f4))
+* **deps:** update dependency react-virtuoso to v4.18.3 ([#595](https://github.com/soc221b/grpc-devtools/issues/595)) ([7662b62](https://github.com/soc221b/grpc-devtools/commit/7662b62152f721714ab2fb56eca36ad22da009e2))
+
 ## [1.23.30](https://github.com/soc221b/grpc-devtools/compare/v1.23.29...v1.23.30) (2026-02-04)
 
 
