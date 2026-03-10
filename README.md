@@ -72,3 +72,34 @@ import { interceptors } from "./grpc-devtools";
 
 const transport = createConnectTransport({ baseUrl: "http://localhost:3003", interceptors });
 ```
+
+## [protobuf-ts](https://github.com/timostamm/protobuf-ts)
+
+grpc-devtools.ts
+
+```ts
+declare const __gRPC_devtools__:
+  | undefined
+  | {
+      protobufTsInterceptor: unknown;
+    };
+
+export const interceptors =
+  typeof __gRPC_devtools__ === "object"
+    ? [
+        __gRPC_devtools__.protobufTsInterceptor as any,
+      ]
+    : [];
+```
+
+example.ts
+
+```ts
+import { GrpcWebFetchTransport } from "@protobuf-ts/grpcweb-transport";
+import { interceptors } from "./grpc-devtools";
+
+const transport = new GrpcWebFetchTransport({
+  baseUrl: "http://localhost:8080",
+  interceptors,
+});
+```

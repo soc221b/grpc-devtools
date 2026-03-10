@@ -7,6 +7,7 @@ import {
   gRPCWebUnaryInterceptor,
   gRPCWebUnaryInterceptorInstance,
 } from "./grpc";
+import { protobufTsInterceptor } from "./protobuf-ts";
 
 declare global {
   interface Window {
@@ -14,6 +15,7 @@ declare global {
       gRPCWebUnaryInterceptor: gRPCWebUnaryInterceptor<Message, Message>;
       gRPCWebStreamInterceptor: gRPCWebStreamInterceptor<Message, Message>;
       connectEsInterceptor: Interceptor;
+      protobufTsInterceptor: unknown;
     };
   }
 }
@@ -45,6 +47,10 @@ Object.defineProperties(window.__gRPC_devtools__, {
   },
   connectEsInterceptor: {
     value: connectEsInterceptor,
+    writable: false,
+  },
+  protobufTsInterceptor: {
+    value: protobufTsInterceptor,
     writable: false,
   },
 });
