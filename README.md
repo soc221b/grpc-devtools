@@ -78,16 +78,18 @@ const transport = createConnectTransport({ baseUrl: "http://localhost:3003", int
 grpc-devtools.ts
 
 ```ts
+import type { RpcInterceptor } from "@protobuf-ts/runtime-rpc";
+
 declare const __gRPC_devtools__:
   | undefined
   | {
-      protobufTsInterceptor: unknown;
+      protobufTsInterceptor: RpcInterceptor;
     };
 
-export const interceptors =
+export const interceptors: RpcInterceptor[] =
   typeof __gRPC_devtools__ === "object"
     ? [
-        __gRPC_devtools__.protobufTsInterceptor as any,
+        __gRPC_devtools__.protobufTsInterceptor,
       ]
     : [];
 ```
@@ -103,3 +105,5 @@ const transport = new GrpcWebFetchTransport({
   interceptors,
 });
 ```
+
+For a standalone snippet-only example, see [`example/protobuf-ts`](./example/protobuf-ts).

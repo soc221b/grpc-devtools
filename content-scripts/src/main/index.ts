@@ -15,7 +15,7 @@ declare global {
       gRPCWebUnaryInterceptor: gRPCWebUnaryInterceptor<Message, Message>;
       gRPCWebStreamInterceptor: gRPCWebStreamInterceptor<Message, Message>;
       connectEsInterceptor: Interceptor;
-      protobufTsInterceptor: unknown;
+      protobufTsInterceptor: typeof protobufTsInterceptor;
     };
   }
 }

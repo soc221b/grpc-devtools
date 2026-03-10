@@ -2,6 +2,67 @@ import { postMessageToContentScript } from "./post-message-to-content-script";
 
 type RpcMetadata = Record<string, string | readonly string[]>;
 
+type ServiceInfo = {
+  typeName: string;
+};
+
+type MethodInfo = {
+  name: string;
+  service: ServiceInfo;
+};
+
+type RpcOptions = Record<string, unknown>;
+
+type RpcError = Error & {
+  code?: string | number;
+  meta?: RpcMetadata;
+};
+
+type FinishedUnaryCall<TResponse> = {
+  response: TResponse;
+  headers?: RpcMetadata;
+};
+
+type UnaryCall<TRequest, TResponse> = Promise<FinishedUnaryCall<TResponse>> & {
+  method: MethodInfo;
+  request: TRequest;
+  requestHeaders?: RpcMetadata;
+};
+
+type ServerStreamingCall<TRequest, TResponse> = {
+  method: MethodInfo;
+  request: TRequest;
+  requestHeaders?: RpcMetadata;
+  responses: {
+    onMessage(callback: (message: TResponse) => void): void;
+    onComplete(callback: () => void): void;
+    onError(callback: (error: RpcError) => void): void;
+  };
+};
+
+type ProtobufTsInterceptor = {
+  interceptUnary<TRequest, TResponse>(
+    next: (
+      method: MethodInfo,
+      input: TRequest,
+      options: RpcOptions,
+    ) => UnaryCall<TRequest, TResponse>,
+    method: MethodInfo,
+    input: TRequest,
+    options: RpcOptions,
+  ): UnaryCall<TRequest, TResponse>;
+  interceptServerStreaming<TRequest, TResponse>(
+    next: (
+      method: MethodInfo,
+      input: TRequest,
+      options: RpcOptions,
+    ) => ServerStreamingCall<TRequest, TResponse>,
+    method: MethodInfo,
+    input: TRequest,
+    options: RpcOptions,
+  ): ServerStreamingCall<TRequest, TResponse>;
+};
+
 const toMetadataRecord = (
   metadata: undefined | RpcMetadata,
 ): Record<string, string> | undefined => {
@@ -24,8 +85,15 @@ const toMetadataRecord = (
   );
 };
 
-export const protobufTsInterceptor = {
-  interceptUnary(next: any, method: any, input: any, options: any) {
+const toSerializableError = (error: RpcError) => ({
+  name: error.name,
+  code: error.code,
+  message: error.message,
+  stack: error.stack,
+});
+
+export const protobufTsInterceptor: ProtobufTsInterceptor = {
+  interceptUnary(next, method, input, options) {
     const id = Math.random().toString(36).slice(2, 6);
     const call = next(method, input, options);
 
@@ -38,7 +106,7 @@ export const protobufTsInterceptor = {
     });
 
     call.then(
-      (finishedUnaryCall: any) => {
+      (finishedUnaryCall) => {
         postMessageToContentScript({
           id,
           responseMetadata: toMetadataRecord(finishedUnaryCall.headers),
@@ -52,15 +120,10 @@ export const protobufTsInterceptor = {
 
         return finishedUnaryCall;
       },
-      (error: any) => {
+      (error: RpcError) => {
         postMessageToContentScript({
           id,
-          responseMessage: {
-            name: error.name,
-            code: error.code,
-            message: error.message,
-            stack: error.stack,
-          },
+          responseMessage: toSerializableError(error),
           errorMetadata: toMetadataRecord(error.meta),
         });
         throw error;
@@ -70,7 +133,7 @@ export const protobufTsInterceptor = {
     return call;
   },
 
-  interceptServerStreaming(next: any, method: any, input: any, options: any) {
+  interceptServerStreaming(next, method, input, options) {
     const id = Math.random().toString(36).slice(2, 6);
     const call = next(method, input, options);
 
@@ -82,7 +145,7 @@ export const protobufTsInterceptor = {
       requestMessage: call.request,
     });
 
-    call.responses.onMessage((message: any) => {
+    call.responses.onMessage((message) => {
       postMessageToContentScript({
         id,
         responseMessage: message,
@@ -96,15 +159,10 @@ export const protobufTsInterceptor = {
       });
     });
 
-    call.responses.onError((error: any) => {
+    call.responses.onError((error) => {
       postMessageToContentScript({
         id,
-        responseMessage: {
-          name: error.name,
-          code: error.code,
-          message: error.message,
-          stack: error.stack,
-        },
+        responseMessage: toSerializableError(error),
         errorMetadata: toMetadataRecord(error.meta),
       });
 

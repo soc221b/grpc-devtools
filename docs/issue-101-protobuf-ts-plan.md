@@ -28,7 +28,10 @@ Add first-class support for applications using `protobuf-ts` with gRPC-Web trans
 4. **Document public usage in README**
    - Add a `protobuf-ts` section with a `grpc-devtools.ts` snippet and transport wiring example for `@protobuf-ts/grpcweb-transport`.
 
-5. **Validation**
+5. **Add a dedicated protobuf-ts example**
+   - Add a self-contained example directory under `example/protobuf-ts` that demonstrates interceptor wiring with `GrpcWebFetchTransport`.
+
+6. **Validation**
    - Build content scripts to ensure TypeScript/webpack compilation succeeds.
    - Build the full extension workspace to verify no regressions across packages.
 
