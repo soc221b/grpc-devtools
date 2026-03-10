@@ -51,8 +51,8 @@ export const protobufTsInterceptor: RpcInterceptor = {
       requestMetadata: toMetadataRecord(call.requestHeaders),
     });
 
-    call.then(
-      (finishedUnaryCall) => {
+    void call
+      .then((finishedUnaryCall) => {
         postMessageToContentScript({
           id,
           responseMetadata: toMetadataRecord(finishedUnaryCall.headers),
@@ -65,16 +65,14 @@ export const protobufTsInterceptor: RpcInterceptor = {
         });
 
         return finishedUnaryCall;
-      },
-      (error: RpcError) => {
+      })
+      .catch((error: RpcError) => {
         postMessageToContentScript({
           id,
           responseMessage: toSerializableError(error),
           errorMetadata: toMetadataRecord(error.meta),
         });
-        throw error;
-      },
-    );
+      });
 
     return call;
   },
@@ -127,8 +125,6 @@ export const protobufTsInterceptor: RpcInterceptor = {
         responseMessage: toSerializableError(error),
         errorMetadata: toMetadataRecord(error.meta),
       });
-
-      throw error;
     });
 
     return call;
