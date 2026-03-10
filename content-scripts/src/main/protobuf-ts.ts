@@ -1,70 +1,16 @@
+import type {
+  NextServerStreamingFn,
+  NextUnaryFn,
+  RpcError,
+  RpcInterceptor,
+  RpcMetadata,
+  ServerStreamingCall,
+  UnaryCall,
+} from "@protobuf-ts/runtime-rpc";
 import { postMessageToContentScript } from "./post-message-to-content-script";
 
-type RpcMetadata = Record<string, string | readonly string[]>;
-
-type ServiceInfo = {
-  typeName: string;
-};
-
-type MethodInfo = {
-  name: string;
-  service: ServiceInfo;
-};
-
-type RpcOptions = Record<string, unknown>;
-
-type RpcError = Error & {
-  code?: string | number;
-  meta?: RpcMetadata;
-};
-
-type FinishedUnaryCall<TResponse> = {
-  response: TResponse;
-  headers?: RpcMetadata;
-};
-
-type UnaryCall<TRequest, TResponse> = Promise<FinishedUnaryCall<TResponse>> & {
-  method: MethodInfo;
-  request: TRequest;
-  requestHeaders?: RpcMetadata;
-};
-
-type ServerStreamingCall<TRequest, TResponse> = {
-  method: MethodInfo;
-  request: TRequest;
-  requestHeaders?: RpcMetadata;
-  responses: {
-    onMessage(callback: (message: TResponse) => void): void;
-    onComplete(callback: () => void): void;
-    onError(callback: (error: RpcError) => void): void;
-  };
-};
-
-type ProtobufTsInterceptor = {
-  interceptUnary<TRequest, TResponse>(
-    next: (
-      method: MethodInfo,
-      input: TRequest,
-      options: RpcOptions,
-    ) => UnaryCall<TRequest, TResponse>,
-    method: MethodInfo,
-    input: TRequest,
-    options: RpcOptions,
-  ): UnaryCall<TRequest, TResponse>;
-  interceptServerStreaming<TRequest, TResponse>(
-    next: (
-      method: MethodInfo,
-      input: TRequest,
-      options: RpcOptions,
-    ) => ServerStreamingCall<TRequest, TResponse>,
-    method: MethodInfo,
-    input: TRequest,
-    options: RpcOptions,
-  ): ServerStreamingCall<TRequest, TResponse>;
-};
-
 const toMetadataRecord = (
-  metadata: undefined | RpcMetadata,
+  metadata: undefined | Readonly<RpcMetadata>,
 ): Record<string, string> | undefined => {
   if (metadata === undefined) {
     return undefined;
@@ -92,8 +38,8 @@ const toSerializableError = (error: RpcError) => ({
   stack: error.stack,
 });
 
-export const protobufTsInterceptor: ProtobufTsInterceptor = {
-  interceptUnary(next, method, input, options) {
+export const protobufTsInterceptor: RpcInterceptor = {
+  interceptUnary(next: NextUnaryFn, method, input, options): UnaryCall {
     const id = Math.random().toString(36).slice(2, 6);
     const call = next(method, input, options);
 
@@ -133,9 +79,23 @@ export const protobufTsInterceptor: ProtobufTsInterceptor = {
     return call;
   },
 
-  interceptServerStreaming(next, method, input, options) {
+  interceptServerStreaming(
+    next: NextServerStreamingFn,
+    method,
+    input,
+    options,
+  ): ServerStreamingCall {
     const id = Math.random().toString(36).slice(2, 6);
     const call = next(method, input, options);
+    let responseMetadata: Record<string, string> | undefined;
+
+    call.headers
+      .then((headers) => {
+        responseMetadata = toMetadataRecord(headers);
+      })
+      .catch(() => {
+        responseMetadata = undefined;
+      });
 
     postMessageToContentScript({
       id,
@@ -148,6 +108,7 @@ export const protobufTsInterceptor: ProtobufTsInterceptor = {
     call.responses.onMessage((message) => {
       postMessageToContentScript({
         id,
+        responseMetadata,
         responseMessage: message,
       });
     });
@@ -155,6 +116,7 @@ export const protobufTsInterceptor: ProtobufTsInterceptor = {
     call.responses.onComplete(() => {
       postMessageToContentScript({
         id,
+        responseMetadata,
         responseMessage: "EOF",
       });
     });
