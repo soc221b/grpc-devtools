@@ -24,11 +24,25 @@ const toMetadataRecord = (
         value,
       ],
     ) => {
-      acc[key] = Array.isArray(value) ? String(value[0] ?? "") : String(value);
+      acc[key] = Array.isArray(value) ? value.map(String).join(", ") : String(value);
       return acc;
     },
     {},
   );
+};
+
+const mergeMetadata = (
+  ...metadataItems: Array<undefined | Readonly<RpcMetadata>>
+): Record<string, string> | undefined => {
+  const records = metadataItems
+    .map((metadata) => toMetadataRecord(metadata))
+    .filter((metadata): metadata is Record<string, string> => metadata !== undefined);
+
+  if (records.length === 0) {
+    return undefined;
+  }
+
+  return Object.assign({}, ...records);
 };
 
 const toSerializableError = (error: RpcError) => ({
@@ -45,8 +59,8 @@ export const protobufTsInterceptor: RpcInterceptor = {
 
     postMessageToContentScript({
       id,
-      methodName: call.method.name,
-      serviceName: call.method.service.typeName,
+      methodName: method.name,
+      serviceName: method.service.typeName,
       requestMessage: call.request,
       requestMetadata: toMetadataRecord(call.requestHeaders),
     });
@@ -55,7 +69,7 @@ export const protobufTsInterceptor: RpcInterceptor = {
       .then((finishedUnaryCall) => {
         postMessageToContentScript({
           id,
-          responseMetadata: toMetadataRecord(finishedUnaryCall.headers),
+          responseMetadata: mergeMetadata(finishedUnaryCall.headers, finishedUnaryCall.trailers),
           responseMessage: finishedUnaryCall.response,
         });
 
@@ -63,8 +77,6 @@ export const protobufTsInterceptor: RpcInterceptor = {
           id,
           responseMessage: "EOF",
         });
-
-        return finishedUnaryCall;
       })
       .catch((error: RpcError) => {
         postMessageToContentScript({
@@ -87,18 +99,25 @@ export const protobufTsInterceptor: RpcInterceptor = {
     const call = next(method, input, options);
     let responseMetadata: Record<string, string> | undefined;
 
-    call.headers
-      .then((headers) => {
-        responseMetadata = toMetadataRecord(headers);
-      })
-      .catch(() => {
-        responseMetadata = undefined;
-      });
+    void Promise.allSettled([
+      call.headers,
+      call.trailers,
+    ]).then(
+      ([
+        headersResult,
+        trailersResult,
+      ]) => {
+        responseMetadata = mergeMetadata(
+          headersResult.status === "fulfilled" ? headersResult.value : undefined,
+          trailersResult.status === "fulfilled" ? trailersResult.value : undefined,
+        );
+      },
+    );
 
     postMessageToContentScript({
       id,
-      methodName: call.method.name,
-      serviceName: call.method.service.typeName,
+      methodName: method.name,
+      serviceName: method.service.typeName,
       requestMetadata: toMetadataRecord(call.requestHeaders),
       requestMessage: call.request,
     });

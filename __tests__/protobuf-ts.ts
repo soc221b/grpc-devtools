@@ -24,7 +24,10 @@ test("protobuf-ts interceptor handles unary and server streaming flows", () => {
   expect(content).toContain("interceptServerStreaming");
   expect(content).toContain('responseMessage: "EOF"');
   expect(content).toContain("toMetadataRecord(call.requestHeaders)");
-  expect(content).toContain("responseMetadata");
+  expect(content).toContain("mergeMetadata");
+  expect(content).toContain("Promise.allSettled([");
+  expect(content).toContain("call.headers");
+  expect(content).toContain("call.trailers");
 });
 
 test("protobuf-ts interceptor avoids creating unhandled rejections", () => {
@@ -40,7 +43,5 @@ test("protobuf-ts interceptor avoids creating unhandled rejections", () => {
 
   expect(content).toContain("void call");
   expect(content).toContain(".catch((error: RpcError) => {");
-  expect(content).not.toContain(
-    "call.responses.onError((error) => {\n      postMessageToContentScript({\n        id,\n        responseMessage: toSerializableError(error),\n        errorMetadata: toMetadataRecord(error.meta),\n      });\n\n      throw error;\n    });",
-  );
+  expect(content).not.toContain("throw error");
 });
