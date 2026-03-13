@@ -99,20 +99,25 @@ export const protobufTsInterceptor: RpcInterceptor = {
     const call = next(method, input, options);
     let responseMetadata: Record<string, string> | undefined;
 
-    void Promise.allSettled([
-      call.headers,
-      call.trailers,
-    ]).then(
-      ([
-        headersResult,
-        trailersResult,
-      ]) => {
-        responseMetadata = mergeMetadata(
-          headersResult.status === "fulfilled" ? headersResult.value : undefined,
-          trailersResult.status === "fulfilled" ? trailersResult.value : undefined,
-        );
-      },
-    );
+    void call.headers
+      .then((headers) => {
+        responseMetadata = mergeMetadata(headers, responseMetadata);
+        postMessageToContentScript({
+          id,
+          responseMetadata,
+        });
+      })
+      .catch(() => void 0);
+
+    void call.trailers
+      .then((trailers) => {
+        responseMetadata = mergeMetadata(responseMetadata, trailers);
+        postMessageToContentScript({
+          id,
+          responseMetadata,
+        });
+      })
+      .catch(() => void 0);
 
     postMessageToContentScript({
       id,
