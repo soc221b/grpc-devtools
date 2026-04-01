@@ -25,7 +25,7 @@ jobs:
 
       - run: npm run test
 
-      - uses: mnao305/chrome-extension-upload@v5.0.0
+      - uses: mnao305/chrome-extension-upload@v6.0.0
         if: ${{ github.ref == 'refs/heads/main' && contains(github.event.head_commit.message, 'chore(release):') }}
         with:
           file-path: dist.zip
