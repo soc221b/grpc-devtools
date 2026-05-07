@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.23.31](https://github.com/soc221b/grpc-devtools/compare/v1.23.30...v1.23.31) (2026-05-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @headlessui/react to v2.2.10 ([#628](https://github.com/soc221b/grpc-devtools/issues/628)) ([8f7b1f6](https://github.com/soc221b/grpc-devtools/commit/8f7b1f6d6c1f10ce1e844adcd6902e9727e5e659))
+* **deps:** update dependency core-js to v3.49.0 ([#609](https://github.com/soc221b/grpc-devtools/issues/609)) ([92680d0](https://github.com/soc221b/grpc-devtools/commit/92680d0aedbe93cfce1dd5f5fb4678b5e2436574))
+* **deps:** update dependency google-protobuf to v4.0.2 ([#585](https://github.com/soc221b/grpc-devtools/issues/585)) ([fcf3614](https://github.com/soc221b/grpc-devtools/commit/fcf36148f52e71986a20a7eede35e55640bda1f4))
+* **deps:** update dependency lodash to v4.18.1 ([#619](https://github.com/soc221b/grpc-devtools/issues/619)) ([1ff9e61](https://github.com/soc221b/grpc-devtools/commit/1ff9e6132b70bbe291f36bcffc93f352fb6afbb0))
+* **deps:** update dependency react-tooltip to v5.30.1 ([#629](https://github.com/soc221b/grpc-devtools/issues/629)) ([ae585d7](https://github.com/soc221b/grpc-devtools/commit/ae585d786b3e19a6a8583d46d35f2a7f5d7a7c5a))
+* **deps:** update dependency react-tooltip to v6 ([#640](https://github.com/soc221b/grpc-devtools/issues/640)) ([f2ddae9](https://github.com/soc221b/grpc-devtools/commit/f2ddae96fd1948ec83fb4be1bbc4a376e0b4f496))
+* **deps:** update dependency react-tooltip to v6.0.2 ([#656](https://github.com/soc221b/grpc-devtools/issues/656)) ([792690d](https://github.com/soc221b/grpc-devtools/commit/792690d645def403bb3d22cf0ba9da7f3d0aaf86))
+* **deps:** update dependency react-virtuoso to v4.18.3 ([#595](https://github.com/soc221b/grpc-devtools/issues/595)) ([7662b62](https://github.com/soc221b/grpc-devtools/commit/7662b62152f721714ab2fb56eca36ad22da009e2))
+* **deps:** update dependency react-virtuoso to v4.18.4 ([#618](https://github.com/soc221b/grpc-devtools/issues/618)) ([0d524a4](https://github.com/soc221b/grpc-devtools/commit/0d524a4a54ab2016ee4c3ec69668db06675097fa))
+* **deps:** update dependency react-virtuoso to v4.18.5 ([#630](https://github.com/soc221b/grpc-devtools/issues/630)) ([cb126fa](https://github.com/soc221b/grpc-devtools/commit/cb126fa47ff39de9a8031b5be568133aa157e8f4))
+* **deps:** update dependency react-virtuoso to v4.18.6 ([#642](https://github.com/soc221b/grpc-devtools/issues/642)) ([4fc9861](https://github.com/soc221b/grpc-devtools/commit/4fc986131be7a03498495530b02d077501f268de))
+* **deps:** update dependency zod to v4.4.0 ([#648](https://github.com/soc221b/grpc-devtools/issues/648)) ([ddfc7e1](https://github.com/soc221b/grpc-devtools/commit/ddfc7e1baf9faaa3d00379f371023eff7c3ddd81))
+* **deps:** update dependency zod to v4.4.1 ([#649](https://github.com/soc221b/grpc-devtools/issues/649)) ([827a822](https://github.com/soc221b/grpc-devtools/commit/827a822fe50cb009951bca7293566eeec0270347))
+* **deps:** update dependency zod to v4.4.2 ([#651](https://github.com/soc221b/grpc-devtools/issues/651)) ([6ace911](https://github.com/soc221b/grpc-devtools/commit/6ace91198ed97b07419daccc1c109ec68bd67729))
+* **deps:** update dependency zod to v4.4.3 ([#653](https://github.com/soc221b/grpc-devtools/issues/653)) ([b21f2c7](https://github.com/soc221b/grpc-devtools/commit/b21f2c705e933245db61f6ad705d0357aaa9bc8e))
+
 ## [1.23.30](https://github.com/soc221b/grpc-devtools/compare/v1.23.29...v1.23.30) (2026-02-04)
 
 
