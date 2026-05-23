@@ -27,7 +27,7 @@
     "react-tooltip": "6.0.4",
     "react-use": "17.6.0",
     "react-virtuoso": "4.18.7",
-    "ua-parser-js": "2.0.9",
+    "ua-parser-js": "2.0.10",
     "zod": "4.4.3"
   },
   "devDependencies": {
