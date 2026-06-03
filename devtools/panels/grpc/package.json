@@ -54,7 +54,7 @@
     "style-loader": "4.0.0",
     "swc-loader": "0.2.7",
     "tailwindcss": "4.3.0",
-    "ts-essentials": "10.2.0",
+    "ts-essentials": "10.2.1",
     "ts-loader": "9.6.0",
     "ts-node": "10.9.2",
     "typescript": "6.0.3",
