@@ -10,6 +10,8 @@ export type DetailAction =
   | { type: "closedMessage" }
   | { type: "toggleIsPreview" }
   | { type: "toggleIsISO8601" }
+  | { type: "toggleIsStructValue" }
+  | { type: "toggleIsRemoveListSuffix" }
   | { type: "toggleIsStickyScroll" };
 
 export const initialDetail: Detail = {
@@ -19,6 +21,8 @@ export const initialDetail: Detail = {
     focusedIndex: null,
     isPreview: true,
     isISO8601: true,
+    isStructValue: true,
+    isRemoveListSuffix: true,
     isStickyScroll: true,
   },
 };
@@ -76,6 +80,24 @@ export const detailReducer: Reducer<DeepReadonly<Detail>, DetailAction> = (state
         messages: {
           ...state.messages,
           isISO8601: !state.messages.isISO8601,
+        },
+      };
+
+    case "toggleIsStructValue":
+      return {
+        ...state,
+        messages: {
+          ...state.messages,
+          isStructValue: !state.messages.isStructValue,
+        },
+      };
+
+    case "toggleIsRemoveListSuffix":
+      return {
+        ...state,
+        messages: {
+          ...state.messages,
+          isRemoveListSuffix: !state.messages.isRemoveListSuffix,
         },
       };
 
