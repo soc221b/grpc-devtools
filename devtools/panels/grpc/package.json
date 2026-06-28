@@ -26,7 +26,7 @@
     "react-popper": "2.3.0",
     "react-tooltip": "6.0.8",
     "react-use": "17.6.1",
-    "react-virtuoso": "4.18.8",
+    "react-virtuoso": "4.18.10",
     "ua-parser-js": "2.0.10",
     "zod": "4.4.3"
   },
