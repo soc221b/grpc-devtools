@@ -57,7 +57,7 @@
     "ts-essentials": "10.2.1",
     "ts-loader": "9.6.2",
     "ts-node": "10.9.2",
-    "typescript": "6.0.3",
+    "typescript": "7.0.2",
     "webpack": "5.108.4",
     "webpack-cli": "7.0.3",
     "webpack-dev-server": "5.2.6"
