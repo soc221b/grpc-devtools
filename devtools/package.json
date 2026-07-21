@@ -10,7 +10,7 @@
   "devDependencies": {
     "@types/chrome": "0.2.2",
     "swc-loader": "0.2.7",
-    "typescript": "6.0.3",
+    "typescript": "7.0.2",
     "webpack": "5.108.4",
     "webpack-cli": "7.0.3"
   }
