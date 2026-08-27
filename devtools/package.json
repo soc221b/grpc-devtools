@@ -11,7 +11,7 @@
     "@types/chrome": "0.2.7",
     "swc-loader": "0.2.7",
     "typescript": "7.0.2",
-    "webpack": "5.110.0",
+    "webpack": "5.110.1",
     "webpack-cli": "7.0.3"
   }
 }
