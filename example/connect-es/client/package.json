@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@bufbuild/protoc-gen-es": "2.14.0",
-    "css-loader": "7.1.4",
+    "css-loader": "7.1.5",
     "html-webpack-plugin": "5.6.8",
     "style-loader": "4.0.0",
     "ts-loader": "9.6.2",
