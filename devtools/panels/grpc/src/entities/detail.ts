@@ -5,6 +5,8 @@ export type Detail = {
     focusedIndex: null | number;
     isPreview: boolean;
     isISO8601: boolean;
+    isStructValue: boolean;
+    isRemoveListSuffix: boolean;
     isStickyScroll: boolean;
   };
 };
