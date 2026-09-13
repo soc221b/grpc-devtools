@@ -12,7 +12,7 @@
     "@connectrpc/connect-web": "2.2.0"
   },
   "devDependencies": {
-    "@bufbuild/protoc-gen-es": "2.14.1",
+    "@bufbuild/protoc-gen-es": "2.15.0",
     "css-loader": "7.1.5",
     "html-webpack-plugin": "5.6.8",
     "style-loader": "4.0.0",
