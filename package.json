@@ -18,7 +18,7 @@
     "test:e2e": "cypress run --e2e --browser chrome"
   },
   "devDependencies": {
-    "cross-zip": "4.0.1",
+    "cross-zip": "4.1.0",
     "cy-verify-downloads": "0.3.0",
     "cypress": "16.3.0",
     "cypress-file-upload": "5.0.8",
